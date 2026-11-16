@@ -1,9 +1,9 @@
 (function () {
   "use strict";
   var root = document.documentElement;
-  var DEMO = root.dataset.demo === "1"; /* preview build: no real iframe, show a stand-in */
+  var DEMO = root.dataset.demo === "1"; 
 
-  /* ---- theme toggle (remembers the viewer's choice, tolerates blocked storage) ---- */
+  /* ---- theme toggle ---- */
   try {
     var saved = localStorage.getItem("theme");
     if (saved === "dark" || saved === "light") root.setAttribute("data-theme", saved);
@@ -55,7 +55,7 @@
     });
   });
 
-  /* ---- YouTube facade: the iframe is only created on click ---- */
+  /* ---- YouTube facade ---- */
   function resetPlayer(box) {
     if (!box) return;
     var fr = box.querySelector("iframe");
@@ -93,7 +93,7 @@
     });
   });
 
-  /* ---- poster frames come from YouTube; harmless if they fail to load ---- */
+  /* ---- poster frames ---- */
   document.querySelectorAll(".yt[data-yt]").forEach(function (box) {
     var id = box.dataset.yt;
     if (!id || id === "VIDEO_ID" || DEMO) return;
@@ -122,7 +122,7 @@
   }
 })();
 
-/* publications open on click; the filters still act on the <li> */
+
 document.querySelectorAll("[data-pubtoggle]").forEach(function (btn) {
   btn.addEventListener("click", function () {
     var body = document.getElementById(btn.getAttribute("aria-controls"));
