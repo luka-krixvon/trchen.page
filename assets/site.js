@@ -127,6 +127,16 @@ document.querySelectorAll("[data-pubtoggle]").forEach(function (btn) {
   btn.addEventListener("click", function () {
     var body = document.getElementById(btn.getAttribute("aria-controls"));
     var open = btn.getAttribute("aria-expanded") === "true";
+    if (!open) {
+      document.querySelectorAll("[data-pubtoggle][aria-expanded='true']").forEach(function (other) {
+        if (other === btn) return;
+        var ob = document.getElementById(other.getAttribute("aria-controls"));
+        other.setAttribute("aria-expanded", "false");
+        if (ob) { ob.hidden = true; }
+        var p = other.closest(".pub");
+        if (p) { p.querySelectorAll(".yt iframe").forEach(function (f) { f.remove(); }); }
+      });
+    }
     btn.setAttribute("aria-expanded", String(!open));
     body.hidden = open;
   });
