@@ -618,7 +618,7 @@
         ]
       ]
     },
-    "bio": "My doctorate was about making protein structure prediction faster without making it wrong. I do the same thing for AI inference now — in an industry that still cannot tell a real speedup from a measurement error.",
+    "bio": "My training is in computer science and my doctorate was in protein structure prediction. I now work on AI inference and API routing — different fields on the surface, but the same job underneath: build the measurement first, so that the improvements people report can be trusted.",
     "education": [
       [
         "2021",
@@ -801,7 +801,7 @@
         ]
       ]
     },
-    "bio": "我的博士在做蛋白質結構預測：怎麼讓它更快，又不讓它算錯。現在我對 AI 推論做同一件事——這個產業到今天還分不出什麼是真的變快，什麼只是量錯了。",
+    "bio": "我的底是資訊工程，博士做的是蛋白質結構預測。現在我做 AI 推論與 API 路由——看起來換了領域，但底下是同一件事：先把量測的標準建立起來。量測可信，大家做出來的改進才算數。",
     "education": [
       [
         "2021",
@@ -984,7 +984,7 @@
         ]
       ]
     },
-    "bio": "博士課程では、タンパク質の構造予測を精度を落とさずに速くすることをやっていた。いま同じことを AI 推論でやっている——この業界はまだ、本当に速くなったのか測り間違えただけなのかを区別できない。",
+    "bio": "私の基礎は情報工学で、博士課程ではタンパク質の構造予測をやっていました。いまは AI 推論と API ルーティングに取り組んでいます。分野は違って見えますが、やっていることは同じです——まず計測の基準をつくること。計測が信頼できてこそ、報告される改善は意味を持ちます。",
     "education": [
       [
         "2021",
