@@ -1,6 +1,3 @@
-/* One identity block in the rail, one reading column beside it.
-   Six type steps and nothing smaller than 12px; a bright paper ground so the
-   page reads as a document rather than a dashboard. */
 :root{
   --paper:#FAFAF9; --surface:#FFFFFF; --rail:#F2F3F1;
   --ink:#16191A; --ink2:#525A5C; --ink3:#7C8486;
@@ -11,7 +8,7 @@
   --serif:"Spectral",Georgia,"Times New Roman",serif;
   --sans:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
-  /* the whole page uses these six and nothing else */
+  
   --t-xs:12px; --t-sm:13.5px; --t-base:16px; --t-md:18px; --t-lg:25px; --t-xl:34px;
   --bar:54px;
   color-scheme:light;
@@ -49,7 +46,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .skip:focus{left:12px;top:12px;z-index:90;background:var(--surface);padding:10px 14px;
   border-radius:8px;border:1px solid var(--line)}
 
-/* ---------- top bar: controls only; the rail carries the name ---------- */
+/* ---------- top bar ---------- */
 .topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;height:var(--bar);
   display:flex;align-items:center;justify-content:space-between;gap:16px;
   background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:saturate(1.2) blur(10px);
@@ -60,7 +57,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .wordmark{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--mono);
   font-size:var(--t-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)}
 .wm-dot{width:9px;height:9px;border-radius:50%;background:var(--accent);flex:none}
-.wordmark{display:none}           /* the name appears once, in the rail */
+.wordmark{display:none}           
 .topbar-r{display:flex;align-items:center;gap:10px}
 .langs{display:flex;align-items:center;border:1px solid var(--line);border-radius:999px;
   overflow:hidden;background:var(--surface);font-family:var(--mono)}
@@ -115,7 +112,7 @@ h2.big{font-family:var(--serif);font-size:var(--t-lg);font-weight:600;letter-spa
   flex-wrap:wrap;margin-bottom:24px}
 .sec-head p{font-family:var(--sans);font-size:var(--t-xs);color:var(--ink3)}
 
-/* ---------- the figures: a quiet summary row, on paper ---------- */
+/* ---------- figures ---------- */
 .proof{display:flex;flex-wrap:wrap;gap:clamp(22px,3.6vw,46px);padding-block:4px 0;
   font-family:var(--mono);border-top:1px solid var(--line);padding-top:30px}
 .proof > div{display:flex;flex-direction:column;gap:6px}
@@ -285,7 +282,7 @@ footer.site{padding-block:30px 56px;font-family:var(--mono);font-size:var(--t-xs
 }
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
 
-/* ---------- print: the page is the CV ---------- */
+/* ---------- print ---------- */
 @media print{
   :root{--paper:#fff;--surface:#fff;--ink:#000;--ink2:#333;--ink3:#555;
         --line:#bbb;--hair:#ddd;--accent:#000;--accent-soft:#f0f0f0;--sig:#000;--sig-soft:#f0f0f0}
@@ -304,7 +301,7 @@ footer.site{padding-block:30px 56px;font-family:var(--mono);font-size:var(--t-xs
   .proof b{font-size:16pt}
 }
 
-/* ---------- CJK: real faces, and the extra leading those scripts need ---------- */
+/* ---------- CJK ---------- */
 :root[lang^="zh"]{
   --serif:"Spectral","Noto Serif TC",Georgia,"Songti TC",serif;
   --sans:"IBM Plex Sans","Noto Sans TC",-apple-system,"PingFang TC",sans-serif;
