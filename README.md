@@ -156,6 +156,19 @@ python3 refresh_metrics.py && python3 build.py
   --window-size=1200,630 --screenshot=og.png file://$PWD/og.html
 ```
 
+## Google 搜尋收錄（Search Console）
+
+已驗證並提交，網域資源是 `https://trchen.page/`，帳號 `itri.b10613@gmail.com`。
+
+**根目錄的 `googledcb22be1fd21b6c2.html` 不可以刪。** 那是 Google 的擁有權驗證檔，
+內容只有一行 `google-site-verification: googledcb22be1fd21b6c2.html`。
+刪掉或改名，Google 下次來查就會失去驗證狀態，網站會從搜尋結果掉出去。
+
+驗證走的是「HTML 檔案」這條，不是 DNS —— 沒有授權 Google 存取 Cloudflare 帳戶。
+
+`sitemap.xml` 已提交。之後改內容不用再提交一次，Google 會自己回來讀。
+要看收錄狀況：https://search.google.com/search-console?resource_id=https%3A%2F%2Ftrchen.page%2F
+
 ## 其他
 
 - 深淺色主題跟隨系統，側欄有手動切換，選擇記在瀏覽器裡。
