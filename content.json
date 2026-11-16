@@ -499,8 +499,8 @@
   "en": {
     "lang_attr": "en",
     "meta_title": "Teng-Ruei Chen — Machine Learning Systems",
-    "meta_desc": "Teng-Ruei Chen, PhD. Research on LLM routing, serving economics and inference-time privacy. Every paper ships with a recorded talk.",
-    "role": "AI infrastructure · LLM inference · Deep learning · Bioinformatics",
+    "meta_desc": "Teng-Ruei Chen, PhD — machine learning systems. LLM routing, inference economics, and the measurement problems underneath them.",
+    "role": "AI infrastructure · LLM inference · Information security · Deep learning · Bioinformatics",
     "rail_sub": "",
     "lede": "",
     "nav": {
@@ -541,8 +541,8 @@
         "Learned routers assign requests across a pool of models. I measure how far those assignments sit from an oracle that knows answer quality in advance."
       ],
       [
-        "Privacy",
-        "Serving infrastructure emits metadata before the response exists: which tier was picked, how long the queue was, how many drafts were sampled. That channel is readable."
+        "Security & privacy",
+        "Serving infrastructure emits metadata before the response exists: which tier was picked, how long the queue was, how many drafts were sampled. That is a side channel, and it is readable from outside."
       ],
       [
         "Validity",
@@ -579,7 +579,7 @@
       "bioinformatics": "Bioinformatics",
       "applications": "Applications",
       "video": "Has talk",
-      "privacy": "Privacy"
+      "privacy": "Security & privacy"
     },
     "notes": {
       "toappear": "to appear",
@@ -616,7 +616,7 @@
         ]
       ]
     },
-    "bio": "Most of what AI costs is moving from training to inference. A model is trained once, then served millions of times, on hardware that is scarce, priced differently in different places, and not interchangeable. Which request runs on which machine, at what cost, has become a question of infrastructure economics — the same problem I worked on in power distribution, vehicle charging and compute scheduling before this.\n\nThe harder half is that these decisions are difficult to evaluate. Reported gains in routing are measured against baselines that are themselves unstable, and the hardware underneath does not reliably return the same answer twice. Until the measurement is sound, the field cannot tell a real improvement from an artifact of how it was measured. That is why most of my work is measurement rather than method.",
+    "bio": "My doctorate was about making protein structure prediction faster without making it wrong. I do the same thing for AI inference now — in an industry that still cannot tell a real speedup from a measurement error.",
     "education": [
       [
         "2021",
@@ -682,8 +682,8 @@
   "zh": {
     "lang_attr": "zh-Hant-TW",
     "meta_title": "陳騰瑞 Teng-Ruei Chen — 機器學習系統",
-    "meta_desc": "陳騰瑞，博士。研究 LLM 路由、serving 成本結構與推論階段隱私。",
-    "role": "AI 基礎設施 · LLM 推論 · 深度學習 · 生物資訊",
+    "meta_desc": "陳騰瑞，機器學習系統。LLM 路由、推論成本，以及它們底下的量測問題。",
+    "role": "AI 基礎設施 · LLM 推論 · 資訊安全 · 深度學習 · 生物資訊",
     "rail_sub": "",
     "lede": "",
     "nav": {
@@ -724,8 +724,8 @@
         "學習型路由器把請求分派到一組模型上。我量測這些分派，離一個事先就知道答案品質的 oracle 還有多遠。"
       ],
       [
-        "隱私",
-        "serving 基礎設施在回應存在之前就送出 metadata：選了哪一層、佇列多長、採樣了幾份草稿。那條通道是讀得出東西的。"
+        "資安與隱私",
+        "serving 基礎設施在回應存在之前就送出 metadata：選了哪一層、佇列多長、採樣了幾份草稿。那是一條旁路通道，而且從外面讀得到。"
       ],
       [
         "效度",
@@ -762,7 +762,7 @@
       "bioinformatics": "生物資訊",
       "applications": "應用",
       "video": "有影片",
-      "privacy": "隱私"
+      "privacy": "資安與隱私"
     },
     "notes": {
       "toappear": "即將發表",
@@ -799,7 +799,7 @@
         ]
       ]
     },
-    "bio": "AI 的成本正在從訓練移到推論。一個模型只訓練一次，卻要被服務上百萬次，而且跑在稀缺、各地價格不同、彼此又不能互換的硬體上。哪一個請求該跑在哪一台機器、花多少錢，已經從實作細節變成基礎設施的經濟問題——這跟我更早在電力調度、車輛充電、算力排程上面對的是同一個問題。\n\n比較難的是另一半：這些決策很難評估。路由上報告出來的增益，是拿一個本身就不穩定的基準在比，而底下的硬體又不保證兩次給出同樣的答案。在量測站得住腳之前，分不出哪些是真的改進、哪些只是量測方式造成的假象。這就是為什麼我的工作有很大一部分是量測而不是方法。",
+    "bio": "我的博士在做蛋白質結構預測：怎麼讓它更快，又不讓它算錯。現在我對 AI 推論做同一件事——這個產業到今天還分不出什麼是真的變快，什麼只是量錯了。",
     "education": [
       [
         "2021",
@@ -865,8 +865,8 @@
   "ja": {
     "lang_attr": "ja",
     "meta_title": "Teng-Ruei Chen — 機械学習システム",
-    "meta_desc": "Teng-Ruei Chen, Ph.D. LLMのルーティング、サービングの経済性、推論時プライバシーの研究。各論文に自作の解説動画が付いています。",
-    "role": "AIインフラ · LLM推論 · 深層学習 · バイオインフォマティクス",
+    "meta_desc": "Teng-Ruei Chen、機械学習システム。LLMルーティング、推論の経済性、そしてその土台にある計測の問題。",
+    "role": "AIインフラ · LLM推論 · 情報セキュリティ · 深層学習 · バイオインフォマティクス",
     "rail_sub": "",
     "lede": "",
     "nav": {
@@ -907,8 +907,8 @@
         "学習型ルーターはリクエストをモデル群に振り分ける。その割り当てが、答えの品質を事前に知るオラクルからどれだけ離れているかを測っている。"
       ],
       [
-        "プライバシー",
-        "サービング基盤は応答が存在する前にメタデータを出す。どの層を選んだか、キューの長さ、サンプリングした下書きの数。その通路は読み取れる。"
+        "セキュリティとプライバシー",
+        "サービング基盤は応答が生成される前にメタデータを発する：どの層が選ばれたか、キューの長さ、サンプリングされた下書きの数。それはサイドチャネルであり、外部から読み取れる。"
       ],
       [
         "妥当性",
@@ -945,7 +945,7 @@
       "bioinformatics": "バイオインフォマティクス",
       "applications": "応用",
       "video": "動画あり",
-      "privacy": "プライバシー"
+      "privacy": "セキュリティ"
     },
     "notes": {
       "toappear": "掲載予定",
@@ -982,7 +982,7 @@
         ]
       ]
     },
-    "bio": "AIのコストの大半は学習から推論へ移りつつある。モデルの学習は一度だが、提供は何百万回も行われる。しかもその計算資源は希少で、場所によって価格が異なり、互換でもない。どのリクエストをどの機械でいくらで走らせるかは、実装の細部ではなくインフラの経済の問題になった——以前に電力配分、車両充電、計算資源の調度で向き合ってきたものと同じ問題である。\n\n難しいのはもう半分だ。これらの判断は評価がしにくい。ルーティングで報告される改善は、それ自体が不安定な基準と比較されており、下層のハードウェアも二度同じ答えを返すとは限らない。測定が確かなものになるまで、本物の改善と測定方法の産物とを区別できない。私の仕事の多くが手法ではなく測定である理由はそこにある。",
+    "bio": "博士課程では、タンパク質の構造予測を精度を落とさずに速くすることをやっていた。いま同じことを AI 推論でやっている——この業界はまだ、本当に速くなったのか測り間違えただけなのかを区別できない。",
     "education": [
       [
         "2021",

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Teng-Ruei Chen — Machine Learning Systems</title>
-<meta name="description" content="Teng-Ruei Chen, PhD. Research on LLM routing, serving economics and inference-time privacy. Every paper ships with a recorded talk.">
+<meta name="description" content="Teng-Ruei Chen, PhD — machine learning systems. LLM routing, inference economics, and the measurement problems underneath them.">
 <link rel="canonical" href="https://trchen.page/">
 <link rel="alternate" hreflang="en" href="https://trchen.page/"><link rel="alternate" hreflang="zh-Hant-TW" href="https://trchen.page/zh/"><link rel="alternate" hreflang="ja" href="https://trchen.page/ja/"><link rel="alternate" hreflang="x-default" href="https://trchen.page/">
 <meta name="author" content="Teng-Ruei Chen">
@@ -14,14 +14,14 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="zh_TW"><meta property="og:locale:alternate" content="ja_JP">
 <meta property="og:title" content="Teng-Ruei Chen — Machine Learning Systems">
-<meta property="og:description" content="Teng-Ruei Chen, PhD. Research on LLM routing, serving economics and inference-time privacy. Every paper ships with a recorded talk.">
+<meta property="og:description" content="Teng-Ruei Chen, PhD — machine learning systems. LLM routing, inference economics, and the measurement problems underneath them.">
 <meta property="og:image" content="https://trchen.page/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Teng-Ruei Chen — Machine Learning Systems">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Teng-Ruei Chen — Machine Learning Systems">
-<meta name="twitter:description" content="Teng-Ruei Chen, PhD. Research on LLM routing, serving economics and inference-time privacy. Every paper ships with a recorded talk.">
+<meta name="twitter:description" content="Teng-Ruei Chen, PhD — machine learning systems. LLM routing, inference economics, and the measurement problems underneath them.">
 <meta name="twitter:image" content="https://trchen.page/og.png">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-96.png" sizes="96x96" type="image/png">
@@ -45,7 +45,7 @@
   <img class="portrait" src="portrait.png" alt="Teng-Ruei Chen" width="128" height="128">
   <div class="idtext">
     <h1>Teng-Ruei Chen</h1>
-    <p class="fields">AI infrastructure · LLM inference · Deep learning · Bioinformatics</p>
+    <p class="fields">AI infrastructure · LLM inference · Information security · Deep learning · Bioinformatics</p>
     <p class="meta">Taoyuan, Taiwan · <a href="mailto:ymchen.bi04g@g2.nctu.edu.tw">ymchen.bi04g@g2.nctu.edu.tw</a></p>
     <nav class="idlinks" aria-label="Profiles"><a href="https://scholar.google.com/citations?user=PiuFUZ8AAAAJ" rel="me">Google Scholar</a><a href="https://orcid.org/0000-0001-8995-334X" rel="me">ORCID</a><a href="https://www.linkedin.com/in/luka-chen/" rel="me">LinkedIn</a><a href="https://github.com/luka-krixvon" rel="me">GitHub</a></nav>
   </div>
@@ -55,7 +55,7 @@
 
     <section class="sec" id="about">
       <span class="eyebrow">About</span>
-      <p class="bio">Most of what AI costs is moving from training to inference. A model is trained once, then served millions of times, on hardware that is scarce, priced differently in different places, and not interchangeable. Which request runs on which machine, at what cost, has become a question of infrastructure economics — the same problem I worked on in power distribution, vehicle charging and compute scheduling before this.</p><p class="bio">The harder half is that these decisions are difficult to evaluate. Reported gains in routing are measured against baselines that are themselves unstable, and the hardware underneath does not reliably return the same answer twice. Until the measurement is sound, the field cannot tell a real improvement from an artifact of how it was measured. That is why most of my work is measurement rather than method.</p>
+      <p class="bio">My doctorate was about making protein structure prediction faster without making it wrong. I do the same thing for AI inference now — in an industry that still cannot tell a real speedup from a measurement error.</p>
       <div class="cv-grid cv-stack">
         <dl class="cv-group"><h3>Education</h3><div class="cv-row"><dt>2021</dt><dd>Ph.D. in bioinformatics and systems biology, National Yang Ming Chiao Tung University, Hsinchu</dd></div></dl>
         <dl class="cv-group"><h3>Positions</h3><div class="cv-row"><dt>2026–</dt><dd>Chief Technology Officer, BiiLabs Co., Ltd. · Taipei</dd></div><div class="cv-row"><dt>2026–</dt><dd>Chief Executive Officer, Krixvon Company Limited · Taipei</dd></div><div class="cv-row"><dt>2024–26</dt><dd>Chief Technology Officer, Taiwan Intelligence Research and Development Co., Ltd. · Taipei</dd></div><div class="cv-row"><dt>2022–24</dt><dd>Engineer, Industrial Technology Research Institute (ITRI) · Hsinchu</dd></div><div class="cv-row"><dt>2018–22</dt><dd>Chief Technology Officer, Lingshing Intelligence Co., Ltd. · Taipei</dd></div></dl>
@@ -64,12 +64,12 @@
 
     <section class="sec" id="research">
       <span class="eyebrow">Research</span>
-      <div class="inner-themes"><div class="theme-row"><h3>Routing</h3><p>Learned routers assign requests across a pool of models. I measure how far those assignments sit from an oracle that knows answer quality in advance.</p></div><div class="theme-row"><h3>Privacy</h3><p>Serving infrastructure emits metadata before the response exists: which tier was picked, how long the queue was, how many drafts were sampled. That channel is readable.</p></div><div class="theme-row"><h3>Validity</h3><p>Whether routing results measured on benchmarks survive contact with production traffic shapes, and what breaks first when they do not.</p></div></div>
+      <div class="inner-themes"><div class="theme-row"><h3>Routing</h3><p>Learned routers assign requests across a pool of models. I measure how far those assignments sit from an oracle that knows answer quality in advance.</p></div><div class="theme-row"><h3>Security &amp; privacy</h3><p>Serving infrastructure emits metadata before the response exists: which tier was picked, how long the queue was, how many drafts were sampled. That is a side channel, and it is readable from outside.</p></div><div class="theme-row"><h3>Validity</h3><p>Whether routing results measured on benchmarks survive contact with production traffic shapes, and what breaks first when they do not.</p></div></div>
     </section>
 
     <section class="sec" id="publications">
       <div class="sec-head"><h2 class="big">Publications</h2><p>Work before 2022 is protein structure prediction. The methodological question carries over.</p></div>
-      <div class="filters"><button class="filt" type="button" data-filter="all" aria-pressed="true">All</button><button class="filt" type="button" data-filter="routing" aria-pressed="false">Routing</button><button class="filt" type="button" data-filter="privacy" aria-pressed="false">Privacy</button><button class="filt" type="button" data-filter="systems" aria-pressed="false">Systems</button><button class="filt" type="button" data-filter="evaluation" aria-pressed="false">Evaluation</button><button class="filt" type="button" data-filter="bioinformatics" aria-pressed="false">Bioinformatics</button><button class="filt" type="button" data-filter="applications" aria-pressed="false">Applications</button><button class="filt" type="button" data-filter="video" aria-pressed="false">Has talk</button></div>
+      <div class="filters"><button class="filt" type="button" data-filter="all" aria-pressed="true">All</button><button class="filt" type="button" data-filter="routing" aria-pressed="false">Routing</button><button class="filt" type="button" data-filter="privacy" aria-pressed="false">Security &amp; privacy</button><button class="filt" type="button" data-filter="systems" aria-pressed="false">Systems</button><button class="filt" type="button" data-filter="evaluation" aria-pressed="false">Evaluation</button><button class="filt" type="button" data-filter="bioinformatics" aria-pressed="false">Bioinformatics</button><button class="filt" type="button" data-filter="applications" aria-pressed="false">Applications</button><button class="filt" type="button" data-filter="video" aria-pressed="false">Has talk</button></div>
       <p class="filt-note" data-filter-note data-tpl="{n} of 13 shown"></p>
       <ol>
         <li class="pub" data-topics="routing evaluation" data-video="0">
@@ -99,7 +99,7 @@
             <div class="pub-meta">
             <p class="pub-a"><b>Teng-Ruei Chen</b></p>
             <p class="pub-v">arXiv:2610.09981 [cs.CR] · Oct 2026</p>
-            <div class="tags"><span class="tag">Privacy</span><span class="tag">Routing</span></div>
+            <div class="tags"><span class="tag">Security &amp; privacy</span><span class="tag">Routing</span></div>
             <div class="acts"><a href="https://arxiv.org/abs/2610.09981">Arxiv</a><a href="https://arxiv.org/pdf/2610.09981">Pdf</a></div>
             </div>
           </div>
@@ -323,8 +323,8 @@
    "name": "Teng-Ruei Chen",
    "url": "https://trchen.page/",
    "email": "mailto:ymchen.bi04g@g2.nctu.edu.tw",
-   "jobTitle": "AI infrastructure · LLM inference · Deep learning · Bioinformatics",
-   "description": "Most of what AI costs is moving from training to inference. A model is trained once, then served millions of times, on hardware that is scarce, priced differently in different places, and not interchangeable. Which request runs on which machine, at what cost, has become a question of infrastructure economics — the same problem I worked on in power distribution, vehicle charging and compute scheduling before this.\n\nThe harder half is that these decisions are difficult to evaluate. Reported gains in routing are measured against baselines that are themselves unstable, and the hardware underneath does not reliably return the same answer twice. Until the measurement is sound, the field cannot tell a real improvement from an artifact of how it was measured. That is why most of my work is measurement rather than method.",
+   "jobTitle": "AI infrastructure · LLM inference · Information security · Deep learning · Bioinformatics",
+   "description": "My doctorate was about making protein structure prediction faster without making it wrong. I do the same thing for AI inference now — in an industry that still cannot tell a real speedup from a measurement error.",
    "alumniOf": [
     {
      "@type": "CollegeOrUniversity",
@@ -350,7 +350,7 @@
     "LLM agents",
     "Bioinformatics",
     "Applications",
-    "Privacy"
+    "Security & privacy"
    ],
    "sameAs": [
     "https://scholar.google.com/citations?user=PiuFUZ8AAAAJ",
