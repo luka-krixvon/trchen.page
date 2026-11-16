@@ -9,7 +9,7 @@
   --sans:"Space Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   --mono:"Space Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
   
-  --t-xs:12px; --t-sm:13.5px; --t-base:16px; --t-md:18px; --t-lg:25px; --t-xl:34px;
+  --t-xs:12px; --t-sm:13.5px; --t-base:16px; --t-md:18px; --t-sec:21px; --t-lg:25px; --t-xl:34px;
   --t-display:clamp(40px,6.2vw,62px);
   --bar:54px;
   color-scheme:light;
@@ -105,10 +105,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .sec{position:relative;padding-block:clamp(32px,3.6vw,46px)}
 .sec > p,.bio,.filt-note{max-width:68ch}
 .sec + .sec{border-top:1px solid var(--line)}
-.eyebrow{display:block;font-family:var(--sans);font-weight:600;font-size:var(--t-xs);
-  letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:22px}
-h2.big{font-family:var(--serif);font-size:var(--t-lg);font-weight:700;letter-spacing:-.025em;
-  line-height:1.2;color:var(--ink)}
+.eyebrow,h2.big{display:block;font-family:var(--sans);font-weight:600;font-size:var(--t-sec);
+  letter-spacing:-.02em;line-height:1.25;color:var(--ink);text-transform:none;margin-bottom:24px}
+h2.big{margin-bottom:0}
 .sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:18px;
   flex-wrap:wrap;margin-bottom:24px}
 .sec-head p{font-family:var(--sans);font-size:var(--t-xs);color:var(--ink3)}
@@ -175,7 +174,7 @@ h2.big{font-family:var(--serif);font-size:var(--t-lg);font-weight:700;letter-spa
 .pub-head[aria-expanded="true"]{background:var(--hair)}
 .pub-head[aria-expanded="true"] .pub-ttl{color:var(--accent)}
 .pub-y{font-family:var(--mono);font-size:var(--t-xs);color:var(--ink3);font-variant-numeric:tabular-nums}
-.pub-ttl{font-family:var(--serif);font-size:var(--t-md);font-weight:600;line-height:1.4;
+.pub-ttl{font-family:var(--serif);font-size:var(--t-base);font-weight:500;line-height:1.45;
   letter-spacing:-.012em;min-width:0}
 .pub-src{font-family:var(--mono);font-size:var(--t-xs);color:var(--ink3);white-space:nowrap}
 .pub-talk{display:inline-flex;align-items:center;gap:6px;margin-right:10px;padding:3px 8px;
