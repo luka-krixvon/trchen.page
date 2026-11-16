@@ -29,7 +29,7 @@
 <meta name="theme-color" content="#FAFAF9" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#16191A" media="(prefers-color-scheme: dark)">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
-<link rel="stylesheet" href="../assets/style.css?v=72d33d90">
+<link rel="stylesheet" href="../assets/style.css?v=5030b1dd">
 </head>
 <body>
 <a class="skip" href="#about">跳到主要內容</a>
@@ -80,6 +80,7 @@
           </button>
           <div class="pub-body" id="pub-strong-reasoners" hidden>
             
+            <div class="pub-blurb"><p>路由的評比常拿「事後諸葛」當標準：只要任何一個模型答對，這題就算解決。但在隨機解碼下，這其實混了兩件事——挑一個最好的模型，和叫好幾個模型、留下對的那一個。後者到底多賺多少，在今天的推理模型進場之後還沒有人量過。我用固定協定量了：MATH-500 全部 500 題、每題 30 次抽樣、三個模型、單張 B300，共 45,000 筆評分。</p><p class="pub-contrib"><b>貢獻：</b>差距只有 0.2–0.6 個百分點，遠低於小模型上報告的 3.5；而且把一個小模型重抽三次，效果等同叫三個模型各一次。另外少數失控的超長生成就會吃掉大部分成本——所以這個數字必須連同模型池、協定與解碼預算一起報告才有意義。</p></div>
             <div class="pub-meta">
             <p class="pub-a"><b>Teng-Ruei Chen</b></p>
             <p class="pub-v">arXiv:2611.04098 [cs.LG] · Nov 2026 · technical report, companion to arXiv:2607.03436</p>
@@ -96,6 +97,7 @@
           </button>
           <div class="pub-body" id="pub-topic-leakage" hidden>
             
+            <div class="pub-blurb"><p>路由器會依你問了什麼，決定用便宜還是昂貴的模型。許多閘道即使關掉內容記錄，仍然會記下這個選擇——於是「選了哪個模型」本身就可能透露話題。我用 170 萬筆真實對話（WildChat-1M、LMSYS-Chat-1M）、兩種成本／品質路由器與一種領域路由器實測，調查了十一個系統的日誌作法，並測試了防禦方式。</p><p class="pub-contrib"><b>貢獻：</b>指出路由日誌是一條旁路通道，並證明依類別做長度匹配的平價化可以在真實流量上消除差距，代價最多 0.2 個百分點的準確率；而較簡單的防禦（每對話固定路由、每用戶預算區間、合併式平價化）都無效。</p></div>
             <div class="pub-meta">
             <p class="pub-a"><b>Teng-Ruei Chen</b></p>
             <p class="pub-v">arXiv:2610.09981 [cs.CR] · Oct 2026</p>
@@ -112,6 +114,7 @@
           </button>
           <div class="pub-body" id="pub-deterministic-inference" hidden>
             
+            <div class="pub-blurb"><p>量化 GPU kernel 的一致性測試，問的是「兩個實作有沒有在容差內吻合」。我問的是：這種測試到底抓得到什麼。我在參考 INT8 流程裡注入九種錯誤，跨 8,232 個「層×錯誤×情境」組合，其中五種錯誤最多只讓輸出偏移一個 bfloat16 刻度——所以容差設成一個刻度，這一整類錯誤從設計上就看不見。</p><p class="pub-contrib"><b>貢獻：</b>提出一個可以直接用的修法：把每個權重的 scale 重新量化到最接近的 2 的次方，兩個不同的 kernel 就能在每一層線性層逐位元吻合，並在 1.7B、8B、14B 產生完全相同的 token 序列。同時釐清先前報告的 +157% perplexity 惡化，是量測探針本身的問題，不是這個修法造成的。</p></div>
             <div class="pub-meta">
             <p class="pub-a"><b>Teng-Ruei Chen</b></p>
             <p class="pub-v">arXiv:2609.00363 [cs.LG] · Sep 2026</p>
@@ -128,6 +131,7 @@
           </button>
           <div class="pub-body" id="pub-integer-alibi" hidden>
             
+            <div class="pub-blurb"><p>兩個實作同一套 INT8 矩陣乘介面的 GPU kernel，一般被當成可以互換。我把其他條件全部固定——模型、提示、硬體、引擎、解碼——只換 kernel，結果兩邊沒有任何一條生成序列是一樣的。而且問題不可能出在算術本身：在已驗證不溢位的前提下，整數累加是精確且與順序無關的。</p><p class="pub-contrib"><b>貢獻：</b>把差異的來源定位在「精確累加之後」的 scale 套用與輸出捨入，用預先登記的預測清單在 196 層與 252 層上逐層驗證，並證明同一個介入可以讓端到端的生成結果恢復逐位元一致。</p></div>
             <div class="pub-meta">
             <p class="pub-a"><b>Teng-Ruei Chen</b></p>
             <p class="pub-v">arXiv:2608.13756 [cs.LG] · Aug 2026</p>
@@ -144,6 +148,7 @@
           </button>
           <div class="pub-body" id="pub-spec-sheets" hidden>
             
+            <div class="pub-blurb"><p>NVIDIA 的規格書給 B300 的 FP8 與 INT8 張量核心吞吐比大約是 30:1，而前兩代都是 1:1。我把這件事在實務上的意義，沿著整個技術堆疊的四層追下去：規格書、PTX 指令集、NVIDIA 自己的 CUTLASS kernel 函式庫，以及兩個主要的開源服務引擎。</p><p class="pub-contrib"><b>貢獻：</b>記錄了 INT8 支援在四個層級上一致地、逐層被抽掉——其中三層是 NVIDIA 自己的——並指出一個量化格式能不能用，是整個技術堆疊的性質，不是模型或規格書的性質。規格書上列著的格式，在那張卡上預設是跑不起來的。</p></div>
             <div class="pub-meta">
             <p class="pub-a"><b>Teng-Ruei Chen</b></p>
             <p class="pub-v">arXiv:2608.11693 [cs.AR] · Aug 2026</p>
@@ -160,6 +165,7 @@
           </button>
           <div class="pub-body" id="pub-resample-or-reroute" hidden>
             
+            <div class="pub-blurb"><p>當一個不夠強的驗證器接受了模型的回答，下一次呼叫可以重抽同一個模型，也可以改派給更強的模型。但因為「對不對」是看不見的，要在兩者之間做選擇其實是一個識別問題，不是調參問題。我設了三道關卡——可回收的停止負債、雙向的行動支持、以及對結果盲選器的保留集價值——在固定的 152 題 MBPP+ 實驗上逐一檢驗。</p><p class="pub-contrib"><b>貢獻：</b>證明「停止負債」確實存在——一次誤判的停止會留下 2.6 個百分點可以救回來的準確率——但也說清楚：現有證據還無法判斷何時該重抽、何時該改派。並點出一個看起來像證據、實際上不含任何可觀察歷史資訊的統計量。</p></div>
             <div class="pub-meta">
             <p class="pub-a"><b>Teng-Ruei Chen</b></p>
             <p class="pub-v">arXiv:2607.08665 [cs.LG] · Jul 2026 · Research Square 10.21203/rs.3.rs-11021599/v1</p>
@@ -176,6 +182,7 @@
           </button>
           <div class="pub-body" id="pub-routing-oracle" hidden>
             
+            <div class="pub-blurb"><p>路由評比會拿兩種東西相比：一種是必須在看到答案之前就選定一個模型的策略，另一種是事後只要有任何一份記錄下來的答案正確就算數的「神諭」。在隨機解碼下，這兩者屬於不同的決策類別，而兩者的落差常被解讀成「路由還有多少空間」。我用 11 個開源模型的凍結正確性張量、每個「題目×模型」格存 30 份回應，在 GSM8K、MATH-500 與 GPQA-Diamond 上做了稽核。</p><p class="pub-contrib"><b>貢獻：</b>指出這個落差只能框出一個區間、不是一個數字：在相容的耦合之下，「完全沒有好處」永遠是可能的，所以檯面上那個數字其實取決於耦合方式、決策類別、評分器、模型池與抽樣次數。成果是一份解讀這類落差的量測規約，而不是「路由可以賺多少」的結論。</p></div>
             <div class="pub-meta">
             <p class="pub-a"><b>Teng-Ruei Chen</b></p>
             <p class="pub-v">arXiv:2607.03436 [cs.LG] · Jul 2026</p>
@@ -192,11 +199,12 @@
           </button>
           <div class="pub-body" id="pub-net-zero" hidden>
             
+            <div class="pub-blurb"><p>熱處理是台灣耗能最高的傳統產業之一：加熱、保溫與熱逸散都在浪費能源。而排程長期靠人工先進先出，沒辦法同時兼顧設備稼動率、交期與能耗。我們做的是一套 AI 排程系統，在接單之前就先模擬排程，用蒙地卡羅樹搜尋估出交期並建議訂單要進哪一座爐；搭配一套能源管理系統，透過智慧電表與設備聯網即時監控用電，結合 ERP 資料算出每項產品的碳排。</p><p class="pub-contrib"><b>貢獻：</b>把「先進先出」的排程換成以能耗與交期一起決定的集中批次處理與階段性升降溫控制。文中報告導入後減碳超過 1,500 噸、節電超過 300 萬度。</p></div>
             <div class="pub-meta">
             <p class="pub-a">T.-C. Su, <b>Teng-Ruei Chen</b>, C.-W. Lin</p>
             <p class="pub-v">電腦與通訊 (ICT Journal, ITRI), no. 197, pp. 35–42 · Mar 2024</p>
             <div class="tags"><span class="tag">應用</span></div>
-            <div class="acts"><a href="https://www.airitilibrary.com/Article/Detail/1019391x-N202404160003-00006">Airiti</a></div>
+            <div class="acts"><a href="https://www.airitilibrary.com/Article/Detail/1019391x-N202404160003-00006">Airiti</a><a href="https://ictjournal.itri.org.tw/xcdoc/cont?xsmsid=0M236556470056558161&amp;sid=0O087553613072616728">Ict journal</a></div>
             </div>
           </div>
         </li>
@@ -208,6 +216,7 @@
           </button>
           <div class="pub-body" id="pub-ultimate-limits" hidden>
             
+            <div class="pub-blurb"><p>三態的蛋白質二級結構預測，在六十年間從約 56% 爬到 81%，之後就停在 81–86% 很久。1990 年代估出來的理論上限是 88%，所以這個問題漸漸被當成「做完了」或「做不動了」。我用大規模的序列與結構分析重新估這個上限，同時把當時還沒人定出來的「片段式」與「八態」預測的上限也一併估出來。</p><p class="pub-contrib"><b>貢獻：</b>三態的上限重新估為約 92%，比長期以來認定的高出 4–5 個百分點；八態的上限估為 84–87%。也就是說，這個領域以為已經沒有的進步空間其實還在，而且現在有一個可以瞄準的數字。</p></div>
             <div class="pub-meta">
             <p class="pub-a">C.-T. Ho, Y.-W. Huang, <b>Teng-Ruei Chen</b>, C.-H. Lo, W.-C. Lo</p>
             <p class="pub-v">Biomolecules, vol. 11, no. 11, 1627 · Nov 2021 · IF 4.88 · doi:10.3390/biom11111627</p>
@@ -224,6 +233,7 @@
           </button>
           <div class="pub-body" id="pub-cirpred" hidden>
             
+            <div class="pub-blurb"><p>環狀排列是把一個蛋白質原本的兩端接起來，再從別的位置切出新的兩端。它在蛋白質工程上很有用，但實作成本高——要做出能用的設計仍然得反覆試誤，而且沒有建模工具處理得了這種重排。CirPred 可以預測環狀排列蛋白質的結構，並設計接起原本兩端的 linker。</p><p class="pub-contrib"><b>貢獻：</b>這是第一個同時能做環狀排列建模與傳統共線建模的系統，linker 設計達到次埃等級的精度；即使排列後的蛋白質與原生蛋白質序列相似度很低，或因為立體域交換而摺疊成不同構型，它仍然站得住。</p></div>
             <div class="pub-meta">
             <p class="pub-a"><b>Teng-Ruei Chen</b>, Y.-C. Lin, Y.-W. Huang, C.-C. Chen, W.-C. Lo</p>
             <p class="pub-v">BMC Bioinformatics, vol. 22, no. S10, 494 · Oct 2021 · IF 3.17 · doi:10.1186/s12859-021-04403-1</p>
@@ -240,6 +250,7 @@
           </button>
           <div class="pub-body" id="pub-ss-pssm" hidden>
             
+            <div class="pub-blurb"><p>二級結構預測停滯了一段時間，而大部分的努力都投在機器學習演算法上。我退一步，改動的是輸入：提出一個以「二級結構元素」而不是以胺基酸為基礎的位置特異性計分矩陣。驗證用的是嚴格的獨立測試——訓練集與測試集的序列相似度低於 25%。</p><p class="pub-contrib"><b>貢獻：</b>新的矩陣在每一組實驗裡都勝過傳統的胺基酸矩陣；兩者合併之後，既有預測方法的三態與八態準確率平均分別提升 2.0 與 5.2 個百分點。這個增益來自「餵給模型看什麼」，不是「模型怎麼學」。</p></div>
             <div class="pub-meta">
             <p class="pub-a"><b>Teng-Ruei Chen</b>, S.-H. Juan, Y.-W. Huang, Y.-C. Lin, W.-C. Lo</p>
             <p class="pub-v">PLOS ONE, vol. 16, no. 7, e0255076 · Jul 2021 · IF 3.24 · doi:10.1371/journal.pone.0255076</p>
@@ -256,6 +267,7 @@
           </button>
           <div class="pub-body" id="pub-dataset-homology" hidden>
             
+            <div class="pub-blurb"><p>二級結構預測報告出來的準確率，取決於訓練集、測試集與獨立測試集彼此之間有多相似——而這件事一直沒有被仔細檢查過。我設計了許多種不同的同源性配置，在每一種上訓練並評估模型，並以隨機抽樣重複多次，最後用當時最好的預測方法在大規模資料上驗證結論。</p><p class="pub-contrib"><b>貢獻：</b>與長期以來的假設相反：查詢資料集之間的同源性幾乎不影響準確率；真正會把準確率灌水的，是資料集內部或彼此之間的冗餘。這個結果把「會影響的同源性」和「不會影響的同源性」分開——而這正是一份評估必須先做對的事，報告出來的進步才可信。</p></div>
             <div class="pub-meta">
             <p class="pub-a"><b>Teng-Ruei Chen</b>, C.-H. Lo, S.-H. Juan, W.-C. Lo</p>
             <p class="pub-v">PLOS ONE, vol. 16, no. 7, e0254555 · Jul 2021 · IF 3.24 · doi:10.1371/journal.pone.0254555</p>
@@ -272,6 +284,7 @@
           </button>
           <div class="pub-body" id="pub-speed-strategy" hidden>
             
+            <div class="pub-blurb"><p>當時二級結構預測的準確率已經在 80% 以上，但它們要搜尋的序列資料庫長得太大，跑一次預測變得很慢。我針對這個成本測試了兩個想法：用隨機抽樣把目標資料庫縮小，以及降低資料庫內部的序列相似度。</p><p class="pub-contrib"><b>貢獻：</b>縮小資料庫可以大幅省時，準確率只掉一點點；而降低序列相似度反而讓準確率上升。兩者合起來，在不犧牲準確率的前提下約快二十倍。文中也以夏農資訊熵解釋了計分矩陣品質與預測準確率之間的關係，並公開了縮減後的資料庫。</p></div>
             <div class="pub-meta">
             <p class="pub-a">S.-H. Juan, <b>Teng-Ruei Chen</b>, W.-C. Lo</p>
             <p class="pub-v">PLOS ONE, vol. 15, no. 6, e0235153 · Jun 2020 · IF 3.24 · doi:10.1371/journal.pone.0235153</p>
@@ -601,6 +614,7 @@
     "name": "電腦與通訊 (ICT Journal, ITRI), no. 197, pp. 35–42 · Mar 2024"
    },
    "sameAs": [
+    "https://ictjournal.itri.org.tw/xcdoc/cont?xsmsid=0M236556470056558161&sid=0O087553613072616728",
     "https://www.airitilibrary.com/Article/Detail/1019391x-N202404160003-00006"
    ]
   },

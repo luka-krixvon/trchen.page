@@ -51,7 +51,17 @@
         "arXiv": "https://arxiv.org/abs/2611.04098",
         "PDF": "https://arxiv.org/pdf/2611.04098"
       },
-      "source": "arXiv"
+      "source": "arXiv",
+      "summary": {
+        "en": "Routing benchmarks often score a router against a hindsight oracle: a question counts as solved if any model's recorded answer was right. Under random decoding that quietly mixes two different things — picking the single best model, and calling several models and keeping whichever answer is correct. Nobody had measured the second one once today's reasoning models join the pool. I measured it on a fixed protocol: all 500 MATH-500 problems, 30 seeded samples each, three models on one B300, 45,000 scored answers.",
+        "zh": "路由的評比常拿「事後諸葛」當標準：只要任何一個模型答對，這題就算解決。但在隨機解碼下，這其實混了兩件事——挑一個最好的模型，和叫好幾個模型、留下對的那一個。後者到底多賺多少，在今天的推理模型進場之後還沒有人量過。我用固定協定量了：MATH-500 全部 500 題、每題 30 次抽樣、三個模型、單張 B300，共 45,000 筆評分。",
+        "ja": "ルーティングの評価では、どれか一つのモデルが正解すればその問題は解決済みと数える「事後オラクル」がよく使われる。だが確率的デコーディングの下では、最良の一つを選ぶことと、複数を呼んで正解を残すことが混ざってしまう。推論モデルが加わったときの後者の大きさは未測定だった。MATH-500 全500問・各30サンプル・3モデルを単一のB300で固定プロトコル計測し、45,000件を採点した。"
+      },
+      "contribution": {
+        "en": "The gap turns out to be 0.2–0.6 points, far below the 3.5 reported for smaller models, and resampling one small model three times matches calling all three once. A handful of runaway generations can also dominate the cost, so an oracle gap only means something when the pool, protocol and decoding budget are reported with it.",
+        "zh": "差距只有 0.2–0.6 個百分點，遠低於小模型上報告的 3.5；而且把一個小模型重抽三次，效果等同叫三個模型各一次。另外少數失控的超長生成就會吃掉大部分成本——所以這個數字必須連同模型池、協定與解碼預算一起報告才有意義。",
+        "ja": "差は 0.2〜0.6 ポイントで、小型モデルでの 3.5 を大きく下回る。小型モデルを3回サンプリングすれば3モデルを1回ずつ呼ぶのとほぼ同等。少数の暴走生成がコストの大半を占めるため、この数値はプール・プロトコル・デコード予算とともに報告されて初めて意味を持つ。"
+      }
     },
     {
       "id": "topic-leakage",
@@ -71,7 +81,17 @@
         "arXiv": "https://arxiv.org/abs/2610.09981",
         "PDF": "https://arxiv.org/pdf/2610.09981"
       },
-      "source": "arXiv"
+      "source": "arXiv",
+      "summary": {
+        "en": "Routers pick a cheap or an expensive model from what you asked. Many gateways log that choice even when content logging is switched off — so the choice itself can reveal the topic. I measured this on 1.7 million real conversations (WildChat-1M, LMSYS-Chat-1M) with two cost/quality routers and a domain router, surveyed how eleven systems log, and tested defences.",
+        "zh": "路由器會依你問了什麼，決定用便宜還是昂貴的模型。許多閘道即使關掉內容記錄，仍然會記下這個選擇——於是「選了哪個模型」本身就可能透露話題。我用 170 萬筆真實對話（WildChat-1M、LMSYS-Chat-1M）、兩種成本／品質路由器與一種領域路由器實測，調查了十一個系統的日誌作法，並測試了防禦方式。",
+        "ja": "ルーターは質問内容に応じて安いモデルか高いモデルかを選ぶ。多くのゲートウェイは内容ログを切ってもその選択自体を記録するため、選択そのものが話題を漏らしうる。実会話170万件（WildChat-1M、LMSYS-Chat-1M）で二種のコスト／品質ルーターとドメインルーターを計測し、11システムのログ実務を調査し、防御策を検証した。"
+      },
+      "contribution": {
+        "en": "It identifies the routing log as a side channel and shows that per-category, length-matched parity closes the gap on real traffic for at most 0.2 accuracy points, while simpler defences — per-conversation stickiness, per-user budget bands, pooled parity — do not.",
+        "zh": "指出路由日誌是一條旁路通道，並證明依類別做長度匹配的平價化可以在真實流量上消除差距，代價最多 0.2 個百分點的準確率；而較簡單的防禦（每對話固定路由、每用戶預算區間、合併式平價化）都無效。",
+        "ja": "ルーティングログがサイドチャネルであることを示し、カテゴリ別・長さ一致のパリティ化が実トラフィック上の差を消すこと（精度コストは最大0.2ポイント）、一方で会話単位の固定・ユーザ予算帯・一括パリティは機能しないことを示した。"
+      }
     },
     {
       "id": "deterministic-inference",
@@ -91,7 +111,17 @@
         "arXiv": "https://arxiv.org/abs/2609.00363",
         "PDF": "https://arxiv.org/pdf/2609.00363"
       },
-      "source": "arXiv"
+      "source": "arXiv",
+      "summary": {
+        "en": "Conformance suites for quantized GPU kernels ask whether two implementations agree within a tolerance. I asked what such a test can actually catch. Injecting nine faults into a reference INT8 pipeline across 8,232 layer–fault–regime cells, five of them move the output by at most one bfloat16 step — so a one-step tolerance is blind to that whole class by construction.",
+        "zh": "量化 GPU kernel 的一致性測試，問的是「兩個實作有沒有在容差內吻合」。我問的是：這種測試到底抓得到什麼。我在參考 INT8 流程裡注入九種錯誤，跨 8,232 個「層×錯誤×情境」組合，其中五種錯誤最多只讓輸出偏移一個 bfloat16 刻度——所以容差設成一個刻度，這一整類錯誤從設計上就看不見。",
+        "ja": "量子化GPUカーネルの適合性テストは「二つの実装が許容誤差内で一致するか」を問う。本研究はそのテストが何を検出できるかを測った。参照INT8パイプラインに9種の欠陥を注入し、8,232の層×欠陥×条件セルで評価したところ、5種は出力を最大1 bfloat16刻みしか動かさない。つまり1刻みの許容誤差では、この分類全体が構造的に検出不能になる。"
+      },
+      "contribution": {
+        "en": "It gives a deployable fix: requantizing every weight scale to the nearest power of two makes two different kernels agree bit-for-bit at every linear layer and produce byte-identical token sequences at 1.7B, 8B and 14B. It also traces a previously reported +157% perplexity for this fix to a flawed probe, not to the constraint itself.",
+        "zh": "提出一個可以直接用的修法：把每個權重的 scale 重新量化到最接近的 2 的次方，兩個不同的 kernel 就能在每一層線性層逐位元吻合，並在 1.7B、8B、14B 產生完全相同的 token 序列。同時釐清先前報告的 +157% perplexity 惡化，是量測探針本身的問題，不是這個修法造成的。",
+        "ja": "実運用できる解決策を示した：各重みのスケールを最も近い2の冪に再量子化すると、異なる2つのカーネルが全線形層でビット一致し、1.7B・8B・14Bでトークン列がバイト単位で一致する。また、この手法に報告されていた +157% のperplexity悪化が、手法ではなく計測プローブ側の不具合であったことを切り分けた。"
+      }
     },
     {
       "id": "integer-alibi",
@@ -110,7 +140,17 @@
         "arXiv": "https://arxiv.org/abs/2608.13756",
         "PDF": "https://arxiv.org/pdf/2608.13756"
       },
-      "source": "arXiv"
+      "source": "arXiv",
+      "summary": {
+        "en": "Two GPU kernels that implement the same INT8 matrix-multiply interface are normally treated as interchangeable. Holding everything else fixed — checkpoint, prompts, hardware, engine, decoding — and swapping only the kernel, they agreed on not a single generated sequence. The arithmetic itself cannot be to blame: for shared INT8 operands under a verified no-overflow bound, the integer accumulator is exact and order-independent.",
+        "zh": "兩個實作同一套 INT8 矩陣乘介面的 GPU kernel，一般被當成可以互換。我把其他條件全部固定——模型、提示、硬體、引擎、解碼——只換 kernel，結果兩邊沒有任何一條生成序列是一樣的。而且問題不可能出在算術本身：在已驗證不溢位的前提下，整數累加是精確且與順序無關的。",
+        "ja": "同一のINT8行列積インタフェースを実装する2つのGPUカーネルは、通常は互換と見なされる。チェックポイント・プロンプト・ハードウェア・エンジン・デコードを固定し、カーネルだけを入れ替えたところ、生成列は一つも一致しなかった。しかも算術自体は原因になり得ない——オーバーフローしないことが検証された共有INT8オペランドでは、整数累算は厳密で順序に依存しないからだ。"
+      },
+      "contribution": {
+        "en": "It localizes the divergence to scale application and output rounding after the exact accumulator, confirms this layer by layer on 196 and 252 linear layers with a pre-registered prediction list, and shows the same intervention restores end-to-end bitwise agreement.",
+        "zh": "把差異的來源定位在「精確累加之後」的 scale 套用與輸出捨入，用預先登記的預測清單在 196 層與 252 層上逐層驗證，並證明同一個介入可以讓端到端的生成結果恢復逐位元一致。",
+        "ja": "差異の発生箇所を、厳密な累算の後段にあるスケール適用と出力丸めに特定し、事前登録した予測リストで196層・252層を層ごとに検証し、同じ介入で端から端までのビット一致が回復することを示した。"
+      }
     },
     {
       "id": "spec-sheets",
@@ -129,7 +169,17 @@
         "arXiv": "https://arxiv.org/abs/2608.11693",
         "PDF": "https://arxiv.org/pdf/2608.11693"
       },
-      "source": "arXiv"
+      "source": "arXiv",
+      "summary": {
+        "en": "NVIDIA's specification gives the B300 roughly a 30:1 ratio between FP8 and INT8 tensor-core throughput, where its predecessors were 1:1. I traced what that means in practice through four layers of the stack: the specification, the PTX instruction set, NVIDIA's CUTLASS kernel library, and the two major open-source serving engines.",
+        "zh": "NVIDIA 的規格書給 B300 的 FP8 與 INT8 張量核心吞吐比大約是 30:1，而前兩代都是 1:1。我把這件事在實務上的意義，沿著整個技術堆疊的四層追下去：規格書、PTX 指令集、NVIDIA 自己的 CUTLASS kernel 函式庫，以及兩個主要的開源服務引擎。",
+        "ja": "NVIDIAの仕様では、B300のFP8とINT8のテンソルコア演算比はおよそ30:1であり、前世代はいずれも1:1だった。それが実務上何を意味するかを、仕様書・PTX命令セット・NVIDIA自身のCUTLASSカーネルライブラリ・主要な2つのOSS推論エンジンという4層にわたって追跡した。"
+      },
+      "contribution": {
+        "en": "It documents a consistent, layered withdrawal of INT8 support across four layers — three of them NVIDIA's own — and shows that a quantization format's availability is a property of the whole stack, not of the model or the spec sheet. A format listed on the datasheet turns out to be undeployable by default on that hardware.",
+        "zh": "記錄了 INT8 支援在四個層級上一致地、逐層被抽掉——其中三層是 NVIDIA 自己的——並指出一個量化格式能不能用，是整個技術堆疊的性質，不是模型或規格書的性質。規格書上列著的格式，在那張卡上預設是跑不起來的。",
+        "ja": "4つの層（うち3つはNVIDIA自身）で INT8 サポートが一貫して段階的に取り下げられていることを記録し、量子化フォーマットの利用可否はモデルや仕様書ではなくスタック全体の性質であることを示した。データシートに載っている形式が、その機材では既定で配備不能になっていた。"
+      }
     },
     {
       "id": "resample-or-reroute",
@@ -148,7 +198,17 @@
         "arXiv": "https://arxiv.org/abs/2607.08665",
         "PDF": "https://arxiv.org/pdf/2607.08665"
       },
-      "source": "arXiv"
+      "source": "arXiv",
+      "summary": {
+        "en": "When a weak verifier accepts a model's answer, the next call can either resample the same model or reroute to a stronger one. Because correctness is hidden, choosing between them is an identification problem rather than a tuning problem. I set three gates — recoverable stopping debt, two-sided action support, and held-out value from an outcome-blind selector — and ran them on a pinned 152-query MBPP+ experiment.",
+        "zh": "當一個不夠強的驗證器接受了模型的回答，下一次呼叫可以重抽同一個模型，也可以改派給更強的模型。但因為「對不對」是看不見的，要在兩者之間做選擇其實是一個識別問題，不是調參問題。我設了三道關卡——可回收的停止負債、雙向的行動支持、以及對結果盲選器的保留集價值——在固定的 152 題 MBPP+ 實驗上逐一檢驗。",
+        "ja": "弱い検証器がモデルの回答を受理したとき、次の呼び出しは同じモデルを再サンプリングするか、より強いモデルへ再ルーティングするかを選べる。正誤が隠れているため、この選択は調整の問題ではなく識別の問題になる。回収可能な停止負債・双方向の行動サポート・結果盲選択器のホールドアウト価値という三つのゲートを設け、固定した152問のMBPP+実験で検証した。"
+      },
+      "contribution": {
+        "en": "It shows the stopping debt is real — a false-positive stop leaves 2.6 points of recoverable accuracy — but that the evidence does not yet identify when to resample rather than reroute, and it names the statistic that looks like evidence but contains no observable-history term.",
+        "zh": "證明「停止負債」確實存在——一次誤判的停止會留下 2.6 個百分點可以救回來的準確率——但也說清楚：現有證據還無法判斷何時該重抽、何時該改派。並點出一個看起來像證據、實際上不含任何可觀察歷史資訊的統計量。",
+        "ja": "停止負債が実在すること（誤って停止すると2.6ポイント分の精度が回収可能なまま残る）を示す一方、再サンプリングと再ルーティングのどちらを選ぶべきかは現状の証拠では識別できないと明示し、証拠のように見えて観測履歴の項を含まない統計量を指摘した。"
+      }
     },
     {
       "id": "routing-oracle",
@@ -174,7 +234,17 @@
         "arXiv": "https://arxiv.org/abs/2607.03436",
         "PDF": "https://arxiv.org/pdf/2607.03436"
       },
-      "source": "arXiv"
+      "source": "arXiv",
+      "summary": {
+        "en": "Routing benchmarks compare a policy that must commit to one model before seeing its answer against a hindsight oracle that credits any correct recorded output. Under random decoding these are different decision classes, and the gap between them is often read as a routing opportunity. I audited frozen correctness tensors from 11 open models with 30 archived responses per query–model cell on GSM8K, MATH-500 and GPQA-Diamond.",
+        "zh": "路由評比會拿兩種東西相比：一種是必須在看到答案之前就選定一個模型的策略，另一種是事後只要有任何一份記錄下來的答案正確就算數的「神諭」。在隨機解碼下，這兩者屬於不同的決策類別，而兩者的落差常被解讀成「路由還有多少空間」。我用 11 個開源模型的凍結正確性張量、每個「題目×模型」格存 30 份回應，在 GSM8K、MATH-500 與 GPQA-Diamond 上做了稽核。",
+        "ja": "ルーティング評価では、回答を見る前に一つのモデルを選ぶ方策と、記録済みの回答のどれかが正しければ正解と数える事後オラクルが比較される。確率的デコーディングの下では両者は異なる決定クラスであり、その差はしばしば「ルーティングの伸びしろ」と読まれる。11のオープンモデルの凍結正誤テンソル（問題×モデルごとに30応答）をGSM8K・MATH-500・GPQA-Diamondで監査した。"
+      },
+      "contribution": {
+        "en": "It shows the gap identifies only an interval, not a number: a zero premium is always attainable over compatible couplings, so the headline figure depends on coupling, decision class, scorer, pool and the number of draws. The result is a measurement contract for reading oracle gaps, not a claim about how much routing can gain.",
+        "zh": "指出這個落差只能框出一個區間、不是一個數字：在相容的耦合之下，「完全沒有好處」永遠是可能的，所以檯面上那個數字其實取決於耦合方式、決策類別、評分器、模型池與抽樣次數。成果是一份解讀這類落差的量測規約，而不是「路由可以賺多少」的結論。",
+        "ja": "この差は数値ではなく区間しか同定しないことを示した：整合的なカップリングの下では差ゼロが常に達成可能であり、表に出る数値はカップリング・決定クラス・採点器・プール・サンプル数に依存する。成果は「ルーティングでどれだけ得られるか」ではなく、オラクル差を読むための計測規約である。"
+      }
     },
     {
       "id": "net-zero",
@@ -190,12 +260,23 @@
       ],
       "note": null,
       "links": {
-        "Airiti": "https://www.airitilibrary.com/Article/Detail/1019391x-N202404160003-00006"
+        "Airiti": "https://www.airitilibrary.com/Article/Detail/1019391x-N202404160003-00006",
+        "ICT Journal": "https://ictjournal.itri.org.tw/xcdoc/cont?xsmsid=0M236556470056558161&sid=0O087553613072616728"
       },
       "video": null,
       "venue_key": "net-zero",
       "venue": "電腦與通訊 (ICT Journal, ITRI), no. 197, pp. 35–42 · Mar 2024",
-      "source": "ICT Journal"
+      "source": "ICT Journal",
+      "summary": {
+        "en": "Heat treatment is one of Taiwan's most energy-intensive traditional industries: heating, holding temperature and heat loss all waste energy. Scheduling was done first-come-first-served by hand, which cannot balance furnace utilisation, delivery dates and energy use at the same time. We built an AI scheduler that simulates the schedule before an order is accepted, using Monte Carlo tree search to estimate the delivery date and propose an order-to-furnace assignment, together with an energy management system that meters equipment in real time and computes per-product carbon emissions against ERP data.",
+        "zh": "熱處理是台灣耗能最高的傳統產業之一：加熱、保溫與熱逸散都在浪費能源。而排程長期靠人工先進先出，沒辦法同時兼顧設備稼動率、交期與能耗。我們做的是一套 AI 排程系統，在接單之前就先模擬排程，用蒙地卡羅樹搜尋估出交期並建議訂單要進哪一座爐；搭配一套能源管理系統，透過智慧電表與設備聯網即時監控用電，結合 ERP 資料算出每項產品的碳排。",
+        "ja": "熱処理は台湾で最もエネルギー消費の大きい伝統産業の一つであり、加熱・保温・放熱のいずれもエネルギーを浪費する。スケジューリングは人手による先着順で、炉の稼働率・納期・エネルギー消費を同時に満たすことができなかった。受注前にスケジュールを模擬し、モンテカルロ木探索で納期を見積もって炉への割り当てを提案するAIスケジューラと、スマートメータと設備連携で消費電力を実時間監視し、ERPデータと突き合わせて製品別の炭素排出を算出するエネルギー管理システムを構築した。"
+      },
+      "contribution": {
+        "en": "It replaces first-come-first-served scheduling with batch consolidation and staged temperature ramping chosen for energy and delivery together. The article reports over 1,500 tonnes of carbon and over three million kWh saved in deployment.",
+        "zh": "把「先進先出」的排程換成以能耗與交期一起決定的集中批次處理與階段性升降溫控制。文中報告導入後減碳超過 1,500 噸、節電超過 300 萬度。",
+        "ja": "先着順のスケジューリングを、エネルギーと納期を同時に勘案したバッチ集約と段階的な昇降温制御に置き換えた。論文では導入後に1,500トン超の二酸化炭素と300万kWh超の電力削減が報告されている。"
+      }
     },
     {
       "id": "ultimate-limits",
@@ -218,7 +299,17 @@
       "video": null,
       "venue_key": "ultimate-limits",
       "venue": "Biomolecules, vol. 11, no. 11, 1627 · Nov 2021 · IF 4.88",
-      "source": "Biomolecules"
+      "source": "Biomolecules",
+      "summary": {
+        "en": "Three-state secondary structure prediction climbed from about 56% to 81% over sixty years and then sat at 81–86% for decades. A 1990s estimate put the theoretical ceiling at 88%, so the problem came to be seen as either finished or hopeless. I ran large-scale sequence and structural analyses to re-estimate that ceiling, and to set the limits for segment-based and eight-state prediction, which had never been determined.",
+        "zh": "三態的蛋白質二級結構預測，在六十年間從約 56% 爬到 81%，之後就停在 81–86% 很久。1990 年代估出來的理論上限是 88%，所以這個問題漸漸被當成「做完了」或「做不動了」。我用大規模的序列與結構分析重新估這個上限，同時把當時還沒人定出來的「片段式」與「八態」預測的上限也一併估出來。",
+        "ja": "三状態の二次構造予測は60年かけて約56%から81%まで上がり、その後は81〜86%で長く停滞した。1990年代の推定では理論上限は88%とされ、この問題は「終わった」か「手に負えない」と見なされるようになった。大規模な配列・構造解析で上限を再推定し、未確定だったセグメント単位および八状態予測の上限も併せて求めた。"
+      },
+      "contribution": {
+        "en": "The three-state ceiling is re-estimated at about 92%, four to five points higher than long assumed, and the eight-state ceiling at 84–87% — so the headroom the field had written off is real, and there is now a number to aim at.",
+        "zh": "三態的上限重新估為約 92%，比長期以來認定的高出 4–5 個百分點；八態的上限估為 84–87%。也就是說，這個領域以為已經沒有的進步空間其實還在，而且現在有一個可以瞄準的數字。",
+        "ja": "三状態の上限は約92%と再推定され、長く信じられてきた値より4〜5ポイント高い。八状態の上限は84〜87%。分野が見切っていた伸びしろは実在し、目標とすべき数値が定まった。"
+      }
     },
     {
       "id": "cirpred",
@@ -241,7 +332,17 @@
       "video": null,
       "venue_key": "cirpred",
       "venue": "BMC Bioinformatics, vol. 22, no. S10, 494 · Oct 2021 · IF 3.17",
-      "source": "BMC Bioinformatics"
+      "source": "BMC Bioinformatics",
+      "summary": {
+        "en": "Circular permutation reconnects a protein's two ends and opens new ones elsewhere. It is useful in protein engineering but expensive to apply, because getting a working design still took trial and error and no modeling tool handled the rearrangement. CirPred models the structure of circularly permuted proteins and designs the linker that joins the original termini.",
+        "zh": "環狀排列是把一個蛋白質原本的兩端接起來，再從別的位置切出新的兩端。它在蛋白質工程上很有用，但實作成本高——要做出能用的設計仍然得反覆試誤，而且沒有建模工具處理得了這種重排。CirPred 可以預測環狀排列蛋白質的結構，並設計接起原本兩端的 linker。",
+        "ja": "循環置換は、タンパク質の両末端をつなぎ直し、別の位置に新たな末端を作る操作である。タンパク質工学で有用だが、実用化には試行錯誤が不可欠で、この再配置を扱えるモデリング手法も存在しなかった。CirPredは循環置換タンパク質の構造を予測し、元の末端をつなぐリンカーを設計する。"
+      },
+      "contribution": {
+        "en": "It is the first system that does both circularly-permuted and conventional co-linear modeling, its linker design reaches sub-angstrom accuracy, and it holds up when the permutant shares little sequence identity with the native protein or adopts a different fold through domain swapping.",
+        "zh": "這是第一個同時能做環狀排列建模與傳統共線建模的系統，linker 設計達到次埃等級的精度；即使排列後的蛋白質與原生蛋白質序列相似度很低，或因為立體域交換而摺疊成不同構型，它仍然站得住。",
+        "ja": "循環置換モデリングと従来の共線モデリングの両方に対応した初のシステムであり、リンカー設計はサブオングストローム精度に達する。置換体が天然型と配列同一性が低い場合や、ドメインスワッピングで異なる構造をとる場合でも成立する。"
+      }
     },
     {
       "id": "ss-pssm",
@@ -264,7 +365,17 @@
       "video": null,
       "venue_key": "ss-pssm",
       "venue": "PLOS ONE, vol. 16, no. 7, e0255076 · Jul 2021 · IF 3.24",
-      "source": "PLOS ONE"
+      "source": "PLOS ONE",
+      "summary": {
+        "en": "Secondary structure prediction had stalled, and most effort was going into the learning algorithm. I took a step back and changed the input instead: a position-specific scoring matrix built from secondary structure elements rather than from amino acids. It was tested under strict independent evaluation, with training and testing sets sharing under 25% sequence identity.",
+        "zh": "二級結構預測停滯了一段時間，而大部分的努力都投在機器學習演算法上。我退一步，改動的是輸入：提出一個以「二級結構元素」而不是以胺基酸為基礎的位置特異性計分矩陣。驗證用的是嚴格的獨立測試——訓練集與測試集的序列相似度低於 25%。",
+        "ja": "二次構造予測は停滞しており、労力の多くは学習アルゴリズムに注がれていた。本研究は一歩引いて入力の側を変えた——アミノ酸ではなく二次構造要素に基づく位置特異的スコア行列である。訓練・評価セットの配列同一性を25%未満に抑えた厳密な独立検証で評価した。"
+      },
+      "contribution": {
+        "en": "The new matrix beat the amino-acid matrix in every experiment, and combining the two raised three- and eight-state accuracy of existing predictors by 2.0 and 5.2 points on average — a gain obtained by changing what the model is shown, not how it learns.",
+        "zh": "新的矩陣在每一組實驗裡都勝過傳統的胺基酸矩陣；兩者合併之後，既有預測方法的三態與八態準確率平均分別提升 2.0 與 5.2 個百分點。這個增益來自「餵給模型看什麼」，不是「模型怎麼學」。",
+        "ja": "新しい行列は全実験でアミノ酸版を上回り、両者を併用すると既存手法の三状態・八状態精度が平均で2.0・5.2ポイント向上した。学習方法ではなく、モデルに何を見せるかを変えて得た改善である。"
+      }
     },
     {
       "id": "dataset-homology",
@@ -287,7 +398,17 @@
       "video": null,
       "venue_key": "dataset-homology",
       "venue": "PLOS ONE, vol. 16, no. 7, e0254555 · Jul 2021 · IF 3.24",
-      "source": "PLOS ONE"
+      "source": "PLOS ONE",
+      "summary": {
+        "en": "Reported accuracy in secondary structure prediction depends on how similar the training, testing and independent datasets are to each other — a question that had not been examined closely. I built many different homology layouts, trained and evaluated models on each with repeated random sampling, then verified the conclusions at scale against state-of-the-art predictors.",
+        "zh": "二級結構預測報告出來的準確率，取決於訓練集、測試集與獨立測試集彼此之間有多相似——而這件事一直沒有被仔細檢查過。我設計了許多種不同的同源性配置，在每一種上訓練並評估模型，並以隨機抽樣重複多次，最後用當時最好的預測方法在大規模資料上驗證結論。",
+        "ja": "二次構造予測で報告される精度は、訓練・評価・独立テストの各データセットがどれだけ似ているかに左右されるが、その点は十分に検証されてこなかった。多様な相同性配置を設計し、それぞれでモデルを訓練・評価し、無作為抽出で複数回繰り返したうえで、最先端手法を用いた大規模データで結論を検証した。"
+      },
+      "contribution": {
+        "en": "Contrary to the long-standing assumption, homology between the query datasets barely affects accuracy — but redundancy within or between datasets inflates it. The result separates the homology that matters from the homology that does not, which is what an evaluation has to get right before any reported gain can be believed.",
+        "zh": "與長期以來的假設相反：查詢資料集之間的同源性幾乎不影響準確率；真正會把準確率灌水的，是資料集內部或彼此之間的冗餘。這個結果把「會影響的同源性」和「不會影響的同源性」分開——而這正是一份評估必須先做對的事，報告出來的進步才可信。",
+        "ja": "長年の前提に反して、クエリデータセット間の相同性は精度にほとんど影響しない。一方、データセット内部や相互の冗長性は精度を過大に見せる。影響する相同性としない相同性を切り分けた本結果は、報告された改善を信じる前に評価が満たすべき条件そのものである。"
+      }
     },
     {
       "id": "speed-strategy",
@@ -308,7 +429,17 @@
       "video": null,
       "venue_key": "speed-strategy",
       "venue": "PLOS ONE, vol. 15, no. 6, e0235153 · Jun 2020 · IF 3.24",
-      "source": "PLOS ONE"
+      "source": "PLOS ONE",
+      "summary": {
+        "en": "By then secondary structure predictors were above 80% accuracy, but the sequence databases they search had grown so large that a single prediction took a long time. I tested two ideas against that cost: shrinking the target database by random sampling, and lowering the sequence identity inside it.",
+        "zh": "當時二級結構預測的準確率已經在 80% 以上，但它們要搜尋的序列資料庫長得太大，跑一次預測變得很慢。我針對這個成本測試了兩個想法：用隨機抽樣把目標資料庫縮小，以及降低資料庫內部的序列相似度。",
+        "ja": "当時、二次構造予測の精度はすでに80%を超えていたが、検索対象の配列データベースが巨大化し、1回の予測に長時間を要していた。このコストに対し、無作為抽出によるデータベース縮小と、内部の配列同一性の低減という二つの考えを検証した。"
+      },
+      "contribution": {
+        "en": "Shrinking the database cuts time sharply for only a slight accuracy loss, and lowering identity actually raises accuracy; together they give about a twenty-fold speed-up at full accuracy. The paper also shows Shannon entropy explains the link between matrix quality and prediction accuracy, and releases the reduced database.",
+        "zh": "縮小資料庫可以大幅省時，準確率只掉一點點；而降低序列相似度反而讓準確率上升。兩者合起來，在不犧牲準確率的前提下約快二十倍。文中也以夏農資訊熵解釋了計分矩陣品質與預測準確率之間的關係，並公開了縮減後的資料庫。",
+        "ja": "データベースを縮小すると時間を大幅に削減でき、精度低下はわずかである。さらに配列同一性を下げると精度はむしろ上がる。両者を組み合わせると、精度を落とさずに約20倍の高速化が得られる。シャノン情報量で行列品質と予測精度の関係を説明し、縮小版データベースも公開した。"
+      }
     }
   ],
   "patents": [
@@ -570,7 +701,8 @@
       "primary_title": "Google Scholar",
       "primary_sub": "citations, h-index, full list",
       "dep_stats": "{v} views · {d} downloads",
-      "metrics_note": "Citation figures from %s, updated %s"
+      "metrics_note": "Citation figures from %s, updated %s",
+      "contribution": "Contribution. "
     },
     "filters": {
       "all": "All",
@@ -753,7 +885,8 @@
       "primary_title": "Google Scholar",
       "primary_sub": "引用數、h-index、完整列表",
       "dep_stats": "{v} 次瀏覽 · {d} 次下載",
-      "metrics_note": "引用數據來自 %s，更新於 %s"
+      "metrics_note": "引用數據來自 %s，更新於 %s",
+      "contribution": "貢獻："
     },
     "filters": {
       "all": "全部",
@@ -936,7 +1069,8 @@
       "primary_title": "Google Scholar",
       "primary_sub": "被引用数・h-index・全リスト",
       "dep_stats": "{v} 閲覧 · {d} ダウンロード",
-      "metrics_note": "被引用データは %s より、更新日 %s"
+      "metrics_note": "被引用データは %s より、更新日 %s",
+      "contribution": "貢献："
     },
     "filters": {
       "all": "すべて",

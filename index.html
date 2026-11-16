@@ -29,7 +29,7 @@
 <meta name="theme-color" content="#FAFAF9" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#16191A" media="(prefers-color-scheme: dark)">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=72d33d90">
+<link rel="stylesheet" href="assets/style.css?v=5030b1dd">
 </head>
 <body>
 <a class="skip" href="#about">Skip to content</a>
@@ -80,6 +80,7 @@
           </button>
           <div class="pub-body" id="pub-strong-reasoners" hidden>
             
+            <div class="pub-blurb"><p>Routing benchmarks often score a router against a hindsight oracle: a question counts as solved if any model&#x27;s recorded answer was right. Under random decoding that quietly mixes two different things — picking the single best model, and calling several models and keeping whichever answer is correct. Nobody had measured the second one once today&#x27;s reasoning models join the pool. I measured it on a fixed protocol: all 500 MATH-500 problems, 30 seeded samples each, three models on one B300, 45,000 scored answers.</p><p class="pub-contrib"><b>Contribution. </b>The gap turns out to be 0.2–0.6 points, far below the 3.5 reported for smaller models, and resampling one small model three times matches calling all three once. A handful of runaway generations can also dominate the cost, so an oracle gap only means something when the pool, protocol and decoding budget are reported with it.</p></div>
             <div class="pub-meta">
             <p class="pub-a"><b>Teng-Ruei Chen</b></p>
             <p class="pub-v">arXiv:2611.04098 [cs.LG] · Nov 2026 · technical report, companion to arXiv:2607.03436</p>
@@ -96,6 +97,7 @@
           </button>
           <div class="pub-body" id="pub-topic-leakage" hidden>
             
+            <div class="pub-blurb"><p>Routers pick a cheap or an expensive model from what you asked. Many gateways log that choice even when content logging is switched off — so the choice itself can reveal the topic. I measured this on 1.7 million real conversations (WildChat-1M, LMSYS-Chat-1M) with two cost/quality routers and a domain router, surveyed how eleven systems log, and tested defences.</p><p class="pub-contrib"><b>Contribution. </b>It identifies the routing log as a side channel and shows that per-category, length-matched parity closes the gap on real traffic for at most 0.2 accuracy points, while simpler defences — per-conversation stickiness, per-user budget bands, pooled parity — do not.</p></div>
             <div class="pub-meta">
             <p class="pub-a"><b>Teng-Ruei Chen</b></p>
             <p class="pub-v">arXiv:2610.09981 [cs.CR] · Oct 2026</p>
@@ -112,6 +114,7 @@
           </button>
           <div class="pub-body" id="pub-deterministic-inference" hidden>
             
+            <div class="pub-blurb"><p>Conformance suites for quantized GPU kernels ask whether two implementations agree within a tolerance. I asked what such a test can actually catch. Injecting nine faults into a reference INT8 pipeline across 8,232 layer–fault–regime cells, five of them move the output by at most one bfloat16 step — so a one-step tolerance is blind to that whole class by construction.</p><p class="pub-contrib"><b>Contribution. </b>It gives a deployable fix: requantizing every weight scale to the nearest power of two makes two different kernels agree bit-for-bit at every linear layer and produce byte-identical token sequences at 1.7B, 8B and 14B. It also traces a previously reported +157% perplexity for this fix to a flawed probe, not to the constraint itself.</p></div>
             <div class="pub-meta">
             <p class="pub-a"><b>Teng-Ruei Chen</b></p>
             <p class="pub-v">arXiv:2609.00363 [cs.LG] · Sep 2026</p>
@@ -128,6 +131,7 @@
           </button>
           <div class="pub-body" id="pub-integer-alibi" hidden>
             
+            <div class="pub-blurb"><p>Two GPU kernels that implement the same INT8 matrix-multiply interface are normally treated as interchangeable. Holding everything else fixed — checkpoint, prompts, hardware, engine, decoding — and swapping only the kernel, they agreed on not a single generated sequence. The arithmetic itself cannot be to blame: for shared INT8 operands under a verified no-overflow bound, the integer accumulator is exact and order-independent.</p><p class="pub-contrib"><b>Contribution. </b>It localizes the divergence to scale application and output rounding after the exact accumulator, confirms this layer by layer on 196 and 252 linear layers with a pre-registered prediction list, and shows the same intervention restores end-to-end bitwise agreement.</p></div>
             <div class="pub-meta">
             <p class="pub-a"><b>Teng-Ruei Chen</b></p>
             <p class="pub-v">arXiv:2608.13756 [cs.LG] · Aug 2026</p>
@@ -144,6 +148,7 @@
           </button>
           <div class="pub-body" id="pub-spec-sheets" hidden>
             
+            <div class="pub-blurb"><p>NVIDIA&#x27;s specification gives the B300 roughly a 30:1 ratio between FP8 and INT8 tensor-core throughput, where its predecessors were 1:1. I traced what that means in practice through four layers of the stack: the specification, the PTX instruction set, NVIDIA&#x27;s CUTLASS kernel library, and the two major open-source serving engines.</p><p class="pub-contrib"><b>Contribution. </b>It documents a consistent, layered withdrawal of INT8 support across four layers — three of them NVIDIA&#x27;s own — and shows that a quantization format&#x27;s availability is a property of the whole stack, not of the model or the spec sheet. A format listed on the datasheet turns out to be undeployable by default on that hardware.</p></div>
             <div class="pub-meta">
             <p class="pub-a"><b>Teng-Ruei Chen</b></p>
             <p class="pub-v">arXiv:2608.11693 [cs.AR] · Aug 2026</p>
@@ -160,6 +165,7 @@
           </button>
           <div class="pub-body" id="pub-resample-or-reroute" hidden>
             
+            <div class="pub-blurb"><p>When a weak verifier accepts a model&#x27;s answer, the next call can either resample the same model or reroute to a stronger one. Because correctness is hidden, choosing between them is an identification problem rather than a tuning problem. I set three gates — recoverable stopping debt, two-sided action support, and held-out value from an outcome-blind selector — and ran them on a pinned 152-query MBPP+ experiment.</p><p class="pub-contrib"><b>Contribution. </b>It shows the stopping debt is real — a false-positive stop leaves 2.6 points of recoverable accuracy — but that the evidence does not yet identify when to resample rather than reroute, and it names the statistic that looks like evidence but contains no observable-history term.</p></div>
             <div class="pub-meta">
             <p class="pub-a"><b>Teng-Ruei Chen</b></p>
             <p class="pub-v">arXiv:2607.08665 [cs.LG] · Jul 2026 · Research Square 10.21203/rs.3.rs-11021599/v1</p>
@@ -176,6 +182,7 @@
           </button>
           <div class="pub-body" id="pub-routing-oracle" hidden>
             
+            <div class="pub-blurb"><p>Routing benchmarks compare a policy that must commit to one model before seeing its answer against a hindsight oracle that credits any correct recorded output. Under random decoding these are different decision classes, and the gap between them is often read as a routing opportunity. I audited frozen correctness tensors from 11 open models with 30 archived responses per query–model cell on GSM8K, MATH-500 and GPQA-Diamond.</p><p class="pub-contrib"><b>Contribution. </b>It shows the gap identifies only an interval, not a number: a zero premium is always attainable over compatible couplings, so the headline figure depends on coupling, decision class, scorer, pool and the number of draws. The result is a measurement contract for reading oracle gaps, not a claim about how much routing can gain.</p></div>
             <div class="pub-meta">
             <p class="pub-a"><b>Teng-Ruei Chen</b></p>
             <p class="pub-v">arXiv:2607.03436 [cs.LG] · Jul 2026</p>
@@ -192,11 +199,12 @@
           </button>
           <div class="pub-body" id="pub-net-zero" hidden>
             
+            <div class="pub-blurb"><p>Heat treatment is one of Taiwan&#x27;s most energy-intensive traditional industries: heating, holding temperature and heat loss all waste energy. Scheduling was done first-come-first-served by hand, which cannot balance furnace utilisation, delivery dates and energy use at the same time. We built an AI scheduler that simulates the schedule before an order is accepted, using Monte Carlo tree search to estimate the delivery date and propose an order-to-furnace assignment, together with an energy management system that meters equipment in real time and computes per-product carbon emissions against ERP data.</p><p class="pub-contrib"><b>Contribution. </b>It replaces first-come-first-served scheduling with batch consolidation and staged temperature ramping chosen for energy and delivery together. The article reports over 1,500 tonnes of carbon and over three million kWh saved in deployment.</p></div>
             <div class="pub-meta">
             <p class="pub-a">T.-C. Su, <b>Teng-Ruei Chen</b>, C.-W. Lin</p>
             <p class="pub-v">電腦與通訊 (ICT Journal, ITRI), no. 197, pp. 35–42 · Mar 2024</p>
             <div class="tags"><span class="tag">Applications</span></div>
-            <div class="acts"><a href="https://www.airitilibrary.com/Article/Detail/1019391x-N202404160003-00006">Airiti</a></div>
+            <div class="acts"><a href="https://www.airitilibrary.com/Article/Detail/1019391x-N202404160003-00006">Airiti</a><a href="https://ictjournal.itri.org.tw/xcdoc/cont?xsmsid=0M236556470056558161&amp;sid=0O087553613072616728">Ict journal</a></div>
             </div>
           </div>
         </li>
@@ -208,6 +216,7 @@
           </button>
           <div class="pub-body" id="pub-ultimate-limits" hidden>
             
+            <div class="pub-blurb"><p>Three-state secondary structure prediction climbed from about 56% to 81% over sixty years and then sat at 81–86% for decades. A 1990s estimate put the theoretical ceiling at 88%, so the problem came to be seen as either finished or hopeless. I ran large-scale sequence and structural analyses to re-estimate that ceiling, and to set the limits for segment-based and eight-state prediction, which had never been determined.</p><p class="pub-contrib"><b>Contribution. </b>The three-state ceiling is re-estimated at about 92%, four to five points higher than long assumed, and the eight-state ceiling at 84–87% — so the headroom the field had written off is real, and there is now a number to aim at.</p></div>
             <div class="pub-meta">
             <p class="pub-a">C.-T. Ho, Y.-W. Huang, <b>Teng-Ruei Chen</b>, C.-H. Lo, W.-C. Lo</p>
             <p class="pub-v">Biomolecules, vol. 11, no. 11, 1627 · Nov 2021 · IF 4.88 · doi:10.3390/biom11111627</p>
@@ -224,6 +233,7 @@
           </button>
           <div class="pub-body" id="pub-cirpred" hidden>
             
+            <div class="pub-blurb"><p>Circular permutation reconnects a protein&#x27;s two ends and opens new ones elsewhere. It is useful in protein engineering but expensive to apply, because getting a working design still took trial and error and no modeling tool handled the rearrangement. CirPred models the structure of circularly permuted proteins and designs the linker that joins the original termini.</p><p class="pub-contrib"><b>Contribution. </b>It is the first system that does both circularly-permuted and conventional co-linear modeling, its linker design reaches sub-angstrom accuracy, and it holds up when the permutant shares little sequence identity with the native protein or adopts a different fold through domain swapping.</p></div>
             <div class="pub-meta">
             <p class="pub-a"><b>Teng-Ruei Chen</b>, Y.-C. Lin, Y.-W. Huang, C.-C. Chen, W.-C. Lo</p>
             <p class="pub-v">BMC Bioinformatics, vol. 22, no. S10, 494 · Oct 2021 · IF 3.17 · doi:10.1186/s12859-021-04403-1</p>
@@ -240,6 +250,7 @@
           </button>
           <div class="pub-body" id="pub-ss-pssm" hidden>
             
+            <div class="pub-blurb"><p>Secondary structure prediction had stalled, and most effort was going into the learning algorithm. I took a step back and changed the input instead: a position-specific scoring matrix built from secondary structure elements rather than from amino acids. It was tested under strict independent evaluation, with training and testing sets sharing under 25% sequence identity.</p><p class="pub-contrib"><b>Contribution. </b>The new matrix beat the amino-acid matrix in every experiment, and combining the two raised three- and eight-state accuracy of existing predictors by 2.0 and 5.2 points on average — a gain obtained by changing what the model is shown, not how it learns.</p></div>
             <div class="pub-meta">
             <p class="pub-a"><b>Teng-Ruei Chen</b>, S.-H. Juan, Y.-W. Huang, Y.-C. Lin, W.-C. Lo</p>
             <p class="pub-v">PLOS ONE, vol. 16, no. 7, e0255076 · Jul 2021 · IF 3.24 · doi:10.1371/journal.pone.0255076</p>
@@ -256,6 +267,7 @@
           </button>
           <div class="pub-body" id="pub-dataset-homology" hidden>
             
+            <div class="pub-blurb"><p>Reported accuracy in secondary structure prediction depends on how similar the training, testing and independent datasets are to each other — a question that had not been examined closely. I built many different homology layouts, trained and evaluated models on each with repeated random sampling, then verified the conclusions at scale against state-of-the-art predictors.</p><p class="pub-contrib"><b>Contribution. </b>Contrary to the long-standing assumption, homology between the query datasets barely affects accuracy — but redundancy within or between datasets inflates it. The result separates the homology that matters from the homology that does not, which is what an evaluation has to get right before any reported gain can be believed.</p></div>
             <div class="pub-meta">
             <p class="pub-a"><b>Teng-Ruei Chen</b>, C.-H. Lo, S.-H. Juan, W.-C. Lo</p>
             <p class="pub-v">PLOS ONE, vol. 16, no. 7, e0254555 · Jul 2021 · IF 3.24 · doi:10.1371/journal.pone.0254555</p>
@@ -272,6 +284,7 @@
           </button>
           <div class="pub-body" id="pub-speed-strategy" hidden>
             
+            <div class="pub-blurb"><p>By then secondary structure predictors were above 80% accuracy, but the sequence databases they search had grown so large that a single prediction took a long time. I tested two ideas against that cost: shrinking the target database by random sampling, and lowering the sequence identity inside it.</p><p class="pub-contrib"><b>Contribution. </b>Shrinking the database cuts time sharply for only a slight accuracy loss, and lowering identity actually raises accuracy; together they give about a twenty-fold speed-up at full accuracy. The paper also shows Shannon entropy explains the link between matrix quality and prediction accuracy, and releases the reduced database.</p></div>
             <div class="pub-meta">
             <p class="pub-a">S.-H. Juan, <b>Teng-Ruei Chen</b>, W.-C. Lo</p>
             <p class="pub-v">PLOS ONE, vol. 15, no. 6, e0235153 · Jun 2020 · IF 3.24 · doi:10.1371/journal.pone.0235153</p>
@@ -601,6 +614,7 @@
     "name": "電腦與通訊 (ICT Journal, ITRI), no. 197, pp. 35–42 · Mar 2024"
    },
    "sameAs": [
+    "https://ictjournal.itri.org.tw/xcdoc/cont?xsmsid=0M236556470056558161&sid=0O087553613072616728",
     "https://www.airitilibrary.com/Article/Detail/1019391x-N202404160003-00006"
    ]
   },
