@@ -55,7 +55,7 @@
       "summary": {
         "en": "Routing benchmarks often score a router against a hindsight oracle: a question counts as solved if any model's recorded answer was right. Under random decoding that quietly mixes two different things — picking the single best model, and calling several models and keeping whichever answer is correct. Nobody had measured the second one once today's reasoning models join the pool. I measured it on a fixed protocol: all 500 MATH-500 problems, 30 seeded samples each, three models on one B300, 45,000 scored answers.",
         "zh": "Routing 的 benchmark 常用一種事後的 oracle：只要任何一個模型答對，這題就算解決。但在 stochastic decoding 下，這等於把兩件事混在一起——一個是挑定單一模型能達到的上限，另一個是多叫幾個模型、留下答對那份所多賺到的。後者在今天的 reasoning model 進場之後有多大，之前沒有人量過。我在一張 B300 上用固定的 protocol 量：MATH-500 全部 500 題，每題 30 個 seed，三個模型，共 45,000 筆評分結果。",
-        "ja": "ルーティングの評価では、どれか一つのモデルが正解すればその問題は解決済みと数える「事後オラクル」がよく使われる。だが確率的デコーディングの下では、最良の一つを選ぶことと、複数を呼んで正解を残すことが混ざってしまう。推論モデルが加わったときの後者の大きさは未測定だった。MATH-500 全500問・各30サンプル・3モデルを単一のB300で固定プロトコル計測し、45,000件を採点した。"
+        "ja": "ルーティングの評価では、どれか一つのモデルが正解すればその問題は解決済みと数える「事後オラクル」がよく使われる。だが確率的デコーディングの下では、最良の一つを選ぶことと、複数を呼んで正解を残すことが混在する。推論モデルが加わったときの後者の大きさは未測定だった。MATH-500 全500問・各30サンプル・3モデルを単一のB300で固定プロトコル計測し、45,000件を採点した。"
       },
       "contribution": {
         "en": "The gap turns out to be 0.2–0.6 points, far below the 3.5 reported for smaller models, and resampling one small model three times matches calling all three once. A handful of runaway generations can also dominate the cost, so an oracle gap only means something when the pool, protocol and decoding budget are reported with it.",
@@ -144,7 +144,7 @@
       "summary": {
         "en": "Two GPU kernels that implement the same INT8 matrix-multiply interface are normally treated as interchangeable. Holding everything else fixed — checkpoint, prompts, hardware, engine, decoding — and swapping only the kernel, they agreed on not a single generated sequence. The arithmetic itself cannot be to blame: for shared INT8 operands under a verified no-overflow bound, the integer accumulator is exact and order-independent.",
         "zh": "兩個實作同一套 scaled INT8 GEMM 介面的 kernel，一般被當成可以互換。我把其他條件全部固定——checkpoint、prompt、硬體、inference engine、decoding、量化設定——只換掉 INT8 linear kernel（CUTLASS 換成 Triton），結果端到端跑出來沒有任何一條序列是一樣的。但算術本身不可能是兇手：在已驗證不會 overflow 的前提下，INT32 的 dot product 是精確的，而且與順序無關。",
-        "ja": "同一のINT8行列積インタフェースを実装する2つのGPUカーネルは、通常は互換と見なされる。チェックポイント・プロンプト・ハードウェア・エンジン・デコードを固定し、カーネルだけを入れ替えたところ、生成列は一つも一致しなかった。しかも算術自体は原因になり得ない——オーバーフローしないことが検証された共有INT8オペランドでは、整数累算は厳密で順序に依存しないからだ。"
+        "ja": "同一のINT8行列積インタフェースを実装する2つのGPUカーネルは、通常は互換と見なされる。チェックポイント・プロンプト・ハードウェア・エンジン・デコードを固定し、カーネルだけを入れ替えたところ、生成列は一つも一致しなかった。しかも算術自体は原因になり得ない——オーバーフローしないことが検証された共有INT8オペランドでは、整数累算は厳密であり、順序に依存しないためである。"
       },
       "contribution": {
         "en": "It localizes the divergence to scale application and output rounding after the exact accumulator, confirms this layer by layer on 196 and 252 linear layers with a pre-registered prediction list, and shows the same intervention restores end-to-end bitwise agreement.",
@@ -336,7 +336,7 @@
       "summary": {
         "en": "Circular permutation reconnects a protein's two ends and opens new ones elsewhere. It is useful in protein engineering but expensive to apply, because getting a working design still took trial and error and no modeling tool handled the rearrangement. CirPred models the structure of circularly permuted proteins and designs the linker that joins the original termini.",
         "zh": "Circular permutation 是把蛋白質原本的兩端接起來，再從別的位置切出新的兩端。它在蛋白質工程上很有用，但實作成本高——要做出能用的設計還是得反覆試誤，而且沒有建模工具處理得了這種重排。CirPred 可以預測 circularly permuted protein 的結構，並設計接起原本兩端的 linker。",
-        "ja": "循環置換は、タンパク質の両末端をつなぎ直し、別の位置に新たな末端を作る操作である。タンパク質工学で有用だが、実用化には試行錯誤が不可欠で、この再配置を扱えるモデリング手法も存在しなかった。CirPredは循環置換タンパク質の構造を予測し、元の末端をつなぐリンカーを設計する。"
+        "ja": "循環置換は、タンパク質の両末端をつなぎ直し、別の位置に新たな末端を作る操作である。タンパク質工学において有用であるが、実用化には試行錯誤が不可欠であり、この再配置を扱えるモデリング手法も存在しなかった。CirPredは循環置換タンパク質の構造を予測し、元の末端をつなぐリンカーを設計する。"
       },
       "contribution": {
         "en": "It is the first system that does both circularly-permuted and conventional co-linear modeling, its linker design reaches sub-angstrom accuracy, and it holds up when the permutant shares little sequence identity with the native protein or adopts a different fold through domain swapping.",
@@ -1118,7 +1118,7 @@
         ]
       ]
     },
-    "bio": "学術的な訓練は情報工学にあり、博士課程ではタンパク質の構造予測を研究していました。現在は AI 推論と API ルーティングを扱っています。分野は異なって見えますが、根底にある仕事は同じです——信頼できる計測の基準を確立すること。それによってはじめて、報告される改善は依拠しうるものになります。",
+    "bio": "専門は情報工学であり、博士課程ではタンパク質の構造予測を研究しておりました。現在は AI 推論および API ルーティングを研究領域としています。分野は異なって見えますが、根底にある課題は同一です——信頼に足る計測の基準を確立すること。それによってはじめて、報告される改善は依拠しうるものとなります。",
     "education": [
       [
         "2021",
