@@ -19,6 +19,12 @@ AWARDS, APPS, DEPS = C["awards"], C["appearances"], C["deposits"]
 METRICS = C.get("metrics") or {}
 
 e = lambda s: html.escape(str(s), quote=True)
+
+
+def ver(rel):
+    """Short content hash, so a changed asset gets a new URL."""
+    import hashlib
+    return hashlib.sha256((HERE / rel).read_bytes()).hexdigest()[:8]
 mmss = lambda s: "%d:%02d" % (s // 60, s % 60)
 
 PREVIEW_TITLE = "學者網站 A+C 版"
@@ -390,14 +396,14 @@ def page(code, demo=False, standalone=True):
 <meta name="theme-color" content="#FAFAF9" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#16191A" media="(prefers-color-scheme: dark)">
 {fonts}
-<link rel="stylesheet" href="{up}assets/style.css">
+<link rel="stylesheet" href="{up}assets/style.css?v={ver("assets/style.css")}">
 </head>
 <body>
 {body(L, code, depth)}
 <script type="application/ld+json">
 {jsonld(L, code)}
 </script>
-<script src="{up}assets/site.js" defer></script>
+<script src="{up}assets/site.js?v={ver("assets/site.js")}" defer></script>
 </body>
 </html>
 """
