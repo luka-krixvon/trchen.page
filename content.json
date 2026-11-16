@@ -1326,11 +1326,16 @@
     },
     {
       "year": 2025,
-      "url": "",
+      "url": "https://finance.ettoday.net/news/2994124",
       "what": {
-        "en": "Nasdaq Accelerator",
-        "zh": "Nasdaq Accelerator",
-        "ja": "Nasdaq Accelerator"
+        "en": "Accelerate to Nasdaq",
+        "zh": "Accelerate to Nasdaq",
+        "ja": "Accelerate to Nasdaq"
+      },
+      "title": {
+        "en": "Asia Innovation Hub with the Nasdaq Entrepreneurial Center; cohort closing at Nasdaq MarketSite, New York.",
+        "zh": "亞洲創新中心與納斯達克創業者中心合辦，於紐約納斯達克總部結業。",
+        "ja": "アジア・イノベーション・ハブと Nasdaq Entrepreneurial Center の共催、ニューヨークの Nasdaq 本社で修了。"
       }
     },
     {
