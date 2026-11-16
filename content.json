@@ -189,7 +189,9 @@
         "applications"
       ],
       "note": null,
-      "links": {},
+      "links": {
+        "Airiti": "https://www.airitilibrary.com/Article/Detail/1019391x-N202404160003-00006"
+      },
       "video": null,
       "venue_key": "net-zero",
       "venue": "電腦與通訊 (ICT Journal, ITRI), no. 197, pp. 35–42 · Mar 2024",
