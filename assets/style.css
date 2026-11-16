@@ -182,9 +182,14 @@ h2.big{font-family:var(--serif);font-size:var(--t-lg);font-weight:700;letter-spa
   border-radius:5px;background:var(--sig-soft);color:var(--sig);font-size:var(--t-xs)}
 .pub-talk svg{width:8px;height:8px;fill:currentColor}
 .pub-body{padding:4px 4px 22px 74px}
+.pub-blurb{max-width:66ch;margin-bottom:18px}
+.pub-blurb p{font-size:var(--t-base);line-height:1.6;color:var(--ink2)}
+.pub-contrib{margin-top:10px;padding-left:12px;border-left:3px solid var(--accent);color:var(--ink)}
+.pub-contrib b{font-weight:600;color:var(--accent)}
 .pub-body.has-talk{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:26px;
   align-items:start}
 .pub-body.has-talk .vpanel{margin-top:0;max-width:none}
+.pub-body.has-talk .pub-blurb{grid-column:1 / -1;max-width:72ch}
 .pub-a{font-family:var(--sans);font-size:var(--t-sm);color:var(--ink2)}
 .pub-a b{color:var(--ink);font-weight:600}
 .pub-v{font-family:var(--mono);font-size:var(--t-xs);color:var(--ink3);margin-top:6px}

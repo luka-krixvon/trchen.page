@@ -78,12 +78,24 @@ def identity(L, code, depth):
 </header>"""
 
 
-def publication(pub, L, i):
+def publication(pub, L, i, code):
     v, cid = pub.get("video"), pub["id"]
     if v and v.get("id") in ("", "VIDEO_ID") and not DEMO_VIDEO:
         v = None          # a placeholder id never ships a dead player
     acts = "".join('<a href="%s">%s</a>' % (e(u), e(k.upper() if k in ("pdf", "bibtex") else k.capitalize()))
                    for k, u in pub["links"].items())
+    def pick(field):
+        x = pub.get(field)
+        if isinstance(x, dict):
+            return x.get(code) or x.get("en")
+        return x
+    sm, cb = pick("summary"), pick("contribution")
+    blurb = ""
+    if sm or cb:
+        blurb = '<div class="pub-blurb">%s%s</div>' % (
+            ('<p>%s</p>' % e(sm)) if sm else "",
+            ('<p class="pub-contrib"><b>%s</b>%s</p>'
+             % (e(L["ui"]["contribution"]), e(cb))) if cb else "")
     watch = panel = mark = ""
     if v:
         pid = "talk-" + cid
@@ -118,6 +130,7 @@ def publication(pub, L, i):
           </button>
           <div class="pub-body{' has-talk' if v else ''}" id="{pid2}" hidden>
             {panel}
+            {blurb}
             <div class="pub-meta">
             <p class="pub-a">{authors(pub)}</p>
             <p class="pub-v">{e(venue)}{note}</p>
@@ -160,7 +173,7 @@ def body(L, code, depth):
     filters = "".join(
         '<button class="filt" type="button" data-filter="%s" aria-pressed="%s">%s</button>'
         % (k, "true" if k == "all" else "false", e(L["filters"][k])) for k in keys)
-    pubs = "\n".join(publication(p, L, i + 1) for i, p in enumerate(PUBS))
+    pubs = "\n".join(publication(p, L, i + 1, code) for i, p in enumerate(PUBS))
     rows = ""
     for p in PATS:
         st = L["patent_status"][p["status"]]
