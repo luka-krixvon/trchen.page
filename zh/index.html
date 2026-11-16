@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>陳騰瑞 Teng-Ruei Chen — 機器學習系統</title>
-<meta name="description" content="陳騰瑞，博士。研究 LLM 路由、serving 成本結構與推論階段隱私。">
+<meta name="description" content="陳騰瑞，機器學習系統。LLM 路由、推論成本，以及它們底下的量測問題。">
 <link rel="canonical" href="https://trchen.page/zh/">
 <link rel="alternate" hreflang="en" href="https://trchen.page/"><link rel="alternate" hreflang="zh-Hant-TW" href="https://trchen.page/zh/"><link rel="alternate" hreflang="ja" href="https://trchen.page/ja/"><link rel="alternate" hreflang="x-default" href="https://trchen.page/">
 <meta name="author" content="Teng-Ruei Chen">
@@ -14,14 +14,14 @@
 <meta property="og:locale" content="zh_TW">
 <meta property="og:locale:alternate" content="en_US"><meta property="og:locale:alternate" content="ja_JP">
 <meta property="og:title" content="陳騰瑞 Teng-Ruei Chen — 機器學習系統">
-<meta property="og:description" content="陳騰瑞，博士。研究 LLM 路由、serving 成本結構與推論階段隱私。">
+<meta property="og:description" content="陳騰瑞，機器學習系統。LLM 路由、推論成本，以及它們底下的量測問題。">
 <meta property="og:image" content="https://trchen.page/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="陳騰瑞 Teng-Ruei Chen — 機器學習系統">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="陳騰瑞 Teng-Ruei Chen — 機器學習系統">
-<meta name="twitter:description" content="陳騰瑞，博士。研究 LLM 路由、serving 成本結構與推論階段隱私。">
+<meta name="twitter:description" content="陳騰瑞，機器學習系統。LLM 路由、推論成本，以及它們底下的量測問題。">
 <meta name="twitter:image" content="https://trchen.page/og.png">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-96.png" sizes="96x96" type="image/png">
@@ -45,7 +45,7 @@
   <img class="portrait" src="../portrait.png" alt="Teng-Ruei Chen" width="128" height="128">
   <div class="idtext">
     <h1>陳騰瑞 Teng-Ruei Chen</h1>
-    <p class="fields">AI 基礎設施 · LLM 推論 · 深度學習 · 生物資訊</p>
+    <p class="fields">AI 基礎設施 · LLM 推論 · 資訊安全 · 深度學習 · 生物資訊</p>
     <p class="meta">桃園，台灣 · <a href="mailto:ymchen.bi04g@g2.nctu.edu.tw">ymchen.bi04g@g2.nctu.edu.tw</a></p>
     <nav class="idlinks" aria-label="Profiles"><a href="https://scholar.google.com/citations?user=PiuFUZ8AAAAJ" rel="me">Google Scholar</a><a href="https://orcid.org/0000-0001-8995-334X" rel="me">ORCID</a><a href="https://www.linkedin.com/in/luka-chen/" rel="me">LinkedIn</a><a href="https://github.com/luka-krixvon" rel="me">GitHub</a></nav>
   </div>
@@ -55,7 +55,7 @@
 
     <section class="sec" id="about">
       <span class="eyebrow">關於</span>
-      <p class="bio">AI 的成本正在從訓練移到推論。一個模型只訓練一次，卻要被服務上百萬次，而且跑在稀缺、各地價格不同、彼此又不能互換的硬體上。哪一個請求該跑在哪一台機器、花多少錢，已經從實作細節變成基礎設施的經濟問題——這跟我更早在電力調度、車輛充電、算力排程上面對的是同一個問題。</p><p class="bio">比較難的是另一半：這些決策很難評估。路由上報告出來的增益，是拿一個本身就不穩定的基準在比，而底下的硬體又不保證兩次給出同樣的答案。在量測站得住腳之前，分不出哪些是真的改進、哪些只是量測方式造成的假象。這就是為什麼我的工作有很大一部分是量測而不是方法。</p>
+      <p class="bio">我的博士在做蛋白質結構預測：怎麼讓它更快，又不讓它算錯。現在我對 AI 推論做同一件事——這個產業到今天還分不出什麼是真的變快，什麼只是量錯了。</p>
       <div class="cv-grid cv-stack">
         <dl class="cv-group"><h3>學歷</h3><div class="cv-row"><dt>2021</dt><dd>博士，生物資訊及系統生物，國立陽明交通大學，新竹</dd></div></dl>
         <dl class="cv-group"><h3>經歷</h3><div class="cv-row"><dt>2026–</dt><dd>技術長，信任網路股份有限公司（BiiLabs Co., Ltd.）· 台北</dd></div><div class="cv-row"><dt>2026–</dt><dd>執行長，宸核股份有限公司（Krixvon Company Limited）· 台北</dd></div><div class="cv-row"><dt>2024–26</dt><dd>技術長，台灣智慧技術研發股份有限公司 · 台北</dd></div><div class="cv-row"><dt>2022–24</dt><dd>工程師，工業技術研究院 · 新竹</dd></div><div class="cv-row"><dt>2018–22</dt><dd>技術長，領星智慧股份有限公司 · 台北</dd></div></dl>
@@ -64,12 +64,12 @@
 
     <section class="sec" id="research">
       <span class="eyebrow">研究主題</span>
-      <div class="inner-themes"><div class="theme-row"><h3>路由</h3><p>學習型路由器把請求分派到一組模型上。我量測這些分派，離一個事先就知道答案品質的 oracle 還有多遠。</p></div><div class="theme-row"><h3>隱私</h3><p>serving 基礎設施在回應存在之前就送出 metadata：選了哪一層、佇列多長、採樣了幾份草稿。那條通道是讀得出東西的。</p></div><div class="theme-row"><h3>效度</h3><p>在 benchmark 上量到的路由效果，碰到真實流量形狀之後還剩多少，以及最先壞掉的是哪一個假設。</p></div></div>
+      <div class="inner-themes"><div class="theme-row"><h3>路由</h3><p>學習型路由器把請求分派到一組模型上。我量測這些分派，離一個事先就知道答案品質的 oracle 還有多遠。</p></div><div class="theme-row"><h3>資安與隱私</h3><p>serving 基礎設施在回應存在之前就送出 metadata：選了哪一層、佇列多長、採樣了幾份草稿。那是一條旁路通道，而且從外面讀得到。</p></div><div class="theme-row"><h3>效度</h3><p>在 benchmark 上量到的路由效果，碰到真實流量形狀之後還剩多少，以及最先壞掉的是哪一個假設。</p></div></div>
     </section>
 
     <section class="sec" id="publications">
       <div class="sec-head"><h2 class="big">論文</h2><p>2022 年以前的論文是蛋白質結構預測，方法學上的問題意識是同一個。</p></div>
-      <div class="filters"><button class="filt" type="button" data-filter="all" aria-pressed="true">全部</button><button class="filt" type="button" data-filter="routing" aria-pressed="false">路由</button><button class="filt" type="button" data-filter="privacy" aria-pressed="false">隱私</button><button class="filt" type="button" data-filter="systems" aria-pressed="false">系統</button><button class="filt" type="button" data-filter="evaluation" aria-pressed="false">評估</button><button class="filt" type="button" data-filter="bioinformatics" aria-pressed="false">生物資訊</button><button class="filt" type="button" data-filter="applications" aria-pressed="false">應用</button><button class="filt" type="button" data-filter="video" aria-pressed="false">有影片</button></div>
+      <div class="filters"><button class="filt" type="button" data-filter="all" aria-pressed="true">全部</button><button class="filt" type="button" data-filter="routing" aria-pressed="false">路由</button><button class="filt" type="button" data-filter="privacy" aria-pressed="false">資安與隱私</button><button class="filt" type="button" data-filter="systems" aria-pressed="false">系統</button><button class="filt" type="button" data-filter="evaluation" aria-pressed="false">評估</button><button class="filt" type="button" data-filter="bioinformatics" aria-pressed="false">生物資訊</button><button class="filt" type="button" data-filter="applications" aria-pressed="false">應用</button><button class="filt" type="button" data-filter="video" aria-pressed="false">有影片</button></div>
       <p class="filt-note" data-filter-note data-tpl="顯示 {n} 篇，共 13 篇"></p>
       <ol>
         <li class="pub" data-topics="routing evaluation" data-video="0">
@@ -99,7 +99,7 @@
             <div class="pub-meta">
             <p class="pub-a"><b>Teng-Ruei Chen</b></p>
             <p class="pub-v">arXiv:2610.09981 [cs.CR] · Oct 2026</p>
-            <div class="tags"><span class="tag">隱私</span><span class="tag">路由</span></div>
+            <div class="tags"><span class="tag">資安與隱私</span><span class="tag">路由</span></div>
             <div class="acts"><a href="https://arxiv.org/abs/2610.09981">Arxiv</a><a href="https://arxiv.org/pdf/2610.09981">Pdf</a></div>
             </div>
           </div>
@@ -323,8 +323,8 @@
    "name": "Teng-Ruei Chen",
    "url": "https://trchen.page/zh/",
    "email": "mailto:ymchen.bi04g@g2.nctu.edu.tw",
-   "jobTitle": "AI 基礎設施 · LLM 推論 · 深度學習 · 生物資訊",
-   "description": "AI 的成本正在從訓練移到推論。一個模型只訓練一次，卻要被服務上百萬次，而且跑在稀缺、各地價格不同、彼此又不能互換的硬體上。哪一個請求該跑在哪一台機器、花多少錢，已經從實作細節變成基礎設施的經濟問題——這跟我更早在電力調度、車輛充電、算力排程上面對的是同一個問題。\n\n比較難的是另一半：這些決策很難評估。路由上報告出來的增益，是拿一個本身就不穩定的基準在比，而底下的硬體又不保證兩次給出同樣的答案。在量測站得住腳之前，分不出哪些是真的改進、哪些只是量測方式造成的假象。這就是為什麼我的工作有很大一部分是量測而不是方法。",
+   "jobTitle": "AI 基礎設施 · LLM 推論 · 資訊安全 · 深度學習 · 生物資訊",
+   "description": "我的博士在做蛋白質結構預測：怎麼讓它更快，又不讓它算錯。現在我對 AI 推論做同一件事——這個產業到今天還分不出什麼是真的變快，什麼只是量錯了。",
    "alumniOf": [
     {
      "@type": "CollegeOrUniversity",
@@ -350,7 +350,7 @@
     "LLM agent",
     "生物資訊",
     "應用",
-    "隱私"
+    "資安與隱私"
    ],
    "sameAs": [
     "https://scholar.google.com/citations?user=PiuFUZ8AAAAJ",
