@@ -27,7 +27,10 @@
     "publications": 13,
     "patents": 12,
     "deposits": 3,
-    "awards": 9
+    "awards": 9,
+    "citations": 113,
+    "h_index": 6,
+    "i10_index": 4
   },
   "publications": [
     {
@@ -528,7 +531,9 @@
       "patents": "Granted patents",
       "deposits": "Datasets & software",
       "awards": "Awards",
-      "citations": "Citations"
+      "citations": "Citations",
+      "h_index": "h-index",
+      "i10_index": "i10-index"
     },
     "themes": [
       [
@@ -562,7 +567,8 @@
       "patent_note": "Listed as inventor; rights are held by the respective assignees. Titles as recorded by the patent office.",
       "primary_title": "Google Scholar",
       "primary_sub": "citations, h-index, full list",
-      "dep_stats": "{v} views · {d} downloads"
+      "dep_stats": "{v} views · {d} downloads",
+      "metrics_note": "Citation figures from %s, updated %s"
     },
     "filters": {
       "all": "All",
@@ -707,7 +713,9 @@
       "patents": "已領證專利",
       "deposits": "資料集與程式",
       "awards": "獲獎",
-      "citations": "引用"
+      "citations": "引用",
+      "h_index": "h 指數",
+      "i10_index": "i10 指數"
     },
     "themes": [
       [
@@ -741,7 +749,8 @@
       "patent_note": "本人為發明人，專利權歸各該專利權人所有。名稱依專利主管機關登錄。",
       "primary_title": "Google Scholar",
       "primary_sub": "引用數、h-index、完整列表",
-      "dep_stats": "{v} 次瀏覽 · {d} 次下載"
+      "dep_stats": "{v} 次瀏覽 · {d} 次下載",
+      "metrics_note": "引用數據來自 %s，更新於 %s"
     },
     "filters": {
       "all": "全部",
@@ -886,7 +895,9 @@
       "patents": "登録特許",
       "deposits": "データセット・ソフトウェア",
       "awards": "受賞",
-      "citations": "被引用"
+      "citations": "被引用",
+      "h_index": "h指数",
+      "i10_index": "i10指数"
     },
     "themes": [
       [
@@ -920,7 +931,8 @@
       "patent_note": "発明者として記載。権利は各権利者に帰属。名称は特許庁の登録どおり。",
       "primary_title": "Google Scholar",
       "primary_sub": "被引用数・h-index・全リスト",
-      "dep_stats": "{v} 閲覧 · {d} ダウンロード"
+      "dep_stats": "{v} 閲覧 · {d} ダウンロード",
+      "metrics_note": "被引用データは %s より、更新日 %s"
     },
     "filters": {
       "all": "すべて",
@@ -1252,7 +1264,7 @@
     },
     {
       "year": 2026,
-      "url": "",
+      "url": "https://www.aita.org.tw/News/news_more?id=393e08bd3e644c54af5fb8a0a1663b21",
       "what": {
         "en": "AI EXPO Taiwan 2026 (AMD)",
         "zh": "AI EXPO Taiwan 2026（AMD）",
@@ -1306,5 +1318,12 @@
       "views": 160,
       "downloads": 19
     }
-  ]
+  ],
+  "metrics": {
+    "source": "OpenAlex",
+    "source_url": "https://openalex.org/A5091465074",
+    "openalex_id": "A5091465074",
+    "scholar_url": "https://scholar.google.com/citations?user=PiuFUZ8AAAAJ",
+    "updated": "2026-11-17"
+  }
 }

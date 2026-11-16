@@ -64,25 +64,30 @@ def main():
     c = json.loads(CJ.read_text(encoding="utf-8"))
     changed = []
 
-    if "citations" not in c["counts"]:
-        # the page defers to the Google Scholar link, so there is nothing to fetch
-        print("  citations not shown on the page; skipping Semantic Scholar")
-        rows, ids = [], []
+    m = c.get("metrics") or {}
+    aid = m.get("openalex_id")
+    if not aid or "citations" not in c["counts"]:
+        print("  citation figures not shown on the page; skipping OpenAlex")
     else:
-        ids = [i for i in (ident(p) for p in c["publications"]) if i]
-        rows = fetch(S2, json.dumps({"ids": ids}).encode(), "semantic scholar")
-    if rows:
-        total = sum((r or {}).get("citationCount") or 0 for r in rows)
-        known = sum(1 for r in rows if r)
-        for r in rows:
-            if r:
-                print("  %4d  %s" % (r.get("citationCount") or 0, (r.get("title") or "")[:62]))
-        if c["counts"].get("citations") != total:
-            changed.append("citations %s -> %s" % (c["counts"].get("citations"), total))
-        c["counts"]["citations"] = total
-        print("  total %d citations across %d of %d papers" % (total, known, len(ids)))
-    elif ids:
-        print("  citations left at %s" % c["counts"].get("citations"))
+        a = fetch("https://api.openalex.org/authors/%s" % aid, label="openalex %s" % aid)
+        stats = (a or {}).get("summary_stats") or {}
+        got = {
+            "citations": (a or {}).get("cited_by_count"),
+            "h_index":   stats.get("h_index"),
+            "i10_index": stats.get("i10_index"),
+        }
+        if a and all(v is not None for v in got.values()):
+            for k, v in got.items():
+                if c["counts"].get(k) != v:
+                    changed.append("%s %s -> %s" % (k, c["counts"].get(k), v))
+                c["counts"][k] = v
+            today = date.today().isoformat()
+            if changed and m.get("updated") != today:
+                m["updated"] = today
+                c["metrics"] = m
+            print("  openalex: %(citations)s citations, h-index %(h_index)s, i10 %(i10_index)s" % got)
+        else:
+            print("  openalex unavailable; figures left at %s" % c["counts"].get("citations"))
 
     for dep in c.get("deposits", []):
         rid = dep.get("record")
