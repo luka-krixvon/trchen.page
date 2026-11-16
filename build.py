@@ -258,16 +258,34 @@ def jsonld(L, code):
         "worksFor": [{"@type": "Organization", "name": n}
                      for n in ([SITE["works_for"]] if isinstance(SITE["works_for"], str) else SITE["works_for"])],
         "alternateName": SITE["name_zh"],
+        "image": base + "/" + SITE["photo"],
+        "knowsAbout": [v for k, v in L["filters"].items() if k not in ("all", "video")],
         "sameAs": [u for u in (SITE["scholar"], SITE["orcid"], SITE["github"],
                                SITE["youtube"], SITE.get("linkedin", "")) if u],
     }]
     for p in PUBS:
+        links = p.get("links") or {}
         art = {
             "@type": "ScholarlyArticle", "@id": base + "/#" + p["id"], "headline": p["title"],
             "name": p["title"], "datePublished": str(p["year"]), "inLanguage": "en",
-            "author": [{"@type": "Person", "name": SITE["name"] if a == "@me" else a} for a in p["authors"]],
+            "author": [({"@type": "Person", "@id": base + "/#person", "name": SITE["name"]}
+                        if a == "@me" else {"@type": "Person", "name": a}) for a in p["authors"]],
             "publication": {"@type": "PublicationEvent", "name": L["venues"].get(p.get("venue_key", ""), "")},
         }
+        canonical = links.get("DOI") or links.get("arXiv")
+        if canonical:
+            art["url"] = canonical
+        same = sorted({u for u in links.values() if u})
+        if same:
+            art["sameAs"] = same
+        ids = []
+        for key, prefix in (("arXiv", "arXiv:"), ("DOI", "doi:")):
+            u = links.get(key)
+            if u:
+                tail = u.rstrip("/").split("doi.org/", 1)[-1] if key == "DOI" else u.rstrip("/").rsplit("/", 1)[-1]
+                ids.append(prefix + tail)
+        if ids:
+            art["identifier"] = ids if len(ids) > 1 else ids[0]
         g.append(art)
         v = p.get("video")
         if v:
@@ -294,6 +312,12 @@ def page(code, demo=False, standalone=True):
     alts = "".join('<link rel="alternate" hreflang="%s" href="%s/%s">' % (
         e(l["hreflang"]), base, l["dir"] + "/" if l["dir"] else "") for l in LANGS)
     alts += '<link rel="alternate" hreflang="x-default" href="%s/">' % base
+    dirs = dict((l["code"], l["dir"]) for l in LANGS)
+    canon = base + "/" + (dirs[code] + "/" if code != "en" else "")
+    oglocales = {"en": "en_US", "zh": "zh_TW", "ja": "ja_JP"}
+    oglocale = oglocales.get(code, "en_US")
+    oglocale_alt = "".join('<meta property="og:locale:alternate" content="%s">' % v
+                           for k, v in oglocales.items() if k != code and k in C)
     cjk = {"zh": "&family=Noto+Serif+TC:wght@400;600&family=Noto+Sans+TC:wght@400;500;600",
            "ja": "&family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@400;500;600"}.get(code, "")
     fonts = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
@@ -324,13 +348,29 @@ def page(code, demo=False, standalone=True):
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{e(L['meta_title'])}</title>
 <meta name="description" content="{e(L['meta_desc'])}">
-<link rel="canonical" href="{base}/{(up and '') or ''}{'' if code == 'en' else dict((l['code'], l['dir']) for l in LANGS)[code] + '/'}">
+<link rel="canonical" href="{canon}">
 {alts}
+<meta name="author" content="{e(SITE['name'])}">
 <meta property="og:type" content="profile">
+<meta property="og:site_name" content="{e(SITE['name'])}">
+<meta property="og:url" content="{canon}">
+<meta property="og:locale" content="{oglocale}">
+{oglocale_alt}
 <meta property="og:title" content="{e(L['meta_title'])}">
 <meta property="og:description" content="{e(L['meta_desc'])}">
 <meta property="og:image" content="{base}/{e(SITE['og_image'])}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{e(L['meta_title'])}">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{e(L['meta_title'])}">
+<meta name="twitter:description" content="{e(L['meta_desc'])}">
+<meta name="twitter:image" content="{base}/{e(SITE['og_image'])}">
+<link rel="icon" href="{up}favicon.svg" type="image/svg+xml">
+<link rel="icon" href="{up}favicon-96.png" sizes="96x96" type="image/png">
+<link rel="apple-touch-icon" href="{up}apple-touch-icon.png">
+<meta name="theme-color" content="#FAFAF9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16191A" media="(prefers-color-scheme: dark)">
 {fonts}
 <link rel="stylesheet" href="{up}assets/style.css">
 </head>
