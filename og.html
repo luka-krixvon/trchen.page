@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>og</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Spectral:wght@400;600;700&display=swap">
+<style>
+/* Source for og.png. Regenerate: see README. 1200x630, the site's own tokens. */
+:root{--paper:#FAFAF9;--surface:#fff;--ink:#16191A;--ink2:#525A5C;--ink3:#7C8486;
+  --line:#E1E4E0;--accent:#2A32C4;--accent-soft:#EBEDFC;
+  --serif:"Spectral",Georgia,serif;--sans:"IBM Plex Sans",-apple-system,sans-serif;
+  --mono:"IBM Plex Mono",Menlo,monospace}
+*{box-sizing:border-box;margin:0}
+body{width:1200px;height:630px;background:var(--paper);color:var(--ink);
+  font-family:var(--serif);overflow:hidden;position:relative;
+  display:grid;grid-template-columns:1fr 330px;gap:56px;padding:66px 72px}
+.mark{position:absolute;top:30px;left:72px;display:flex;align-items:center;gap:11px;
+  font-family:var(--mono);font-size:15px;letter-spacing:.17em;text-transform:uppercase;color:var(--ink2)}
+.mark i{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+.left{display:flex;flex-direction:column;justify-content:center;min-width:0}
+h1{font-size:82px;font-weight:700;letter-spacing:-.04em;line-height:.95}
+.role{font-family:var(--mono);font-size:16px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink3);margin-top:20px}
+.lede{font-size:30px;line-height:1.36;color:var(--ink2);margin-top:30px;max-width:21ch}
+.lede em{font-style:normal;font-weight:600;color:var(--ink);
+  background:linear-gradient(transparent 62%,var(--accent-soft) 0);padding:0 3px}
+.counts{display:flex;gap:40px;margin-top:38px;padding-top:24px;border-top:1px solid var(--line);
+  font-family:var(--mono)}
+.counts div{display:flex;flex-direction:column;gap:3px}
+.counts b{font-size:34px;font-weight:400;letter-spacing:-.03em;color:var(--accent);line-height:1}
+.counts span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3)}
+.right{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px}
+.photo{width:300px;height:300px;border-radius:50%;object-fit:cover;background:var(--accent-soft);
+  box-shadow:0 20px 50px -26px rgba(15,20,22,.5)}
+svg.routing{width:280px;height:auto;overflow:visible}
+.lane{fill:none;stroke:var(--line);stroke-width:1.4}
+.lane.pick{stroke:var(--accent);stroke-width:2.4}
+.node{fill:var(--paper);stroke:var(--line);stroke-width:1.4}
+.node.pick{fill:var(--accent);stroke:var(--accent)}
+.src{fill:var(--ink)}
+svg text{font-family:var(--mono);font-size:11px;fill:var(--ink3)}
+svg text.on{fill:var(--accent)}
+</style></head>
+<body>
+<div class="mark"><i></i>orcid 0000-0001-8995-334X</div>
+<div class="left">
+  <h1>Teng-Ruei Chen</h1>
+  <p class="role">Ph.D. · Machine Learning Systems</p>
+  <p class="lede">The <em>routing layer</em> of large language model systems, and how much of a reported improvement is real.</p>
+  <div class="counts">
+    <div><b>13</b><span>Publications</span></div>
+    <div><b>12</b><span>Patents</span></div>
+    <div><b>3</b><span>Datasets</span></div>
+    <div><b>9</b><span>Awards</span></div>
+  </div>
+</div>
+<div class="right">
+  <img class="photo" src="portrait.png" alt="">
+</div>
+</body></html>

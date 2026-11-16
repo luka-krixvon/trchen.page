@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://trchen.page/sitemap.xml
