@@ -16,6 +16,7 @@ C = json.loads((HERE / "content.json").read_text(encoding="utf-8"))
 SITE, COUNTS, PUBS, PATS, LANGS = C["site"], C["counts"], C["publications"], C["patents"], C["languages"]
 DEMO_VIDEO = False
 AWARDS, APPS, DEPS = C["awards"], C["appearances"], C["deposits"]
+METRICS = C.get("metrics") or {}
 
 e = lambda s: html.escape(str(s), quote=True)
 mmss = lambda s: "%d:%02d" % (s // 60, s % 60)
@@ -123,11 +124,22 @@ def publication(pub, L, i):
 
 def body(L, code, depth):
     up = "../" * depth
-    counts = "".join(
-        '<div><b>%s</b><span>%s</span></div>'
-        % ("—" if COUNTS.get(k) is None else COUNTS[k], e(L["count_labels"][k]))
-        for k in ("publications", "citations", "patents", "deposits", "awards")
-                     if COUNTS.get(k) is not None)
+    lab = L["count_labels"]
+    headline = "".join(
+        '<div><b>%s</b><span>%s</span></div>' % (COUNTS[k], e(lab[k]))
+        for k in ("citations", "h_index", "publications", "patents")
+        if COUNTS.get(k) is not None)
+    minor = "".join(
+        '<span>%s<b>%s</b></span>' % (e(lab[k]), COUNTS[k])
+        for k in ("i10_index", "deposits", "awards")
+        if COUNTS.get(k) is not None)
+    src = ""
+    if METRICS.get("source") and METRICS.get("updated"):
+        srclink = '<a href="%s">%s</a>' % (e(METRICS["source_url"]), e(METRICS["source"]))
+        src = '<p class="kpi-src">%s</p>' % (
+            e(L["ui"]["metrics_note"]).replace("%s", "{}", 2).format(srclink, e(METRICS["updated"])))
+    counts = ('<div class="kpi-main">%s</div><div class="kpi-strip">%s</div>%s'
+              % (headline, minor, src))
     lede_html = ('          <p class="lede">%s</p>\n' % L["lede"]) if L.get("lede") else ""
     bio_html = "".join('<p class="bio">%s</p>' % e(par) for par in L["bio"].split("\n\n"))
     cv_class = "cv-grid cv-stack" if len(L["education"]) < 2 else "cv-grid"
@@ -197,7 +209,7 @@ def body(L, code, depth):
 <main class="page" id="main">
 {identity(L, code, depth)}
   <div class="col">
-    <div class="proof">{counts}</div>
+    <div class="kpi">{counts}</div>
 
     <section class="sec" id="about">
       <span class="eyebrow">{e(L['headings']['about'])}</span>
@@ -323,7 +335,7 @@ def page(code, demo=False, standalone=True):
     fonts = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
              '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
              '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500'
-             '&family=IBM+Plex+Sans:wght@400;500;600&family=Spectral:ital,wght@0,400;0,600;0,700;1,400'
+             '&family=IBM+Plex+Sans:wght@400;500;600&family=Spectral:ital,wght@0,400;0,600;0,700;0,800;1,400'
              + cjk + '&display=swap">')
     if demo:
         globals()["DEMO_VIDEO"] = True
