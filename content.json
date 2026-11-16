@@ -1,0 +1,1310 @@
+{
+  "site": {
+    "domain": "https://trchen.page",
+    "name": "Teng-Ruei Chen",
+    "monogram": "TRC",
+    "email": "ymchen.bi04g@g2.nctu.edu.tw",
+    "scholar": "https://scholar.google.com/citations?user=PiuFUZ8AAAAJ",
+    "orcid": "https://orcid.org/0000-0001-8995-334X",
+    "github": "https://github.com/luka-krixvon",
+    "youtube": "",
+    "cv": "",
+    "og_image": "og.png",
+    "alumni_of": [
+      "National Yang Ming Chiao Tung University"
+    ],
+    "works_for": [
+      "Krixvon Company Limited",
+      "BiiLabs Co., Ltd."
+    ],
+    "photo": "portrait.png",
+    "name_zh": "陳騰瑞",
+    "primary_link": "scholar",
+    "linkedin": "https://www.linkedin.com/in/luka-chen/",
+    "metrics_updated": "2026-11-17"
+  },
+  "counts": {
+    "publications": 13,
+    "patents": 12,
+    "deposits": 3,
+    "awards": 9
+  },
+  "publications": [
+    {
+      "id": "strong-reasoners",
+      "year": 2026,
+      "title": "When Strong Reasoners Join the Pool: Small Union Premiums and Costly Runaway Generations in LLM Routing",
+      "authors": [
+        "@me"
+      ],
+      "topics": [
+        "routing",
+        "evaluation"
+      ],
+      "note": null,
+      "venue_key": "strong-reasoners",
+      "video": null,
+      "links": {
+        "arXiv": "https://arxiv.org/abs/2611.04098",
+        "PDF": "https://arxiv.org/pdf/2611.04098"
+      },
+      "source": "arXiv"
+    },
+    {
+      "id": "topic-leakage",
+      "year": 2026,
+      "title": "Sensitive-Topic Leakage Through LLM Routing Metadata: Measurement and Mitigation",
+      "authors": [
+        "@me"
+      ],
+      "topics": [
+        "privacy",
+        "routing"
+      ],
+      "note": null,
+      "venue_key": "topic-leakage",
+      "video": null,
+      "links": {
+        "arXiv": "https://arxiv.org/abs/2610.09981",
+        "PDF": "https://arxiv.org/pdf/2610.09981"
+      },
+      "source": "arXiv"
+    },
+    {
+      "id": "deterministic-inference",
+      "year": 2026,
+      "title": "Deterministic LLM Inference Across GPU Kernels: Power-of-Two INT8 Quantization Scales and the Limits of Tolerance-Based Conformance",
+      "authors": [
+        "@me"
+      ],
+      "topics": [
+        "systems",
+        "evaluation"
+      ],
+      "note": null,
+      "venue_key": "deterministic-inference",
+      "video": null,
+      "links": {
+        "arXiv": "https://arxiv.org/abs/2609.00363",
+        "PDF": "https://arxiv.org/pdf/2609.00363"
+      },
+      "source": "arXiv"
+    },
+    {
+      "id": "integer-alibi",
+      "year": 2026,
+      "title": "The Integer Alibi: Localizing Cross-Kernel Divergence in INT8-Quantized LLM Inference",
+      "authors": [
+        "@me"
+      ],
+      "topics": [
+        "systems"
+      ],
+      "note": null,
+      "venue_key": "integer-alibi",
+      "video": null,
+      "links": {
+        "arXiv": "https://arxiv.org/abs/2608.13756",
+        "PDF": "https://arxiv.org/pdf/2608.13756"
+      },
+      "source": "arXiv"
+    },
+    {
+      "id": "spec-sheets",
+      "year": 2026,
+      "title": "Spec Sheets Are Not Kernels: An ISA- and Source-Level Audit of INT8 Availability on NVIDIA Blackwell Ultra",
+      "authors": [
+        "@me"
+      ],
+      "topics": [
+        "systems"
+      ],
+      "note": null,
+      "venue_key": "spec-sheets",
+      "video": null,
+      "links": {
+        "arXiv": "https://arxiv.org/abs/2608.11693",
+        "PDF": "https://arxiv.org/pdf/2608.11693"
+      },
+      "source": "arXiv"
+    },
+    {
+      "id": "resample-or-reroute",
+      "year": 2026,
+      "title": "Resample or Reroute? Recoverable Stopping Debt Without Identified Action Selection",
+      "authors": [
+        "@me"
+      ],
+      "topics": [
+        "routing"
+      ],
+      "note": null,
+      "venue_key": "resample-or-reroute",
+      "video": null,
+      "links": {
+        "arXiv": "https://arxiv.org/abs/2607.08665",
+        "PDF": "https://arxiv.org/pdf/2607.08665"
+      },
+      "source": "arXiv"
+    },
+    {
+      "id": "routing-oracle",
+      "year": 2026,
+      "title": "What Does a Routing Oracle Measure Under Stochastic Decoding? Coupling, Scorer Choice, and Single-Commit Ceilings",
+      "authors": [
+        "@me"
+      ],
+      "topics": [
+        "routing",
+        "evaluation"
+      ],
+      "note": null,
+      "venue_key": "routing-oracle",
+      "video": {
+        "id": "VIDEO_ID",
+        "duration": "14:02",
+        "iso": "PT14M2S",
+        "minutes": 14,
+        "uploaded": "2026-11-01"
+      },
+      "links": {
+        "arXiv": "https://arxiv.org/abs/2607.03436",
+        "PDF": "https://arxiv.org/pdf/2607.03436"
+      },
+      "source": "arXiv"
+    },
+    {
+      "id": "net-zero",
+      "year": 2024,
+      "title": "AI-enabled digital net-zero transformation in the heat-processing industry",
+      "authors": [
+        "T.-C. Su",
+        "@me",
+        "C.-W. Lin"
+      ],
+      "topics": [
+        "applications"
+      ],
+      "note": null,
+      "links": {},
+      "video": null,
+      "venue_key": "net-zero",
+      "venue": "電腦與通訊 (ICT Journal, ITRI), no. 197, pp. 35–42 · Mar 2024",
+      "source": "ICT Journal"
+    },
+    {
+      "id": "ultimate-limits",
+      "year": 2021,
+      "title": "Discovering the ultimate limits of protein secondary structure prediction",
+      "authors": [
+        "C.-T. Ho",
+        "Y.-W. Huang",
+        "@me",
+        "C.-H. Lo",
+        "W.-C. Lo"
+      ],
+      "topics": [
+        "bioinformatics"
+      ],
+      "note": null,
+      "links": {
+        "DOI": "https://doi.org/10.3390/biom11111627"
+      },
+      "video": null,
+      "venue_key": "ultimate-limits",
+      "venue": "Biomolecules, vol. 11, no. 11, 1627 · Nov 2021 · IF 4.88",
+      "source": "Biomolecules"
+    },
+    {
+      "id": "cirpred",
+      "year": 2021,
+      "title": "CirPred, the first structure modeling and linker design system for circularly permuted proteins",
+      "authors": [
+        "@me",
+        "Y.-C. Lin",
+        "Y.-W. Huang",
+        "C.-C. Chen",
+        "W.-C. Lo"
+      ],
+      "topics": [
+        "bioinformatics"
+      ],
+      "note": null,
+      "links": {
+        "DOI": "https://doi.org/10.1186/s12859-021-04403-1"
+      },
+      "video": null,
+      "venue_key": "cirpred",
+      "venue": "BMC Bioinformatics, vol. 22, no. S10, 494 · Oct 2021 · IF 3.17",
+      "source": "BMC Bioinformatics"
+    },
+    {
+      "id": "ss-pssm",
+      "year": 2021,
+      "title": "A secondary structure-based position-specific scoring matrix applied to the improvement in protein secondary structure prediction",
+      "authors": [
+        "@me",
+        "S.-H. Juan",
+        "Y.-W. Huang",
+        "Y.-C. Lin",
+        "W.-C. Lo"
+      ],
+      "topics": [
+        "bioinformatics"
+      ],
+      "note": null,
+      "links": {
+        "DOI": "https://doi.org/10.1371/journal.pone.0255076"
+      },
+      "video": null,
+      "venue_key": "ss-pssm",
+      "venue": "PLOS ONE, vol. 16, no. 7, e0255076 · Jul 2021 · IF 3.24",
+      "source": "PLOS ONE"
+    },
+    {
+      "id": "dataset-homology",
+      "year": 2021,
+      "title": "The influence of dataset homology and a rigorous evaluation strategy on protein secondary structure prediction",
+      "authors": [
+        "@me",
+        "C.-H. Lo",
+        "S.-H. Juan",
+        "W.-C. Lo"
+      ],
+      "topics": [
+        "bioinformatics",
+        "evaluation"
+      ],
+      "note": null,
+      "links": {
+        "DOI": "https://doi.org/10.1371/journal.pone.0254555"
+      },
+      "video": null,
+      "venue_key": "dataset-homology",
+      "venue": "PLOS ONE, vol. 16, no. 7, e0254555 · Jul 2021 · IF 3.24",
+      "source": "PLOS ONE"
+    },
+    {
+      "id": "speed-strategy",
+      "year": 2020,
+      "title": "A simple strategy to enhance the speed of protein secondary structure prediction without sacrificing accuracy",
+      "authors": [
+        "S.-H. Juan",
+        "@me",
+        "W.-C. Lo"
+      ],
+      "topics": [
+        "bioinformatics"
+      ],
+      "note": null,
+      "links": {
+        "DOI": "https://doi.org/10.1371/journal.pone.0235153"
+      },
+      "video": null,
+      "venue_key": "speed-strategy",
+      "venue": "PLOS ONE, vol. 15, no. 6, e0235153 · Jun 2020 · IF 3.24",
+      "source": "PLOS ONE"
+    }
+  ],
+  "patents": [
+    {
+      "no": "—",
+      "status": "examining",
+      "note": null,
+      "title": {
+        "en": "Scheduling system and method combining cloud and local computing power",
+        "zh": "結合雲端及本地算力的調度系統及其方法",
+        "ja": "Scheduling system and method combining cloud and local computing power"
+      },
+      "region": "TW"
+    },
+    {
+      "no": "—",
+      "status": "allowed",
+      "note": null,
+      "region": "TW",
+      "title": {
+        "en": "Battery Swapping Scheduling System and Scheduling Method",
+        "zh": "換電排程系統及其排程方法",
+        "ja": "Battery Swapping Scheduling System and Scheduling Method"
+      }
+    },
+    {
+      "no": "—",
+      "status": "allowed",
+      "note": null,
+      "title": {
+        "en": "Global cross-timezone computing power scheduling method",
+        "zh": "全球跨時區算力調度方法（美國案）",
+        "ja": "Global cross-timezone computing power scheduling method"
+      },
+      "region": "US"
+    },
+    {
+      "no": "I941269",
+      "status": "granted",
+      "note": null,
+      "title": {
+        "en": "Regional computing power management platform system",
+        "zh": "區域算力管理平台系統及區域算力資源調度方法",
+        "ja": "Regional computing power management platform system"
+      },
+      "region": "TW"
+    },
+    {
+      "no": "I935869",
+      "status": "granted",
+      "note": null,
+      "title": {
+        "en": "Global cross-timezone computing power scheduling method",
+        "zh": "全球跨時區算力調度方法",
+        "ja": "Global cross-timezone computing power scheduling method"
+      },
+      "region": "TW"
+    },
+    {
+      "no": "I928765",
+      "status": "granted",
+      "note": null,
+      "title": {
+        "en": "Computing power demand analysis system and method thereof",
+        "zh": "算力需求分析系統及其方法",
+        "ja": "Computing power demand analysis system and method thereof"
+      },
+      "region": "TW"
+    },
+    {
+      "no": "I928714",
+      "status": "granted",
+      "note": null,
+      "title": {
+        "en": "An open analytical structure combining depth and breadth with dual engines of thoughts",
+        "zh": "結合深度與廣度的雙引擎思維的開放式分析結構及其方法",
+        "ja": "An open analytical structure combining depth and breadth with dual engines of thoughts"
+      },
+      "region": "TW"
+    },
+    {
+      "no": "I907964",
+      "status": "granted",
+      "note": null,
+      "title": {
+        "en": "Power information processing system and method based on blockchain",
+        "zh": "基於區塊鏈的電力資訊處理系統及其方法",
+        "ja": "Power information processing system and method based on blockchain"
+      },
+      "region": "TW"
+    },
+    {
+      "no": "I882792",
+      "status": "granted",
+      "note": null,
+      "title": {
+        "en": "Intelligent vehicle-assisted drone operation system",
+        "zh": "智慧車輛輔助無人機作業之系統",
+        "ja": "Intelligent vehicle-assisted drone operation system"
+      },
+      "region": "TW"
+    },
+    {
+      "no": "I870046",
+      "status": "granted",
+      "note": null,
+      "title": {
+        "en": "Wireless charging system and method for unmanned vehicles",
+        "zh": "電力驅動載具的無線充電系統及方法",
+        "ja": "Wireless charging system and method for unmanned vehicles"
+      },
+      "region": "TW"
+    },
+    {
+      "no": "I829017",
+      "status": "granted",
+      "note": null,
+      "title": {
+        "en": "The system and the method of battery exchange of the electric car",
+        "zh": "智能車輛充放電系統及其方法",
+        "ja": "The system and the method of battery exchange of the electric car"
+      },
+      "region": "TW"
+    },
+    {
+      "no": "I827983",
+      "status": "granted",
+      "note": null,
+      "title": {
+        "en": "The system and the method of wireless charging of the electric car",
+        "zh": "智能車輛無線充放電系統及其方法",
+        "ja": "The system and the method of wireless charging of the electric car"
+      },
+      "region": "TW"
+    },
+    {
+      "no": "I828105",
+      "status": "granted",
+      "note": null,
+      "title": {
+        "en": "Logistics processing system and method thereof",
+        "zh": "一種物流處理系統及其方法",
+        "ja": "Logistics processing system and method thereof"
+      },
+      "region": "TW"
+    },
+    {
+      "no": "I824753",
+      "status": "granted",
+      "note": null,
+      "title": {
+        "en": "Charging service system and method thereof",
+        "zh": "充電服務系統及其方法",
+        "ja": "Charging service system and method thereof"
+      },
+      "region": "TW"
+    },
+    {
+      "no": "I741788",
+      "status": "granted",
+      "note": null,
+      "title": {
+        "en": "A wide area power monitoring platform system and method",
+        "zh": "一種廣域電力監控平台系統及其方法",
+        "ja": "A wide area power monitoring platform system and method"
+      },
+      "region": "TW"
+    }
+  ],
+  "languages": [
+    {
+      "code": "en",
+      "hreflang": "en",
+      "dir": "",
+      "label": "EN"
+    },
+    {
+      "code": "zh",
+      "hreflang": "zh-Hant-TW",
+      "dir": "zh",
+      "label": "中文"
+    },
+    {
+      "code": "ja",
+      "hreflang": "ja",
+      "dir": "ja",
+      "label": "日本語"
+    }
+  ],
+  "en": {
+    "lang_attr": "en",
+    "meta_title": "Teng-Ruei Chen — Machine Learning Systems",
+    "meta_desc": "Teng-Ruei Chen, PhD. Research on LLM routing, serving economics and inference-time privacy. Every paper ships with a recorded talk.",
+    "role": "AI infrastructure · LLM inference · Deep learning · Bioinformatics",
+    "rail_sub": "",
+    "lede": "",
+    "nav": {
+      "overview": "Overview",
+      "research": "Research",
+      "publications": "Publications",
+      "patents": "Patents as inventor",
+      "talks": "Talks",
+      "cv": "CV",
+      "about": "About",
+      "awards": "Awards",
+      "deposits": "Datasets & software"
+    },
+    "headings": {
+      "research": "Research",
+      "publications": "Publications",
+      "patents": "Patents as inventor",
+      "service": "Service & awards",
+      "about": "About",
+      "education": "Education",
+      "positions": "Positions",
+      "awards": "Awards",
+      "appearances": "Appearances",
+      "deposits": "Datasets & software"
+    },
+    "count_labels": {
+      "publications": "Publications",
+      "patents": "Granted patents",
+      "deposits": "Datasets & software",
+      "awards": "Awards",
+      "citations": "Citations"
+    },
+    "themes": [
+      [
+        "Routing",
+        "Learned routers assign requests across a pool of models. I measure how far those assignments sit from an oracle that knows answer quality in advance."
+      ],
+      [
+        "Privacy",
+        "Serving infrastructure emits metadata before the response exists: which tier was picked, how long the queue was, how many drafts were sampled. That channel is readable."
+      ],
+      [
+        "Validity",
+        "Whether routing results measured on benchmarks survive contact with production traffic shapes, and what breaks first when they do not."
+      ]
+    ],
+    "ui": {
+      "skip": "Skip to content",
+      "pub_sub": "Work before 2022 is protein structure prediction. The methodological question carries over.",
+      "watch_tpl": "{m}-min talk",
+      "chapters": "Chapters",
+      "talk_lang": "Talk in English",
+      "filter_note": "{n} of {total} shown",
+      "theme_toggle": "Theme",
+      "scholar_title": "Google Scholar",
+      "scholar_sub": "citations, co-authors, full list",
+      "cv_label": "CV (PDF)",
+      "email_label": "Email",
+      "updated": "Updated November 2026",
+      "demo_note": "A YouTube player loads here on the live site.",
+      "art_cap": "Allocating compute under a cost budget",
+      "patent_note": "Listed as inventor; rights are held by the respective assignees. Titles as recorded by the patent office.",
+      "primary_title": "Google Scholar",
+      "primary_sub": "citations, h-index, full list",
+      "dep_stats": "{v} views · {d} downloads"
+    },
+    "filters": {
+      "all": "All",
+      "routing": "Routing",
+      "systems": "Systems",
+      "evaluation": "Evaluation",
+      "agents": "LLM agents",
+      "bioinformatics": "Bioinformatics",
+      "applications": "Applications",
+      "video": "Has talk",
+      "privacy": "Privacy"
+    },
+    "notes": {
+      "toappear": "to appear",
+      "oral": "oral"
+    },
+    "patent_cols": {
+      "region": "Region",
+      "no": "Number",
+      "title": "Title",
+      "status": "Status"
+    },
+    "patent_status": {
+      "granted": "Granted",
+      "examining": "Under examination",
+      "allowed": "Allowed"
+    },
+    "chapters": {
+      "routing-oracle": [
+        [
+          0,
+          "Problem"
+        ],
+        [
+          150,
+          "Method"
+        ],
+        [
+          360,
+          "Results"
+        ],
+        [
+          600,
+          "Limitations"
+        ]
+      ]
+    },
+    "bio": "Most of what AI costs is moving from training to inference. A model is trained once and then served millions of times, on hardware that is scarce, priced differently in different places, and not interchangeable. Deciding which request runs on which machine, at what cost, is becoming a question of infrastructure economics rather than an implementation detail. That is the problem I work on, and it is the same problem I worked on in power distribution, in vehicle charging, and in compute scheduling before that.\n\nThe harder half is that these decisions are difficult to evaluate. Reported gains in routing are measured against baselines that are themselves unstable, and the hardware underneath does not reliably return the same answer twice. Until the measurement is sound, the field cannot separate a real improvement from an artifact of how it was measured, and will keep paying for the difference. That is why much of my work is measurement rather than method.\n\nMy bachelor's and master's degrees are in computer science, and my doctorate is in bioinformatics and systems biology from National Yang Ming Chiao Tung University, where I worked on protein secondary structure prediction: faster prediction without loss of accuracy, a secondary-structure-based scoring matrix, the theoretical limits of the problem, and CirPred, a structure modeling and linker design system for circularly permuted proteins. I have worked in industry throughout, and I am an inventor on twelve granted patents in compute scheduling and AI infrastructure.",
+    "education": [
+      [
+        "2021",
+        "Ph.D. in bioinformatics and systems biology, National Yang Ming Chiao Tung University, Hsinchu"
+      ]
+    ],
+    "positions": [
+      [
+        "2026–",
+        "Chief Technology Officer, BiiLabs Co., Ltd. · Taipei"
+      ],
+      [
+        "2026–",
+        "Chief Executive Officer, Krixvon Company Limited · Taipei"
+      ],
+      [
+        "2024–26",
+        "Chief Technology Officer, Taiwan Intelligence Research and Development Co., Ltd. · Taipei"
+      ],
+      [
+        "2022–24",
+        "Engineer, Industrial Technology Research Institute (ITRI) · Hsinchu"
+      ],
+      [
+        "2018–22",
+        "Chief Technology Officer, Lingshing Intelligence Co., Ltd. · Taipei"
+      ]
+    ],
+    "venues": {
+      "deterministic-inference": "arXiv:2609.00363 [cs.LG] · Sep 2026",
+      "integer-alibi": "arXiv:2608.13756 [cs.LG] · Aug 2026",
+      "spec-sheets": "arXiv:2608.11693 [cs.AR] · Aug 2026",
+      "resample-or-reroute": "arXiv:2607.08665 [cs.LG] · Jul 2026 · Research Square 10.21203/rs.3.rs-11021599/v1",
+      "routing-oracle": "arXiv:2607.03436 [cs.LG] · Jul 2026",
+      "net-zero": "電腦與通訊 (ICT Journal, ITRI), no. 197, pp. 35–42 · Mar 2024",
+      "ultimate-limits": "Biomolecules, vol. 11, no. 11, 1627 · Nov 2021 · IF 4.88 · doi:10.3390/biom11111627",
+      "cirpred": "BMC Bioinformatics, vol. 22, no. S10, 494 · Oct 2021 · IF 3.17 · doi:10.1186/s12859-021-04403-1",
+      "ss-pssm": "PLOS ONE, vol. 16, no. 7, e0255076 · Jul 2021 · IF 3.24 · doi:10.1371/journal.pone.0255076",
+      "dataset-homology": "PLOS ONE, vol. 16, no. 7, e0254555 · Jul 2021 · IF 3.24 · doi:10.1371/journal.pone.0254555",
+      "speed-strategy": "PLOS ONE, vol. 15, no. 6, e0235153 · Jun 2020 · IF 3.24 · doi:10.1371/journal.pone.0235153",
+      "strong-reasoners": "arXiv:2611.04098 [cs.LG] · Nov 2026 · technical report, companion to arXiv:2607.03436",
+      "topic-leakage": "arXiv:2610.09981 [cs.CR] · Oct 2026"
+    },
+    "location": "Taoyuan, Taiwan",
+    "name_local": "",
+    "award_cols": {
+      "year": "Year",
+      "competition": "Competition",
+      "project": "Project",
+      "award": "Award"
+    },
+    "deposit_cols": {
+      "year": "Year",
+      "kind": "Type",
+      "title": "Title"
+    },
+    "deposit_kinds": {
+      "dataset": "Dataset",
+      "software": "Software"
+    }
+  },
+  "zh": {
+    "lang_attr": "zh-Hant-TW",
+    "meta_title": "陳騰瑞 Teng-Ruei Chen — 機器學習系統",
+    "meta_desc": "陳騰瑞，博士。研究 LLM 路由、serving 成本結構與推論階段隱私。",
+    "role": "AI 基礎設施 · LLM 推論 · 深度學習 · 生物資訊",
+    "rail_sub": "",
+    "lede": "",
+    "nav": {
+      "overview": "總覽",
+      "research": "研究",
+      "publications": "論文",
+      "patents": "專利（發明人）",
+      "talks": "演講",
+      "cv": "履歷",
+      "about": "關於",
+      "awards": "獲獎",
+      "deposits": "資料集與程式"
+    },
+    "headings": {
+      "research": "研究主題",
+      "publications": "論文",
+      "patents": "專利（發明人）",
+      "service": "服務與獲獎",
+      "about": "關於",
+      "education": "學歷",
+      "positions": "經歷",
+      "awards": "獲獎",
+      "appearances": "國際曝光",
+      "deposits": "資料集與程式"
+    },
+    "count_labels": {
+      "publications": "論文",
+      "patents": "已領證專利",
+      "deposits": "資料集與程式",
+      "awards": "獲獎",
+      "citations": "引用"
+    },
+    "themes": [
+      [
+        "路由",
+        "學習型路由器把請求分派到一組模型上。我量測這些分派，離一個事先就知道答案品質的 oracle 還有多遠。"
+      ],
+      [
+        "隱私",
+        "serving 基礎設施在回應存在之前就送出 metadata：選了哪一層、佇列多長、採樣了幾份草稿。那條通道是讀得出東西的。"
+      ],
+      [
+        "效度",
+        "在 benchmark 上量到的路由效果，碰到真實流量形狀之後還剩多少，以及最先壞掉的是哪一個假設。"
+      ]
+    ],
+    "ui": {
+      "skip": "跳到主要內容",
+      "pub_sub": "2022 年以前的論文是蛋白質結構預測，方法學上的問題意識是同一個。",
+      "watch_tpl": "{m} 分鐘講解",
+      "chapters": "章節",
+      "talk_lang": "英語發表",
+      "filter_note": "顯示 {n} 篇，共 {total} 篇",
+      "theme_toggle": "深淺色",
+      "scholar_title": "Google Scholar",
+      "scholar_sub": "引用數、合著者、完整列表",
+      "cv_label": "履歷 (PDF)",
+      "email_label": "Email",
+      "updated": "更新於 2026 年 11 月",
+      "demo_note": "正式網站這裡會載入 YouTube 播放器。",
+      "art_cap": "在成本預算下分配算力",
+      "patent_note": "本人為發明人，專利權歸各該專利權人所有。名稱依專利主管機關登錄。",
+      "primary_title": "Google Scholar",
+      "primary_sub": "引用數、h-index、完整列表",
+      "dep_stats": "{v} 次瀏覽 · {d} 次下載"
+    },
+    "filters": {
+      "all": "全部",
+      "routing": "路由",
+      "systems": "系統",
+      "evaluation": "評估",
+      "agents": "LLM agent",
+      "bioinformatics": "生物資訊",
+      "applications": "應用",
+      "video": "有影片",
+      "privacy": "隱私"
+    },
+    "notes": {
+      "toappear": "即將發表",
+      "oral": "口頭報告"
+    },
+    "patent_cols": {
+      "region": "國別",
+      "no": "專利號",
+      "title": "名稱",
+      "status": "狀態"
+    },
+    "patent_status": {
+      "granted": "已領證",
+      "examining": "審查中",
+      "allowed": "領證中"
+    },
+    "chapters": {
+      "routing-oracle": [
+        [
+          0,
+          "問題"
+        ],
+        [
+          150,
+          "方法"
+        ],
+        [
+          360,
+          "結果"
+        ],
+        [
+          600,
+          "限制"
+        ]
+      ]
+    },
+    "bio": "AI 的成本正在從訓練移到推論。一個模型只訓練一次，卻要被服務上百萬次，而且跑在稀缺、各地價格不同、彼此又不能互換的硬體上。哪一個請求該跑在哪一台機器、花多少錢，正在從實作細節變成基礎設施的經濟問題。這就是我在做的事，而它跟我更早在電力調度、車輛充電、算力排程上面對的是同一個問題。\n\n比較難的是另一半：這些決策很難評估。路由上報告出來的增益，是拿一個本身就不穩定的基準在比，而底下的硬體又不保證兩次給出同樣的答案。在量測站得住腳之前，這個領域分不出哪些是真的改進、哪些只是量測方式造成的假象，而差額是會被實際付出去的。這就是為什麼我的工作有很大一部分是量測而不是方法。\n\n我的學士與碩士是資訊工程，博士是國立陽明交通大學生物資訊及系統生物，研究主題為蛋白質二級結構預測：在不犧牲準確率的前提下加快預測、以二級結構為基礎的位置特異性計分矩陣、這個問題的理論上限，以及 CirPred——針對環狀排列蛋白質的結構建模與 linker 設計系統。我一直在業界工作，並為十二件已領證專利的發明人，領域為算力調度與 AI 基礎設施。",
+    "education": [
+      [
+        "2021",
+        "博士，生物資訊及系統生物，國立陽明交通大學，新竹"
+      ]
+    ],
+    "positions": [
+      [
+        "2026–",
+        "技術長，信任網路股份有限公司（BiiLabs Co., Ltd.）· 台北"
+      ],
+      [
+        "2026–",
+        "執行長，宸核股份有限公司（Krixvon Company Limited）· 台北"
+      ],
+      [
+        "2024–26",
+        "技術長，台灣智慧技術研發股份有限公司 · 台北"
+      ],
+      [
+        "2022–24",
+        "工程師，工業技術研究院 · 新竹"
+      ],
+      [
+        "2018–22",
+        "技術長，領星智慧股份有限公司 · 台北"
+      ]
+    ],
+    "venues": {
+      "deterministic-inference": "arXiv:2609.00363 [cs.LG] · Sep 2026",
+      "integer-alibi": "arXiv:2608.13756 [cs.LG] · Aug 2026",
+      "spec-sheets": "arXiv:2608.11693 [cs.AR] · Aug 2026",
+      "resample-or-reroute": "arXiv:2607.08665 [cs.LG] · Jul 2026 · Research Square 10.21203/rs.3.rs-11021599/v1",
+      "routing-oracle": "arXiv:2607.03436 [cs.LG] · Jul 2026",
+      "net-zero": "電腦與通訊 (ICT Journal, ITRI), no. 197, pp. 35–42 · Mar 2024",
+      "ultimate-limits": "Biomolecules, vol. 11, no. 11, 1627 · Nov 2021 · IF 4.88 · doi:10.3390/biom11111627",
+      "cirpred": "BMC Bioinformatics, vol. 22, no. S10, 494 · Oct 2021 · IF 3.17 · doi:10.1186/s12859-021-04403-1",
+      "ss-pssm": "PLOS ONE, vol. 16, no. 7, e0255076 · Jul 2021 · IF 3.24 · doi:10.1371/journal.pone.0255076",
+      "dataset-homology": "PLOS ONE, vol. 16, no. 7, e0254555 · Jul 2021 · IF 3.24 · doi:10.1371/journal.pone.0254555",
+      "speed-strategy": "PLOS ONE, vol. 15, no. 6, e0235153 · Jun 2020 · IF 3.24 · doi:10.1371/journal.pone.0235153",
+      "strong-reasoners": "arXiv:2611.04098 [cs.LG] · Nov 2026 · technical report, companion to arXiv:2607.03436",
+      "topic-leakage": "arXiv:2610.09981 [cs.CR] · Oct 2026"
+    },
+    "location": "桃園，台灣",
+    "name_local": "陳騰瑞",
+    "award_cols": {
+      "year": "年份",
+      "competition": "競賽",
+      "project": "作品",
+      "award": "獎項"
+    },
+    "deposit_cols": {
+      "year": "年份",
+      "kind": "類型",
+      "title": "名稱"
+    },
+    "deposit_kinds": {
+      "dataset": "資料集",
+      "software": "程式"
+    }
+  },
+  "ja": {
+    "lang_attr": "ja",
+    "meta_title": "Teng-Ruei Chen — 機械学習システム",
+    "meta_desc": "Teng-Ruei Chen, Ph.D. LLMのルーティング、サービングの経済性、推論時プライバシーの研究。各論文に自作の解説動画が付いています。",
+    "role": "AIインフラ · LLM推論 · 深層学習 · バイオインフォマティクス",
+    "rail_sub": "",
+    "lede": "",
+    "nav": {
+      "overview": "概要",
+      "research": "研究",
+      "publications": "論文",
+      "patents": "特許（発明者）",
+      "talks": "講演",
+      "cv": "CV",
+      "about": "略歴",
+      "awards": "受賞",
+      "deposits": "データセット・ソフトウェア"
+    },
+    "headings": {
+      "research": "研究テーマ",
+      "publications": "論文",
+      "patents": "特許（発明者）",
+      "service": "学会活動・受賞",
+      "about": "略歴",
+      "education": "学歴",
+      "positions": "職歴",
+      "awards": "受賞",
+      "appearances": "対外活動",
+      "deposits": "データセット・ソフトウェア"
+    },
+    "count_labels": {
+      "publications": "論文",
+      "patents": "登録特許",
+      "deposits": "データセット・ソフトウェア",
+      "awards": "受賞",
+      "citations": "被引用"
+    },
+    "themes": [
+      [
+        "ルーティング",
+        "学習型ルーターはリクエストをモデル群に振り分ける。その割り当てが、答えの品質を事前に知るオラクルからどれだけ離れているかを測っている。"
+      ],
+      [
+        "プライバシー",
+        "サービング基盤は応答が存在する前にメタデータを出す。どの層を選んだか、キューの長さ、サンプリングした下書きの数。その通路は読み取れる。"
+      ],
+      [
+        "妥当性",
+        "ベンチマークで測ったルーティングの効果が、本番の流量形状に触れてどれだけ残るか。残らないとき、最初に壊れるのはどの仮定か。"
+      ]
+    ],
+    "ui": {
+      "skip": "本文へスキップ",
+      "pub_sub": "2022年以前はタンパク質構造予測。方法論上の問いは共通している。",
+      "watch_tpl": "{m}分の解説",
+      "chapters": "チャプター",
+      "talk_lang": "発表は英語",
+      "filter_note": "{total}件中 {n} 件を表示",
+      "theme_toggle": "テーマ",
+      "scholar_title": "Google Scholar",
+      "scholar_sub": "被引用数・共著者・全リスト",
+      "cv_label": "CV (PDF)",
+      "email_label": "メール",
+      "updated": "2026年11月更新",
+      "demo_note": "公開サイトではここにYouTubeプレーヤーが読み込まれます。",
+      "art_cap": "コスト予算下での計算資源の配分",
+      "patent_note": "発明者として記載。権利は各権利者に帰属。名称は特許庁の登録どおり。",
+      "primary_title": "Google Scholar",
+      "primary_sub": "被引用数・h-index・全リスト",
+      "dep_stats": "{v} 閲覧 · {d} ダウンロード"
+    },
+    "filters": {
+      "all": "すべて",
+      "routing": "ルーティング",
+      "systems": "システム",
+      "evaluation": "評価",
+      "agents": "LLMエージェント",
+      "bioinformatics": "バイオインフォマティクス",
+      "applications": "応用",
+      "video": "動画あり",
+      "privacy": "プライバシー"
+    },
+    "notes": {
+      "toappear": "掲載予定",
+      "oral": "口頭発表"
+    },
+    "patent_cols": {
+      "region": "国",
+      "no": "特許番号",
+      "title": "名称",
+      "status": "状態"
+    },
+    "patent_status": {
+      "granted": "登録済",
+      "examining": "審査中",
+      "allowed": "登録手続中"
+    },
+    "chapters": {
+      "routing-oracle": [
+        [
+          0,
+          "問題"
+        ],
+        [
+          150,
+          "手法"
+        ],
+        [
+          360,
+          "結果"
+        ],
+        [
+          600,
+          "限界"
+        ]
+      ]
+    },
+    "bio": "AIのコストの大半は学習から推論へ移りつつある。モデルの学習は一度だが、提供は何百万回も行われる。しかもその計算資源は希少で、場所によって価格が異なり、互換でもない。どのリクエストをどの機械でいくらで走らせるかは、実装の細部ではなくインフラの経済の問題になりつつある。これが私の扱う問題であり、以前に電力配分、車両充電、計算資源の調度で向き合ってきたものと同じ問題である。\n\n難しいのはもう半分だ。これらの判断は評価がしにくい。ルーティングで報告される改善は、それ自体が不安定な基準と比較されており、下層のハードウェアも二度同じ答えを返すとは限らない。測定が確かなものになるまで、この分野は本物の改善と測定方法の産物とを区別できず、その差額を払い続けることになる。私の仕事の多くが手法ではなく測定である理由はそこにある。\n\n学士と修士は情報工学、博士は国立陽明交通大学のバイオインフォマティクス・システム生物学で、タンパク質二次構造予測を扱った。精度を落とさない高速化、二次構造ベースの位置特異的スコア行列、問題の理論的上限、そして環状置換タンパク質のための構造モデリング・リンカー設計システム CirPred である。一貫して産業界で働いており、計算資源の調度とAIインフラの分野で12件の登録特許の発明者である。",
+    "education": [
+      [
+        "2021",
+        "博士（バイオインフォマティクス・システム生物学）国立陽明交通大学、新竹"
+      ]
+    ],
+    "positions": [
+      [
+        "2026–",
+        "CTO、BiiLabs Co., Ltd.（信任網路股份有限公司）· 台北"
+      ],
+      [
+        "2026–",
+        "CEO、Krixvon Company Limited（宸核股份有限公司）· 台北"
+      ],
+      [
+        "2024–26",
+        "CTO、Taiwan Intelligence Research and Development Co., Ltd. · 台北"
+      ],
+      [
+        "2022–24",
+        "エンジニア、工業技術研究院（ITRI）· 新竹"
+      ],
+      [
+        "2018–22",
+        "CTO、Lingshing Intelligence Co., Ltd.（領星智慧股份有限公司）· 台北"
+      ]
+    ],
+    "venues": {
+      "deterministic-inference": "arXiv:2609.00363 [cs.LG] · Sep 2026",
+      "integer-alibi": "arXiv:2608.13756 [cs.LG] · Aug 2026",
+      "spec-sheets": "arXiv:2608.11693 [cs.AR] · Aug 2026",
+      "resample-or-reroute": "arXiv:2607.08665 [cs.LG] · Jul 2026 · Research Square 10.21203/rs.3.rs-11021599/v1",
+      "routing-oracle": "arXiv:2607.03436 [cs.LG] · Jul 2026",
+      "net-zero": "電腦與通訊 (ICT Journal, ITRI), no. 197, pp. 35–42 · Mar 2024",
+      "ultimate-limits": "Biomolecules, vol. 11, no. 11, 1627 · Nov 2021 · IF 4.88 · doi:10.3390/biom11111627",
+      "cirpred": "BMC Bioinformatics, vol. 22, no. S10, 494 · Oct 2021 · IF 3.17 · doi:10.1186/s12859-021-04403-1",
+      "ss-pssm": "PLOS ONE, vol. 16, no. 7, e0255076 · Jul 2021 · IF 3.24 · doi:10.1371/journal.pone.0255076",
+      "dataset-homology": "PLOS ONE, vol. 16, no. 7, e0254555 · Jul 2021 · IF 3.24 · doi:10.1371/journal.pone.0254555",
+      "speed-strategy": "PLOS ONE, vol. 15, no. 6, e0235153 · Jun 2020 · IF 3.24 · doi:10.1371/journal.pone.0235153",
+      "strong-reasoners": "arXiv:2611.04098 [cs.LG] · Nov 2026 · technical report, companion to arXiv:2607.03436",
+      "topic-leakage": "arXiv:2610.09981 [cs.CR] · Oct 2026"
+    },
+    "location": "台湾・桃園",
+    "name_local": "",
+    "award_cols": {
+      "year": "年",
+      "competition": "コンペティション",
+      "project": "作品",
+      "award": "賞"
+    },
+    "deposit_cols": {
+      "year": "年",
+      "kind": "種別",
+      "title": "名称"
+    },
+    "deposit_kinds": {
+      "dataset": "データセット",
+      "software": "ソフトウェア"
+    }
+  },
+  "awards": [
+    {
+      "year": 2023,
+      "competition": {
+        "zh": "AI 應用鬥智賽",
+        "en": "AI Application Challenge",
+        "ja": "AI Application Challenge"
+      },
+      "project": {
+        "zh": "錦鯉影像辨識系統",
+        "en": "Koi image recognition system",
+        "ja": "Koi image recognition system"
+      },
+      "award": {
+        "zh": "優勝",
+        "en": "Winner",
+        "ja": "Winner"
+      },
+      "short": {
+        "zh": "AI 鬥智賽",
+        "en": "AI Application Challenge",
+        "ja": "AI Application Challenge"
+      }
+    },
+    {
+      "year": 2023,
+      "competition": {
+        "zh": "AI GOOD 實戰場域人才選拔競賽",
+        "en": "AI GOOD field-deployment talent selection",
+        "ja": "AI GOOD field-deployment talent selection"
+      },
+      "project": {
+        "zh": "ESG 智能萃取及精準匹配永續指標模型",
+        "en": "ESG extraction and sustainability-indicator matching model",
+        "ja": "ESG extraction and sustainability-indicator matching model"
+      },
+      "award": {
+        "zh": "優等",
+        "en": "Excellence",
+        "ja": "Excellence"
+      },
+      "short": {
+        "zh": "AI GOOD",
+        "en": "AI GOOD",
+        "ja": "AI GOOD"
+      }
+    },
+    {
+      "year": 2023,
+      "competition": {
+        "zh": "數位科技解決方案競賽",
+        "en": "Digital Technology Solution Competition",
+        "ja": "Digital Technology Solution Competition"
+      },
+      "project": {
+        "zh": "生成式 AI 技術協助生物展示缸體解說變化性",
+        "en": "Generative AI for varied interpretation of aquarium exhibits",
+        "ja": "Generative AI for varied interpretation of aquarium exhibits"
+      },
+      "award": {
+        "zh": "評審獎",
+        "en": "Judges' Award",
+        "ja": "Judges' Award"
+      },
+      "short": {
+        "zh": "數位科技競賽",
+        "en": "Digital Technology Solution",
+        "ja": "Digital Technology Solution"
+      }
+    },
+    {
+      "year": 2022,
+      "competition": {
+        "zh": "數位科技解決方案競賽",
+        "en": "Digital Technology Solution Competition",
+        "ja": "Digital Technology Solution Competition"
+      },
+      "project": {
+        "zh": "AI 智能魚種辨識系統",
+        "en": "AI fish-species recognition system",
+        "ja": "AI fish-species recognition system"
+      },
+      "award": {
+        "zh": "評審獎",
+        "en": "Judges' Award",
+        "ja": "Judges' Award"
+      },
+      "short": {
+        "zh": "數位科技競賽",
+        "en": "Digital Technology Solution",
+        "ja": "Digital Technology Solution"
+      }
+    },
+    {
+      "year": 2022,
+      "competition": {
+        "zh": "AI 智慧應用新世代人才培育計畫 (AIGO)",
+        "en": "AIGO talent development program",
+        "ja": "AIGO talent development program"
+      },
+      "project": {
+        "zh": "醫療院所門診看診時間智慧動態預測計算模型",
+        "en": "Dynamic prediction model for hospital outpatient waiting times",
+        "ja": "Dynamic prediction model for hospital outpatient waiting times"
+      },
+      "award": {
+        "zh": "特優",
+        "en": "Outstanding",
+        "ja": "Outstanding"
+      },
+      "short": {
+        "zh": "AIGO",
+        "en": "AIGO",
+        "ja": "AIGO"
+      }
+    },
+    {
+      "year": 2021,
+      "competition": {
+        "zh": "AI 智慧應用新世代人才培育計畫 (AIGO)",
+        "en": "AIGO talent development program",
+        "ja": "AIGO talent development program"
+      },
+      "project": {
+        "zh": "AI 智慧規劃排程系統開發",
+        "en": "AI planning and scheduling system",
+        "ja": "AI planning and scheduling system"
+      },
+      "award": {
+        "zh": "佳作",
+        "en": "Honorable Mention",
+        "ja": "Honorable Mention"
+      },
+      "short": {
+        "zh": "AIGO",
+        "en": "AIGO",
+        "ja": "AIGO"
+      }
+    },
+    {
+      "year": 2021,
+      "competition": {
+        "zh": "數位科技解決方案競賽",
+        "en": "Digital Technology Solution Competition",
+        "ja": "Digital Technology Solution Competition"
+      },
+      "project": {
+        "zh": "無人機應用人形探測系統開發",
+        "en": "UAV-based human detection system",
+        "ja": "UAV-based human detection system"
+      },
+      "award": {
+        "zh": "評審獎",
+        "en": "Judges' Award",
+        "ja": "Judges' Award"
+      },
+      "short": {
+        "zh": "數位科技競賽",
+        "en": "Digital Technology Solution",
+        "ja": "Digital Technology Solution"
+      }
+    },
+    {
+      "year": 2020,
+      "competition": {
+        "zh": "AI 智慧應用新世代人才培育計畫 (AIGO)",
+        "en": "AIGO talent development program",
+        "ja": "AIGO talent development program"
+      },
+      "project": {
+        "zh": "AI 頭髮區域偵測技術開發",
+        "en": "AI hair-region detection",
+        "ja": "AI hair-region detection"
+      },
+      "award": {
+        "zh": "優等",
+        "en": "Excellence",
+        "ja": "Excellence"
+      },
+      "short": {
+        "zh": "AIGO",
+        "en": "AIGO",
+        "ja": "AIGO"
+      }
+    },
+    {
+      "year": 2019,
+      "competition": {
+        "zh": "AI 智慧應用新世代人才培育計畫 (AIGO)",
+        "en": "AIGO talent development program",
+        "ja": "AIGO talent development program"
+      },
+      "project": {
+        "zh": "智能生產排程系統開發",
+        "en": "Intelligent production scheduling system",
+        "ja": "Intelligent production scheduling system"
+      },
+      "award": {
+        "zh": "佳作",
+        "en": "Honorable Mention",
+        "ja": "Honorable Mention"
+      },
+      "short": {
+        "zh": "AIGO",
+        "en": "AIGO",
+        "ja": "AIGO"
+      }
+    }
+  ],
+  "appearances": [
+    {
+      "year": 2026,
+      "url": "https://www.nvidia.com/gtc/session-catalog/sessions/gtc26-p81053/",
+      "what": {
+        "en": "NVIDIA GTC 2026 — poster",
+        "zh": "NVIDIA GTC 2026 — 海報",
+        "ja": "NVIDIA GTC 2026 — ポスター"
+      },
+      "title": "Dual Engines of Thought: A Dual-Engine Architecture With Breadth–Depth Coordination for Open-Ended Reasoning in LLMs"
+    },
+    {
+      "year": 2026,
+      "url": "",
+      "what": {
+        "en": "AI EXPO Taiwan 2026 (AMD)",
+        "zh": "AI EXPO Taiwan 2026（AMD）",
+        "ja": "AI EXPO Taiwan 2026（AMD）"
+      }
+    },
+    {
+      "year": 2026,
+      "url": "",
+      "what": {
+        "en": "Nasdaq 2026 Accelerator",
+        "zh": "Nasdaq 2026 Accelerator",
+        "ja": "Nasdaq 2026 Accelerator"
+      }
+    },
+    {
+      "year": 2026,
+      "url": "",
+      "what": {
+        "en": "Nasdaq Chicago Summit 2026",
+        "zh": "Nasdaq Chicago Summit 2026",
+        "ja": "Nasdaq Chicago Summit 2026"
+      }
+    }
+  ],
+  "deposits": [
+    {
+      "year": 2026,
+      "doi": "10.5281/zenodo.23685942",
+      "kind": "software",
+      "title": "deterministic-int8-llm-inference: measurement programme and reproducibility companion for two papers on cross-kernel INT8 inference numerics",
+      "record": "23695800",
+      "views": 21,
+      "downloads": 7
+    },
+    {
+      "year": 2026,
+      "doi": "10.5281/zenodo.23696093",
+      "kind": "dataset",
+      "title": "Per-layer int8 activation captures of Qwen3-1.7B (W8A8) for the fault-injection study in arXiv:2609.00363",
+      "record": "23696093",
+      "views": 21,
+      "downloads": 8
+    },
+    {
+      "year": 2026,
+      "doi": "10.5281/zenodo.23724735",
+      "kind": "dataset",
+      "title": "When Strong Reasoners Join the Pool: run record and code (NVIDIA B300, MATH-500)",
+      "record": "23939046",
+      "views": 160,
+      "downloads": 19
+    }
+  ]
+}

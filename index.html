@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Teng-Ruei Chen — Machine Learning Systems</title>
+<meta name="description" content="Teng-Ruei Chen, PhD. Research on LLM routing, serving economics and inference-time privacy. Every paper ships with a recorded talk.">
+<link rel="canonical" href="https://trchen.page/">
+<link rel="alternate" hreflang="en" href="https://trchen.page/"><link rel="alternate" hreflang="zh-Hant-TW" href="https://trchen.page/zh/"><link rel="alternate" hreflang="ja" href="https://trchen.page/ja/"><link rel="alternate" hreflang="x-default" href="https://trchen.page/">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Teng-Ruei Chen — Machine Learning Systems">
+<meta property="og:description" content="Teng-Ruei Chen, PhD. Research on LLM routing, serving economics and inference-time privacy. Every paper ships with a recorded talk.">
+<meta property="og:image" content="https://trchen.page/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Spectral:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#about">Skip to content</a>
+<header class="topbar">
+  <nav class="topnav" aria-label="About"><a href="#about">About</a><a href="#research">Research</a><a href="#publications">Publications</a><a href="#deposits">Datasets &amp; software</a><a href="#patents">Patents as inventor</a><a href="#awards">Awards</a></nav>
+  <div class="topbar-r">
+    <nav class="langs" aria-label="Language"><a href="" hreflang="en" aria-current="page">EN</a><a href="zh/" hreflang="zh-Hant-TW">中文</a><a href="ja/" hreflang="ja">日本語</a></nav>
+    <button class="themebtn" type="button" data-theme-toggle aria-label="Theme">◐</button>
+  </div>
+</header>
+<main class="page" id="main">
+<header class="idblock">
+  <img class="portrait" src="portrait.png" alt="Teng-Ruei Chen" width="128" height="128">
+  <div class="idtext">
+    <h1>Teng-Ruei Chen</h1>
+    <p class="fields">AI infrastructure · LLM inference · Deep learning · Bioinformatics</p>
+    <p class="meta">Taoyuan, Taiwan · <a href="mailto:ymchen.bi04g@g2.nctu.edu.tw">ymchen.bi04g@g2.nctu.edu.tw</a></p>
+    <nav class="idlinks" aria-label="Profiles"><a href="https://scholar.google.com/citations?user=PiuFUZ8AAAAJ" rel="me">Google Scholar</a><a href="https://orcid.org/0000-0001-8995-334X" rel="me">ORCID</a><a href="https://www.linkedin.com/in/luka-chen/" rel="me">LinkedIn</a><a href="https://github.com/luka-krixvon" rel="me">GitHub</a></nav>
+  </div>
+</header>
+  <div class="col">
+    <div class="proof"><div><b>13</b><span>Publications</span></div><div><b>12</b><span>Granted patents</span></div><div><b>3</b><span>Datasets &amp; software</span></div><div><b>9</b><span>Awards</span></div></div>
+
+    <section class="sec" id="about">
+      <span class="eyebrow">About</span>
+      <p class="bio">Most of what AI costs is moving from training to inference. A model is trained once and then served millions of times, on hardware that is scarce, priced differently in different places, and not interchangeable. Deciding which request runs on which machine, at what cost, is becoming a question of infrastructure economics rather than an implementation detail. That is the problem I work on, and it is the same problem I worked on in power distribution, in vehicle charging, and in compute scheduling before that.</p><p class="bio">The harder half is that these decisions are difficult to evaluate. Reported gains in routing are measured against baselines that are themselves unstable, and the hardware underneath does not reliably return the same answer twice. Until the measurement is sound, the field cannot separate a real improvement from an artifact of how it was measured, and will keep paying for the difference. That is why much of my work is measurement rather than method.</p><p class="bio">My bachelor&#x27;s and master&#x27;s degrees are in computer science, and my doctorate is in bioinformatics and systems biology from National Yang Ming Chiao Tung University, where I worked on protein secondary structure prediction: faster prediction without loss of accuracy, a secondary-structure-based scoring matrix, the theoretical limits of the problem, and CirPred, a structure modeling and linker design system for circularly permuted proteins. I have worked in industry throughout, and I am an inventor on twelve granted patents in compute scheduling and AI infrastructure.</p>
+      <div class="cv-grid cv-stack">
+        <dl class="cv-group"><h3>Education</h3><div class="cv-row"><dt>2021</dt><dd>Ph.D. in bioinformatics and systems biology, National Yang Ming Chiao Tung University, Hsinchu</dd></div></dl>
+        <dl class="cv-group"><h3>Positions</h3><div class="cv-row"><dt>2026–</dt><dd>Chief Technology Officer, BiiLabs Co., Ltd. · Taipei</dd></div><div class="cv-row"><dt>2026–</dt><dd>Chief Executive Officer, Krixvon Company Limited · Taipei</dd></div><div class="cv-row"><dt>2024–26</dt><dd>Chief Technology Officer, Taiwan Intelligence Research and Development Co., Ltd. · Taipei</dd></div><div class="cv-row"><dt>2022–24</dt><dd>Engineer, Industrial Technology Research Institute (ITRI) · Hsinchu</dd></div><div class="cv-row"><dt>2018–22</dt><dd>Chief Technology Officer, Lingshing Intelligence Co., Ltd. · Taipei</dd></div></dl>
+      </div>
+    </section>
+
+    <section class="sec" id="research">
+      <span class="eyebrow">Research</span>
+      <div class="inner-themes"><div class="theme-row"><h3>Routing</h3><p>Learned routers assign requests across a pool of models. I measure how far those assignments sit from an oracle that knows answer quality in advance.</p></div><div class="theme-row"><h3>Privacy</h3><p>Serving infrastructure emits metadata before the response exists: which tier was picked, how long the queue was, how many drafts were sampled. That channel is readable.</p></div><div class="theme-row"><h3>Validity</h3><p>Whether routing results measured on benchmarks survive contact with production traffic shapes, and what breaks first when they do not.</p></div></div>
+    </section>
+
+    <section class="sec" id="publications">
+      <div class="sec-head"><h2 class="big">Publications</h2><p>Work before 2022 is protein structure prediction. The methodological question carries over.</p></div>
+      <div class="filters"><button class="filt" type="button" data-filter="all" aria-pressed="true">All</button><button class="filt" type="button" data-filter="routing" aria-pressed="false">Routing</button><button class="filt" type="button" data-filter="privacy" aria-pressed="false">Privacy</button><button class="filt" type="button" data-filter="systems" aria-pressed="false">Systems</button><button class="filt" type="button" data-filter="evaluation" aria-pressed="false">Evaluation</button><button class="filt" type="button" data-filter="bioinformatics" aria-pressed="false">Bioinformatics</button><button class="filt" type="button" data-filter="applications" aria-pressed="false">Applications</button><button class="filt" type="button" data-filter="video" aria-pressed="false">Has talk</button></div>
+      <p class="filt-note" data-filter-note data-tpl="{n} of 13 shown"></p>
+      <ol>
+        <li class="pub" data-topics="routing evaluation" data-video="0">
+          <button class="pub-head" type="button" data-pubtoggle aria-expanded="false" aria-controls="pub-strong-reasoners">
+            <span class="pub-y">2026</span>
+            <span class="pub-ttl">When Strong Reasoners Join the Pool: Small Union Premiums and Costly Runaway Generations in LLM Routing</span>
+            <span class="pub-src">arXiv</span>
+          </button>
+          <div class="pub-body" id="pub-strong-reasoners" hidden>
+            
+            <div class="pub-meta">
+            <p class="pub-a"><b>Teng-Ruei Chen</b></p>
+            <p class="pub-v">arXiv:2611.04098 [cs.LG] · Nov 2026 · technical report, companion to arXiv:2607.03436</p>
+            <div class="tags"><span class="tag">Routing</span><span class="tag">Evaluation</span></div>
+            <div class="acts"><a href="https://arxiv.org/abs/2611.04098">Arxiv</a><a href="https://arxiv.org/pdf/2611.04098">Pdf</a></div>
+            </div>
+          </div>
+        </li>
+        <li class="pub" data-topics="privacy routing" data-video="0">
+          <button class="pub-head" type="button" data-pubtoggle aria-expanded="false" aria-controls="pub-topic-leakage">
+            <span class="pub-y">2026</span>
+            <span class="pub-ttl">Sensitive-Topic Leakage Through LLM Routing Metadata: Measurement and Mitigation</span>
+            <span class="pub-src">arXiv</span>
+          </button>
+          <div class="pub-body" id="pub-topic-leakage" hidden>
+            
+            <div class="pub-meta">
+            <p class="pub-a"><b>Teng-Ruei Chen</b></p>
+            <p class="pub-v">arXiv:2610.09981 [cs.CR] · Oct 2026</p>
+            <div class="tags"><span class="tag">Privacy</span><span class="tag">Routing</span></div>
+            <div class="acts"><a href="https://arxiv.org/abs/2610.09981">Arxiv</a><a href="https://arxiv.org/pdf/2610.09981">Pdf</a></div>
+            </div>
+          </div>
+        </li>
+        <li class="pub" data-topics="systems evaluation" data-video="0">
+          <button class="pub-head" type="button" data-pubtoggle aria-expanded="false" aria-controls="pub-deterministic-inference">
+            <span class="pub-y">2026</span>
+            <span class="pub-ttl">Deterministic LLM Inference Across GPU Kernels: Power-of-Two INT8 Quantization Scales and the Limits of Tolerance-Based Conformance</span>
+            <span class="pub-src">arXiv</span>
+          </button>
+          <div class="pub-body" id="pub-deterministic-inference" hidden>
+            
+            <div class="pub-meta">
+            <p class="pub-a"><b>Teng-Ruei Chen</b></p>
+            <p class="pub-v">arXiv:2609.00363 [cs.LG] · Sep 2026</p>
+            <div class="tags"><span class="tag">Systems</span><span class="tag">Evaluation</span></div>
+            <div class="acts"><a href="https://arxiv.org/abs/2609.00363">Arxiv</a><a href="https://arxiv.org/pdf/2609.00363">Pdf</a></div>
+            </div>
+          </div>
+        </li>
+        <li class="pub" data-topics="systems" data-video="0">
+          <button class="pub-head" type="button" data-pubtoggle aria-expanded="false" aria-controls="pub-integer-alibi">
+            <span class="pub-y">2026</span>
+            <span class="pub-ttl">The Integer Alibi: Localizing Cross-Kernel Divergence in INT8-Quantized LLM Inference</span>
+            <span class="pub-src">arXiv</span>
+          </button>
+          <div class="pub-body" id="pub-integer-alibi" hidden>
+            
+            <div class="pub-meta">
+            <p class="pub-a"><b>Teng-Ruei Chen</b></p>
+            <p class="pub-v">arXiv:2608.13756 [cs.LG] · Aug 2026</p>
+            <div class="tags"><span class="tag">Systems</span></div>
+            <div class="acts"><a href="https://arxiv.org/abs/2608.13756">Arxiv</a><a href="https://arxiv.org/pdf/2608.13756">Pdf</a></div>
+            </div>
+          </div>
+        </li>
+        <li class="pub" data-topics="systems" data-video="0">
+          <button class="pub-head" type="button" data-pubtoggle aria-expanded="false" aria-controls="pub-spec-sheets">
+            <span class="pub-y">2026</span>
+            <span class="pub-ttl">Spec Sheets Are Not Kernels: An ISA- and Source-Level Audit of INT8 Availability on NVIDIA Blackwell Ultra</span>
+            <span class="pub-src">arXiv</span>
+          </button>
+          <div class="pub-body" id="pub-spec-sheets" hidden>
+            
+            <div class="pub-meta">
+            <p class="pub-a"><b>Teng-Ruei Chen</b></p>
+            <p class="pub-v">arXiv:2608.11693 [cs.AR] · Aug 2026</p>
+            <div class="tags"><span class="tag">Systems</span></div>
+            <div class="acts"><a href="https://arxiv.org/abs/2608.11693">Arxiv</a><a href="https://arxiv.org/pdf/2608.11693">Pdf</a></div>
+            </div>
+          </div>
+        </li>
+        <li class="pub" data-topics="routing" data-video="0">
+          <button class="pub-head" type="button" data-pubtoggle aria-expanded="false" aria-controls="pub-resample-or-reroute">
+            <span class="pub-y">2026</span>
+            <span class="pub-ttl">Resample or Reroute? Recoverable Stopping Debt Without Identified Action Selection</span>
+            <span class="pub-src">arXiv</span>
+          </button>
+          <div class="pub-body" id="pub-resample-or-reroute" hidden>
+            
+            <div class="pub-meta">
+            <p class="pub-a"><b>Teng-Ruei Chen</b></p>
+            <p class="pub-v">arXiv:2607.08665 [cs.LG] · Jul 2026 · Research Square 10.21203/rs.3.rs-11021599/v1</p>
+            <div class="tags"><span class="tag">Routing</span></div>
+            <div class="acts"><a href="https://arxiv.org/abs/2607.08665">Arxiv</a><a href="https://arxiv.org/pdf/2607.08665">Pdf</a></div>
+            </div>
+          </div>
+        </li>
+        <li class="pub" data-topics="routing evaluation" data-video="0">
+          <button class="pub-head" type="button" data-pubtoggle aria-expanded="false" aria-controls="pub-routing-oracle">
+            <span class="pub-y">2026</span>
+            <span class="pub-ttl">What Does a Routing Oracle Measure Under Stochastic Decoding? Coupling, Scorer Choice, and Single-Commit Ceilings</span>
+            <span class="pub-src">arXiv</span>
+          </button>
+          <div class="pub-body" id="pub-routing-oracle" hidden>
+            
+            <div class="pub-meta">
+            <p class="pub-a"><b>Teng-Ruei Chen</b></p>
+            <p class="pub-v">arXiv:2607.03436 [cs.LG] · Jul 2026</p>
+            <div class="tags"><span class="tag">Routing</span><span class="tag">Evaluation</span></div>
+            <div class="acts"><a href="https://arxiv.org/abs/2607.03436">Arxiv</a><a href="https://arxiv.org/pdf/2607.03436">Pdf</a></div>
+            </div>
+          </div>
+        </li>
+        <li class="pub" data-topics="applications" data-video="0">
+          <button class="pub-head" type="button" data-pubtoggle aria-expanded="false" aria-controls="pub-net-zero">
+            <span class="pub-y">2024</span>
+            <span class="pub-ttl">AI-enabled digital net-zero transformation in the heat-processing industry</span>
+            <span class="pub-src">ICT Journal</span>
+          </button>
+          <div class="pub-body" id="pub-net-zero" hidden>
+            
+            <div class="pub-meta">
+            <p class="pub-a">T.-C. Su, <b>Teng-Ruei Chen</b>, C.-W. Lin</p>
+            <p class="pub-v">電腦與通訊 (ICT Journal, ITRI), no. 197, pp. 35–42 · Mar 2024</p>
+            <div class="tags"><span class="tag">Applications</span></div>
+            <div class="acts"></div>
+            </div>
+          </div>
+        </li>
+        <li class="pub" data-topics="bioinformatics" data-video="0">
+          <button class="pub-head" type="button" data-pubtoggle aria-expanded="false" aria-controls="pub-ultimate-limits">
+            <span class="pub-y">2021</span>
+            <span class="pub-ttl">Discovering the ultimate limits of protein secondary structure prediction</span>
+            <span class="pub-src">Biomolecules</span>
+          </button>
+          <div class="pub-body" id="pub-ultimate-limits" hidden>
+            
+            <div class="pub-meta">
+            <p class="pub-a">C.-T. Ho, Y.-W. Huang, <b>Teng-Ruei Chen</b>, C.-H. Lo, W.-C. Lo</p>
+            <p class="pub-v">Biomolecules, vol. 11, no. 11, 1627 · Nov 2021 · IF 4.88 · doi:10.3390/biom11111627</p>
+            <div class="tags"><span class="tag">Bioinformatics</span></div>
+            <div class="acts"><a href="https://doi.org/10.3390/biom11111627">Doi</a></div>
+            </div>
+          </div>
+        </li>
+        <li class="pub" data-topics="bioinformatics" data-video="0">
+          <button class="pub-head" type="button" data-pubtoggle aria-expanded="false" aria-controls="pub-cirpred">
+            <span class="pub-y">2021</span>
+            <span class="pub-ttl">CirPred, the first structure modeling and linker design system for circularly permuted proteins</span>
+            <span class="pub-src">BMC Bioinformatics</span>
+          </button>
+          <div class="pub-body" id="pub-cirpred" hidden>
+            
+            <div class="pub-meta">
+            <p class="pub-a"><b>Teng-Ruei Chen</b>, Y.-C. Lin, Y.-W. Huang, C.-C. Chen, W.-C. Lo</p>
+            <p class="pub-v">BMC Bioinformatics, vol. 22, no. S10, 494 · Oct 2021 · IF 3.17 · doi:10.1186/s12859-021-04403-1</p>
+            <div class="tags"><span class="tag">Bioinformatics</span></div>
+            <div class="acts"><a href="https://doi.org/10.1186/s12859-021-04403-1">Doi</a></div>
+            </div>
+          </div>
+        </li>
+        <li class="pub" data-topics="bioinformatics" data-video="0">
+          <button class="pub-head" type="button" data-pubtoggle aria-expanded="false" aria-controls="pub-ss-pssm">
+            <span class="pub-y">2021</span>
+            <span class="pub-ttl">A secondary structure-based position-specific scoring matrix applied to the improvement in protein secondary structure prediction</span>
+            <span class="pub-src">PLOS ONE</span>
+          </button>
+          <div class="pub-body" id="pub-ss-pssm" hidden>
+            
+            <div class="pub-meta">
+            <p class="pub-a"><b>Teng-Ruei Chen</b>, S.-H. Juan, Y.-W. Huang, Y.-C. Lin, W.-C. Lo</p>
+            <p class="pub-v">PLOS ONE, vol. 16, no. 7, e0255076 · Jul 2021 · IF 3.24 · doi:10.1371/journal.pone.0255076</p>
+            <div class="tags"><span class="tag">Bioinformatics</span></div>
+            <div class="acts"><a href="https://doi.org/10.1371/journal.pone.0255076">Doi</a></div>
+            </div>
+          </div>
+        </li>
+        <li class="pub" data-topics="bioinformatics evaluation" data-video="0">
+          <button class="pub-head" type="button" data-pubtoggle aria-expanded="false" aria-controls="pub-dataset-homology">
+            <span class="pub-y">2021</span>
+            <span class="pub-ttl">The influence of dataset homology and a rigorous evaluation strategy on protein secondary structure prediction</span>
+            <span class="pub-src">PLOS ONE</span>
+          </button>
+          <div class="pub-body" id="pub-dataset-homology" hidden>
+            
+            <div class="pub-meta">
+            <p class="pub-a"><b>Teng-Ruei Chen</b>, C.-H. Lo, S.-H. Juan, W.-C. Lo</p>
+            <p class="pub-v">PLOS ONE, vol. 16, no. 7, e0254555 · Jul 2021 · IF 3.24 · doi:10.1371/journal.pone.0254555</p>
+            <div class="tags"><span class="tag">Bioinformatics</span><span class="tag">Evaluation</span></div>
+            <div class="acts"><a href="https://doi.org/10.1371/journal.pone.0254555">Doi</a></div>
+            </div>
+          </div>
+        </li>
+        <li class="pub" data-topics="bioinformatics" data-video="0">
+          <button class="pub-head" type="button" data-pubtoggle aria-expanded="false" aria-controls="pub-speed-strategy">
+            <span class="pub-y">2020</span>
+            <span class="pub-ttl">A simple strategy to enhance the speed of protein secondary structure prediction without sacrificing accuracy</span>
+            <span class="pub-src">PLOS ONE</span>
+          </button>
+          <div class="pub-body" id="pub-speed-strategy" hidden>
+            
+            <div class="pub-meta">
+            <p class="pub-a">S.-H. Juan, <b>Teng-Ruei Chen</b>, W.-C. Lo</p>
+            <p class="pub-v">PLOS ONE, vol. 15, no. 6, e0235153 · Jun 2020 · IF 3.24 · doi:10.1371/journal.pone.0235153</p>
+            <div class="tags"><span class="tag">Bioinformatics</span></div>
+            <div class="acts"><a href="https://doi.org/10.1371/journal.pone.0235153">Doi</a></div>
+            </div>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="sec" id="deposits">
+      <div class="sec-head"><h2 class="big">Datasets &amp; software</h2></div>
+      <div class="dep-grid"><a class="dep" href="https://doi.org/10.5281/zenodo.23685942"><span class="jur">Software</span><span class="dep-t">deterministic-int8-llm-inference: measurement programme and reproducibility companion for two papers on cross-kernel INT8 inference numerics</span><span class="dep-stat">21 views · 7 downloads</span><span class="t-doi">doi:10.5281/zenodo.23685942</span></a><a class="dep" href="https://doi.org/10.5281/zenodo.23696093"><span class="jur">Dataset</span><span class="dep-t">Per-layer int8 activation captures of Qwen3-1.7B (W8A8) for the fault-injection study in arXiv:2609.00363</span><span class="dep-stat">21 views · 8 downloads</span><span class="t-doi">doi:10.5281/zenodo.23696093</span></a><a class="dep" href="https://doi.org/10.5281/zenodo.23724735"><span class="jur">Dataset</span><span class="dep-t">When Strong Reasoners Join the Pool: run record and code (NVIDIA B300, MATH-500)</span><span class="dep-stat">160 views · 19 downloads</span><span class="t-doi">doi:10.5281/zenodo.23724735</span></a></div>
+    </section>
+
+    <section class="sec" id="patents">
+      <div class="sec-head"><h2 class="big">Patents as inventor</h2></div>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Region</th><th>Number</th><th>Title</th><th>Status</th></tr></thead>
+        <tbody><tr><td class="t-no"><span class="jur">TW</span></td><td class="t-no">—</td><td class="t-ttl">Scheduling system and method combining cloud and local computing power</td><td><span class="badge b-wait"><i></i>Under examination</span></td></tr><tr><td class="t-no"><span class="jur">TW</span></td><td class="t-no">—</td><td class="t-ttl">Battery Swapping Scheduling System and Scheduling Method</td><td><span class="badge b-mid"><i></i>Allowed</span></td></tr><tr><td class="t-no"><span class="jur">US</span></td><td class="t-no">—</td><td class="t-ttl">Global cross-timezone computing power scheduling method</td><td><span class="badge b-mid"><i></i>Allowed</span></td></tr><tr><td class="t-no"><span class="jur">TW</span></td><td class="t-no">I941269</td><td class="t-ttl">Regional computing power management platform system</td><td><span class="badge b-ok"><i></i>Granted</span></td></tr><tr><td class="t-no"><span class="jur">TW</span></td><td class="t-no">I935869</td><td class="t-ttl">Global cross-timezone computing power scheduling method</td><td><span class="badge b-ok"><i></i>Granted</span></td></tr><tr><td class="t-no"><span class="jur">TW</span></td><td class="t-no">I928765</td><td class="t-ttl">Computing power demand analysis system and method thereof</td><td><span class="badge b-ok"><i></i>Granted</span></td></tr><tr><td class="t-no"><span class="jur">TW</span></td><td class="t-no">I928714</td><td class="t-ttl">An open analytical structure combining depth and breadth with dual engines of thoughts</td><td><span class="badge b-ok"><i></i>Granted</span></td></tr><tr><td class="t-no"><span class="jur">TW</span></td><td class="t-no">I907964</td><td class="t-ttl">Power information processing system and method based on blockchain</td><td><span class="badge b-ok"><i></i>Granted</span></td></tr><tr><td class="t-no"><span class="jur">TW</span></td><td class="t-no">I882792</td><td class="t-ttl">Intelligent vehicle-assisted drone operation system</td><td><span class="badge b-ok"><i></i>Granted</span></td></tr><tr><td class="t-no"><span class="jur">TW</span></td><td class="t-no">I870046</td><td class="t-ttl">Wireless charging system and method for unmanned vehicles</td><td><span class="badge b-ok"><i></i>Granted</span></td></tr><tr><td class="t-no"><span class="jur">TW</span></td><td class="t-no">I829017</td><td class="t-ttl">The system and the method of battery exchange of the electric car</td><td><span class="badge b-ok"><i></i>Granted</span></td></tr><tr><td class="t-no"><span class="jur">TW</span></td><td class="t-no">I827983</td><td class="t-ttl">The system and the method of wireless charging of the electric car</td><td><span class="badge b-ok"><i></i>Granted</span></td></tr><tr><td class="t-no"><span class="jur">TW</span></td><td class="t-no">I828105</td><td class="t-ttl">Logistics processing system and method thereof</td><td><span class="badge b-ok"><i></i>Granted</span></td></tr><tr><td class="t-no"><span class="jur">TW</span></td><td class="t-no">I824753</td><td class="t-ttl">Charging service system and method thereof</td><td><span class="badge b-ok"><i></i>Granted</span></td></tr><tr><td class="t-no"><span class="jur">TW</span></td><td class="t-no">I741788</td><td class="t-ttl">A wide area power monitoring platform system and method</td><td><span class="badge b-ok"><i></i>Granted</span></td></tr></tbody>
+      </table></div>
+      <p class="filt-note">Listed as inventor; rights are held by the respective assignees. Titles as recorded by the patent office.</p>
+    </section>
+
+    <section class="sec" id="awards">
+      <div class="sec-head"><h2 class="big">Awards</h2></div>
+      <div class="road" style="--road-cols:5"><div class="road-y"><span class="road-node"></span><span class="road-year">2019</span><ul><li><span class="aw-win">Honorable Mention</span><b>Intelligent production scheduling system</b><span class="aw-comp">AIGO</span></li></ul></div><div class="road-y"><span class="road-node"></span><span class="road-year">2020</span><ul><li><span class="aw-win">Excellence</span><b>AI hair-region detection</b><span class="aw-comp">AIGO</span></li></ul></div><div class="road-y"><span class="road-node"></span><span class="road-year">2021</span><ul><li><span class="aw-win">Honorable Mention</span><b>AI planning and scheduling system</b><span class="aw-comp">AIGO</span></li><li><span class="aw-win">Judges&#x27; Award</span><b>UAV-based human detection system</b><span class="aw-comp">Digital Technology Solution</span></li></ul></div><div class="road-y"><span class="road-node"></span><span class="road-year">2022</span><ul><li><span class="aw-win">Judges&#x27; Award</span><b>AI fish-species recognition system</b><span class="aw-comp">Digital Technology Solution</span></li><li><span class="aw-win">Outstanding</span><b>Dynamic prediction model for hospital outpatient waiting times</b><span class="aw-comp">AIGO</span></li></ul></div><div class="road-y"><span class="road-node"></span><span class="road-year">2023</span><ul><li><span class="aw-win">Winner</span><b>Koi image recognition system</b><span class="aw-comp">AI Application Challenge</span></li><li><span class="aw-win">Excellence</span><b>ESG extraction and sustainability-indicator matching model</b><span class="aw-comp">AI GOOD</span></li><li><span class="aw-win">Judges&#x27; Award</span><b>Generative AI for varied interpretation of aquarium exhibits</b><span class="aw-comp">Digital Technology Solution</span></li></ul></div></div>
+    </section>
+
+    <section class="sec" id="appearances">
+      <div class="sec-head"><h2 class="big">Appearances</h2></div>
+      <div class="app-list"><div class="svc"><dt>2026</dt><dd><a href="https://www.nvidia.com/gtc/session-catalog/sessions/gtc26-p81053/">NVIDIA GTC 2026 — poster ↗</a><span class="app-title">Dual Engines of Thought: A Dual-Engine Architecture With Breadth–Depth Coordination for Open-Ended Reasoning in LLMs</span></dd></div><div class="svc"><dt>2026</dt><dd>AI EXPO Taiwan 2026 (AMD)</dd></div><div class="svc"><dt>2026</dt><dd>Nasdaq 2026 Accelerator</dd></div><div class="svc"><dt>2026</dt><dd>Nasdaq Chicago Summit 2026</dd></div></div>
+    </section>
+
+    <footer class="site">
+      <span>Teng-Ruei Chen · ymchen.bi04g@g2.nctu.edu.tw</span>
+      <span>Updated November 2026</span>
+    </footer>
+  </div>
+</main>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://trchen.page/#person",
+   "name": "Teng-Ruei Chen",
+   "url": "https://trchen.page/",
+   "email": "mailto:ymchen.bi04g@g2.nctu.edu.tw",
+   "jobTitle": "AI infrastructure · LLM inference · Deep learning · Bioinformatics",
+   "description": "Most of what AI costs is moving from training to inference. A model is trained once and then served millions of times, on hardware that is scarce, priced differently in different places, and not interchangeable. Deciding which request runs on which machine, at what cost, is becoming a question of infrastructure economics rather than an implementation detail. That is the problem I work on, and it is the same problem I worked on in power distribution, in vehicle charging, and in compute scheduling before that.\n\nThe harder half is that these decisions are difficult to evaluate. Reported gains in routing are measured against baselines that are themselves unstable, and the hardware underneath does not reliably return the same answer twice. Until the measurement is sound, the field cannot separate a real improvement from an artifact of how it was measured, and will keep paying for the difference. That is why much of my work is measurement rather than method.\n\nMy bachelor's and master's degrees are in computer science, and my doctorate is in bioinformatics and systems biology from National Yang Ming Chiao Tung University, where I worked on protein secondary structure prediction: faster prediction without loss of accuracy, a secondary-structure-based scoring matrix, the theoretical limits of the problem, and CirPred, a structure modeling and linker design system for circularly permuted proteins. I have worked in industry throughout, and I am an inventor on twelve granted patents in compute scheduling and AI infrastructure.",
+   "alumniOf": [
+    {
+     "@type": "CollegeOrUniversity",
+     "name": "National Yang Ming Chiao Tung University"
+    }
+   ],
+   "worksFor": [
+    {
+     "@type": "Organization",
+     "name": "Krixvon Company Limited"
+    },
+    {
+     "@type": "Organization",
+     "name": "BiiLabs Co., Ltd."
+    }
+   ],
+   "alternateName": "陳騰瑞",
+   "sameAs": [
+    "https://scholar.google.com/citations?user=PiuFUZ8AAAAJ",
+    "https://orcid.org/0000-0001-8995-334X",
+    "https://github.com/luka-krixvon",
+    "https://www.linkedin.com/in/luka-chen/"
+   ]
+  },
+  {
+   "@type": "ScholarlyArticle",
+   "@id": "https://trchen.page/#strong-reasoners",
+   "headline": "When Strong Reasoners Join the Pool: Small Union Premiums and Costly Runaway Generations in LLM Routing",
+   "name": "When Strong Reasoners Join the Pool: Small Union Premiums and Costly Runaway Generations in LLM Routing",
+   "datePublished": "2026",
+   "inLanguage": "en",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "Teng-Ruei Chen"
+    }
+   ],
+   "publication": {
+    "@type": "PublicationEvent",
+    "name": "arXiv:2611.04098 [cs.LG] · Nov 2026 · technical report, companion to arXiv:2607.03436"
+   }
+  },
+  {
+   "@type": "ScholarlyArticle",
+   "@id": "https://trchen.page/#topic-leakage",
+   "headline": "Sensitive-Topic Leakage Through LLM Routing Metadata: Measurement and Mitigation",
+   "name": "Sensitive-Topic Leakage Through LLM Routing Metadata: Measurement and Mitigation",
+   "datePublished": "2026",
+   "inLanguage": "en",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "Teng-Ruei Chen"
+    }
+   ],
+   "publication": {
+    "@type": "PublicationEvent",
+    "name": "arXiv:2610.09981 [cs.CR] · Oct 2026"
+   }
+  },
+  {
+   "@type": "ScholarlyArticle",
+   "@id": "https://trchen.page/#deterministic-inference",
+   "headline": "Deterministic LLM Inference Across GPU Kernels: Power-of-Two INT8 Quantization Scales and the Limits of Tolerance-Based Conformance",
+   "name": "Deterministic LLM Inference Across GPU Kernels: Power-of-Two INT8 Quantization Scales and the Limits of Tolerance-Based Conformance",
+   "datePublished": "2026",
+   "inLanguage": "en",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "Teng-Ruei Chen"
+    }
+   ],
+   "publication": {
+    "@type": "PublicationEvent",
+    "name": "arXiv:2609.00363 [cs.LG] · Sep 2026"
+   }
+  },
+  {
+   "@type": "ScholarlyArticle",
+   "@id": "https://trchen.page/#integer-alibi",
+   "headline": "The Integer Alibi: Localizing Cross-Kernel Divergence in INT8-Quantized LLM Inference",
+   "name": "The Integer Alibi: Localizing Cross-Kernel Divergence in INT8-Quantized LLM Inference",
+   "datePublished": "2026",
+   "inLanguage": "en",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "Teng-Ruei Chen"
+    }
+   ],
+   "publication": {
+    "@type": "PublicationEvent",
+    "name": "arXiv:2608.13756 [cs.LG] · Aug 2026"
+   }
+  },
+  {
+   "@type": "ScholarlyArticle",
+   "@id": "https://trchen.page/#spec-sheets",
+   "headline": "Spec Sheets Are Not Kernels: An ISA- and Source-Level Audit of INT8 Availability on NVIDIA Blackwell Ultra",
+   "name": "Spec Sheets Are Not Kernels: An ISA- and Source-Level Audit of INT8 Availability on NVIDIA Blackwell Ultra",
+   "datePublished": "2026",
+   "inLanguage": "en",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "Teng-Ruei Chen"
+    }
+   ],
+   "publication": {
+    "@type": "PublicationEvent",
+    "name": "arXiv:2608.11693 [cs.AR] · Aug 2026"
+   }
+  },
+  {
+   "@type": "ScholarlyArticle",
+   "@id": "https://trchen.page/#resample-or-reroute",
+   "headline": "Resample or Reroute? Recoverable Stopping Debt Without Identified Action Selection",
+   "name": "Resample or Reroute? Recoverable Stopping Debt Without Identified Action Selection",
+   "datePublished": "2026",
+   "inLanguage": "en",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "Teng-Ruei Chen"
+    }
+   ],
+   "publication": {
+    "@type": "PublicationEvent",
+    "name": "arXiv:2607.08665 [cs.LG] · Jul 2026 · Research Square 10.21203/rs.3.rs-11021599/v1"
+   }
+  },
+  {
+   "@type": "ScholarlyArticle",
+   "@id": "https://trchen.page/#routing-oracle",
+   "headline": "What Does a Routing Oracle Measure Under Stochastic Decoding? Coupling, Scorer Choice, and Single-Commit Ceilings",
+   "name": "What Does a Routing Oracle Measure Under Stochastic Decoding? Coupling, Scorer Choice, and Single-Commit Ceilings",
+   "datePublished": "2026",
+   "inLanguage": "en",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "Teng-Ruei Chen"
+    }
+   ],
+   "publication": {
+    "@type": "PublicationEvent",
+    "name": "arXiv:2607.03436 [cs.LG] · Jul 2026"
+   }
+  },
+  {
+   "@type": "VideoObject",
+   "name": "What Does a Routing Oracle Measure Under Stochastic Decoding? Coupling, Scorer Choice, and Single-Commit Ceilings",
+   "description": "Problem",
+   "uploadDate": "2026-11-01",
+   "duration": "PT14M2S",
+   "inLanguage": "en",
+   "thumbnailUrl": "https://i.ytimg.com/vi/VIDEO_ID/maxresdefault.jpg",
+   "embedUrl": "https://www.youtube.com/embed/VIDEO_ID",
+   "contentUrl": "https://www.youtube.com/watch?v=VIDEO_ID",
+   "about": {
+    "@id": "https://trchen.page/#routing-oracle"
+   },
+   "hasPart": [
+    {
+     "@type": "Clip",
+     "name": "Problem",
+     "startOffset": 0,
+     "url": "https://www.youtube.com/watch?v=VIDEO_ID&t=0s"
+    },
+    {
+     "@type": "Clip",
+     "name": "Method",
+     "startOffset": 150,
+     "url": "https://www.youtube.com/watch?v=VIDEO_ID&t=150s"
+    },
+    {
+     "@type": "Clip",
+     "name": "Results",
+     "startOffset": 360,
+     "url": "https://www.youtube.com/watch?v=VIDEO_ID&t=360s"
+    },
+    {
+     "@type": "Clip",
+     "name": "Limitations",
+     "startOffset": 600,
+     "url": "https://www.youtube.com/watch?v=VIDEO_ID&t=600s"
+    }
+   ]
+  },
+  {
+   "@type": "ScholarlyArticle",
+   "@id": "https://trchen.page/#net-zero",
+   "headline": "AI-enabled digital net-zero transformation in the heat-processing industry",
+   "name": "AI-enabled digital net-zero transformation in the heat-processing industry",
+   "datePublished": "2024",
+   "inLanguage": "en",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "T.-C. Su"
+    },
+    {
+     "@type": "Person",
+     "name": "Teng-Ruei Chen"
+    },
+    {
+     "@type": "Person",
+     "name": "C.-W. Lin"
+    }
+   ],
+   "publication": {
+    "@type": "PublicationEvent",
+    "name": "電腦與通訊 (ICT Journal, ITRI), no. 197, pp. 35–42 · Mar 2024"
+   }
+  },
+  {
+   "@type": "ScholarlyArticle",
+   "@id": "https://trchen.page/#ultimate-limits",
+   "headline": "Discovering the ultimate limits of protein secondary structure prediction",
+   "name": "Discovering the ultimate limits of protein secondary structure prediction",
+   "datePublished": "2021",
+   "inLanguage": "en",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "C.-T. Ho"
+    },
+    {
+     "@type": "Person",
+     "name": "Y.-W. Huang"
+    },
+    {
+     "@type": "Person",
+     "name": "Teng-Ruei Chen"
+    },
+    {
+     "@type": "Person",
+     "name": "C.-H. Lo"
+    },
+    {
+     "@type": "Person",
+     "name": "W.-C. Lo"
+    }
+   ],
+   "publication": {
+    "@type": "PublicationEvent",
+    "name": "Biomolecules, vol. 11, no. 11, 1627 · Nov 2021 · IF 4.88 · doi:10.3390/biom11111627"
+   }
+  },
+  {
+   "@type": "ScholarlyArticle",
+   "@id": "https://trchen.page/#cirpred",
+   "headline": "CirPred, the first structure modeling and linker design system for circularly permuted proteins",
+   "name": "CirPred, the first structure modeling and linker design system for circularly permuted proteins",
+   "datePublished": "2021",
+   "inLanguage": "en",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "Teng-Ruei Chen"
+    },
+    {
+     "@type": "Person",
+     "name": "Y.-C. Lin"
+    },
+    {
+     "@type": "Person",
+     "name": "Y.-W. Huang"
+    },
+    {
+     "@type": "Person",
+     "name": "C.-C. Chen"
+    },
+    {
+     "@type": "Person",
+     "name": "W.-C. Lo"
+    }
+   ],
+   "publication": {
+    "@type": "PublicationEvent",
+    "name": "BMC Bioinformatics, vol. 22, no. S10, 494 · Oct 2021 · IF 3.17 · doi:10.1186/s12859-021-04403-1"
+   }
+  },
+  {
+   "@type": "ScholarlyArticle",
+   "@id": "https://trchen.page/#ss-pssm",
+   "headline": "A secondary structure-based position-specific scoring matrix applied to the improvement in protein secondary structure prediction",
+   "name": "A secondary structure-based position-specific scoring matrix applied to the improvement in protein secondary structure prediction",
+   "datePublished": "2021",
+   "inLanguage": "en",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "Teng-Ruei Chen"
+    },
+    {
+     "@type": "Person",
+     "name": "S.-H. Juan"
+    },
+    {
+     "@type": "Person",
+     "name": "Y.-W. Huang"
+    },
+    {
+     "@type": "Person",
+     "name": "Y.-C. Lin"
+    },
+    {
+     "@type": "Person",
+     "name": "W.-C. Lo"
+    }
+   ],
+   "publication": {
+    "@type": "PublicationEvent",
+    "name": "PLOS ONE, vol. 16, no. 7, e0255076 · Jul 2021 · IF 3.24 · doi:10.1371/journal.pone.0255076"
+   }
+  },
+  {
+   "@type": "ScholarlyArticle",
+   "@id": "https://trchen.page/#dataset-homology",
+   "headline": "The influence of dataset homology and a rigorous evaluation strategy on protein secondary structure prediction",
+   "name": "The influence of dataset homology and a rigorous evaluation strategy on protein secondary structure prediction",
+   "datePublished": "2021",
+   "inLanguage": "en",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "Teng-Ruei Chen"
+    },
+    {
+     "@type": "Person",
+     "name": "C.-H. Lo"
+    },
+    {
+     "@type": "Person",
+     "name": "S.-H. Juan"
+    },
+    {
+     "@type": "Person",
+     "name": "W.-C. Lo"
+    }
+   ],
+   "publication": {
+    "@type": "PublicationEvent",
+    "name": "PLOS ONE, vol. 16, no. 7, e0254555 · Jul 2021 · IF 3.24 · doi:10.1371/journal.pone.0254555"
+   }
+  },
+  {
+   "@type": "ScholarlyArticle",
+   "@id": "https://trchen.page/#speed-strategy",
+   "headline": "A simple strategy to enhance the speed of protein secondary structure prediction without sacrificing accuracy",
+   "name": "A simple strategy to enhance the speed of protein secondary structure prediction without sacrificing accuracy",
+   "datePublished": "2020",
+   "inLanguage": "en",
+   "author": [
+    {
+     "@type": "Person",
+     "name": "S.-H. Juan"
+    },
+    {
+     "@type": "Person",
+     "name": "Teng-Ruei Chen"
+    },
+    {
+     "@type": "Person",
+     "name": "W.-C. Lo"
+    }
+   ],
+   "publication": {
+    "@type": "PublicationEvent",
+    "name": "PLOS ONE, vol. 15, no. 6, e0235153 · Jun 2020 · IF 3.24 · doi:10.1371/journal.pone.0235153"
+   }
+  }
+ ]
+}
+</script>
+<script src="assets/site.js" defer></script>
+</body>
+</html>

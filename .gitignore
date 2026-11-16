@@ -1,0 +1,7 @@
+# preview/ is only for pasting into a preview tool; it duplicates every page
+# and would show up as duplicate content if it ever reached a live site.
+preview/
+.DS_Store
+
+# working notes, not for the public repo
+notes.local.md
