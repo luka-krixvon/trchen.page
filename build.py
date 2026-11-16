@@ -336,12 +336,12 @@ def page(code, demo=False, standalone=True):
     oglocale = oglocales.get(code, "en_US")
     oglocale_alt = "".join('<meta property="og:locale:alternate" content="%s">' % v
                            for k, v in oglocales.items() if k != code and k in C)
-    cjk = {"zh": "&family=Noto+Serif+TC:wght@400;600&family=Noto+Sans+TC:wght@400;500;600",
-           "ja": "&family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@400;500;600"}.get(code, "")
+    cjk = {"zh": "&family=Noto+Sans+TC:wght@400;500;700;900",
+           "ja": "&family=Noto+Sans+JP:wght@400;500;700;900"}.get(code, "")
     fonts = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
              '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
-             '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500'
-             '&family=IBM+Plex+Sans:wght@400;500;600&family=Spectral:ital,wght@0,400;0,600;0,700;0,800;1,400'
+             '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?'
+             'family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700'
              + cjk + '&display=swap">')
     if demo:
         globals()["DEMO_VIDEO"] = True

@@ -5,9 +5,9 @@
   --accent:#1B2BD6; --accent-soft:#E8EBFC; --accent-ink:#FFFFFF;
   --sig:#8A5A08; --sig-soft:#F8F0DE;
   --ok:#276B43; --ok-bg:#E8F2EB; --wait:#8A5A12; --wait-bg:#F8F0DE;
-  --serif:"Spectral",Georgia,"Times New Roman",serif;
-  --sans:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --serif:"Space Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --sans:"Space Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mono:"Space Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
   
   --t-xs:12px; --t-sm:13.5px; --t-base:16px; --t-md:18px; --t-lg:25px; --t-xl:34px;
   --t-display:clamp(40px,6.2vw,62px);
@@ -35,7 +35,7 @@
 [hidden]{display:none!important}
 html,body{margin:0}
 body{background:var(--paper);color:var(--ink);font-family:var(--serif);
-  font-size:var(--t-base);line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  font-size:var(--t-base);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 h1,h2,h3,h4{margin:0;text-wrap:balance}
 p{margin:0}
 ul,ol{margin:0;padding:0;list-style:none}
@@ -86,8 +86,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   background:var(--accent-soft);display:grid;place-items:center;font-family:var(--mono);
   font-size:var(--t-lg);color:var(--accent)}
 .idtext{min-width:0;display:flex;flex-direction:column;gap:10px}
-.idtext h1{font-family:var(--serif);font-size:var(--t-display);font-weight:800;
-  letter-spacing:-.032em;line-height:.98;color:var(--ink)}
+.idtext h1{font-family:var(--serif);font-size:var(--t-display);font-weight:700;
+  letter-spacing:-.042em;line-height:1;color:var(--ink)}
 .fields{font-size:var(--t-md);color:var(--ink2);line-height:1.5}
 .meta{font-family:var(--mono);font-size:var(--t-xs);color:var(--ink3)}
 .meta a{color:inherit}
@@ -102,7 +102,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 }
 
 /* ---------- content ---------- */
-.sec{position:relative;padding-block:clamp(38px,4.6vw,58px)}
+.sec{position:relative;padding-block:clamp(32px,3.6vw,46px)}
 .sec > p,.bio,.filt-note{max-width:68ch}
 .sec + .sec{border-top:1px solid var(--line)}
 .eyebrow{display:block;font-family:var(--sans);font-weight:600;font-size:var(--t-xs);
@@ -120,8 +120,8 @@ h2.big{font-family:var(--serif);font-size:var(--t-lg);font-weight:700;letter-spa
 .kpi-main > div{padding:24px 18px 20px;border-right:1px solid var(--hair)}
 .kpi-main > div:first-child{padding-left:0}
 .kpi-main > div:last-child{border-right:0}
-.kpi-main b{display:block;font-family:var(--serif);font-weight:800;
-  font-size:clamp(36px,4.8vw,54px);line-height:.9;letter-spacing:-.038em;
+.kpi-main b{display:block;font-family:var(--mono);font-weight:700;
+  font-size:clamp(30px,3.9vw,44px);line-height:.95;letter-spacing:-.05em;
   color:var(--accent);font-variant-numeric:tabular-nums}
 .kpi-main span{display:block;margin-top:12px;font-family:var(--sans);font-weight:600;
   font-size:var(--t-xs);letter-spacing:.13em;text-transform:uppercase;color:var(--ink3)}
@@ -142,7 +142,7 @@ h2.big{font-family:var(--serif);font-size:var(--t-lg);font-weight:700;letter-spa
 }
 
 /* ---------- about ---------- */
-.bio{font-size:var(--t-md);line-height:1.68;max-width:60ch;color:var(--ink2)}
+.bio{font-size:var(--t-md);line-height:1.62;max-width:60ch;color:var(--ink2)}
 .bio + .bio{margin-top:18px}
 .cv-grid{display:grid;grid-template-columns:1fr;gap:30px;margin-top:38px}
 .cv-stack{grid-template-columns:210px minmax(0,1fr);gap:34px}
@@ -326,15 +326,23 @@ footer.site{padding-block:30px 56px;font-family:var(--mono);font-size:var(--t-xs
 
 /* ---------- CJK ---------- */
 :root[lang^="zh"]{
-  --serif:"Spectral","Noto Serif TC",Georgia,"Songti TC",serif;
-  --sans:"IBM Plex Sans","Noto Sans TC",-apple-system,"PingFang TC",sans-serif;
+  --serif:"Space Grotesk","Noto Sans TC",-apple-system,"PingFang TC",sans-serif;
+  --sans:"Space Grotesk","Noto Sans TC",-apple-system,"PingFang TC",sans-serif;
 }
 :root[lang^="ja"]{
-  --serif:"Spectral","Noto Serif JP",Georgia,"Hiragino Mincho ProN",serif;
-  --sans:"IBM Plex Sans","Noto Sans JP",-apple-system,"Hiragino Sans",sans-serif;
+  --serif:"Space Grotesk","Noto Sans JP",-apple-system,"Hiragino Sans",sans-serif;
+  --sans:"Space Grotesk","Noto Sans JP",-apple-system,"Hiragino Sans",sans-serif;
 }
 :root[lang^="zh"] body,:root[lang^="ja"] body{line-height:1.85}
 :root[lang^="zh"] .bio,:root[lang^="ja"] .bio{line-height:1.9}
 :root[lang^="zh"] .idtext h1,:root[lang^="ja"] .idtext h1{letter-spacing:-.01em}
 :root[lang^="zh"] .pub-ttl,:root[lang^="ja"] .pub-ttl{line-height:1.5}
 :root[lang^="zh"] .theme-row p,:root[lang^="ja"] .theme-row p{line-height:1.8}
+
+
+/* ---------- wide: use the horizontal space instead of growing downward ---- */
+@media (min-width:1240px){
+  .page{max-width:1080px}
+  .bio{max-width:64ch}
+  .sec > p,.filt-note{max-width:72ch}
+}
