@@ -616,7 +616,7 @@
         ]
       ]
     },
-    "bio": "Most of what AI costs is moving from training to inference. A model is trained once and then served millions of times, on hardware that is scarce, priced differently in different places, and not interchangeable. Deciding which request runs on which machine, at what cost, is becoming a question of infrastructure economics rather than an implementation detail. That is the problem I work on, and it is the same problem I worked on in power distribution, in vehicle charging, and in compute scheduling before that.\n\nThe harder half is that these decisions are difficult to evaluate. Reported gains in routing are measured against baselines that are themselves unstable, and the hardware underneath does not reliably return the same answer twice. Until the measurement is sound, the field cannot separate a real improvement from an artifact of how it was measured, and will keep paying for the difference. That is why much of my work is measurement rather than method.\n\nMy bachelor's and master's degrees are in computer science, and my doctorate is in bioinformatics and systems biology from National Yang Ming Chiao Tung University, where I worked on protein secondary structure prediction: faster prediction without loss of accuracy, a secondary-structure-based scoring matrix, the theoretical limits of the problem, and CirPred, a structure modeling and linker design system for circularly permuted proteins. I have worked in industry throughout, and I am an inventor on twelve granted patents in compute scheduling and AI infrastructure.",
+    "bio": "Most of what AI costs is moving from training to inference. A model is trained once, then served millions of times, on hardware that is scarce, priced differently in different places, and not interchangeable. Which request runs on which machine, at what cost, has become a question of infrastructure economics — the same problem I worked on in power distribution, vehicle charging and compute scheduling before this.\n\nThe harder half is that these decisions are difficult to evaluate. Reported gains in routing are measured against baselines that are themselves unstable, and the hardware underneath does not reliably return the same answer twice. Until the measurement is sound, the field cannot tell a real improvement from an artifact of how it was measured. That is why most of my work is measurement rather than method.",
     "education": [
       [
         "2021",
@@ -666,7 +666,8 @@
       "year": "Year",
       "competition": "Competition",
       "project": "Project",
-      "award": "Award"
+      "award": "Award",
+      "issuer": "Issued by"
     },
     "deposit_cols": {
       "year": "Year",
@@ -798,7 +799,7 @@
         ]
       ]
     },
-    "bio": "AI 的成本正在從訓練移到推論。一個模型只訓練一次，卻要被服務上百萬次，而且跑在稀缺、各地價格不同、彼此又不能互換的硬體上。哪一個請求該跑在哪一台機器、花多少錢，正在從實作細節變成基礎設施的經濟問題。這就是我在做的事，而它跟我更早在電力調度、車輛充電、算力排程上面對的是同一個問題。\n\n比較難的是另一半：這些決策很難評估。路由上報告出來的增益，是拿一個本身就不穩定的基準在比，而底下的硬體又不保證兩次給出同樣的答案。在量測站得住腳之前，這個領域分不出哪些是真的改進、哪些只是量測方式造成的假象，而差額是會被實際付出去的。這就是為什麼我的工作有很大一部分是量測而不是方法。\n\n我的學士與碩士是資訊工程，博士是國立陽明交通大學生物資訊及系統生物，研究主題為蛋白質二級結構預測：在不犧牲準確率的前提下加快預測、以二級結構為基礎的位置特異性計分矩陣、這個問題的理論上限，以及 CirPred——針對環狀排列蛋白質的結構建模與 linker 設計系統。我一直在業界工作，並為十二件已領證專利的發明人，領域為算力調度與 AI 基礎設施。",
+    "bio": "AI 的成本正在從訓練移到推論。一個模型只訓練一次，卻要被服務上百萬次，而且跑在稀缺、各地價格不同、彼此又不能互換的硬體上。哪一個請求該跑在哪一台機器、花多少錢，已經從實作細節變成基礎設施的經濟問題——這跟我更早在電力調度、車輛充電、算力排程上面對的是同一個問題。\n\n比較難的是另一半：這些決策很難評估。路由上報告出來的增益，是拿一個本身就不穩定的基準在比，而底下的硬體又不保證兩次給出同樣的答案。在量測站得住腳之前，分不出哪些是真的改進、哪些只是量測方式造成的假象。這就是為什麼我的工作有很大一部分是量測而不是方法。",
     "education": [
       [
         "2021",
@@ -848,7 +849,8 @@
       "year": "年份",
       "competition": "競賽",
       "project": "作品",
-      "award": "獎項"
+      "award": "獎項",
+      "issuer": "頒發單位"
     },
     "deposit_cols": {
       "year": "年份",
@@ -980,7 +982,7 @@
         ]
       ]
     },
-    "bio": "AIのコストの大半は学習から推論へ移りつつある。モデルの学習は一度だが、提供は何百万回も行われる。しかもその計算資源は希少で、場所によって価格が異なり、互換でもない。どのリクエストをどの機械でいくらで走らせるかは、実装の細部ではなくインフラの経済の問題になりつつある。これが私の扱う問題であり、以前に電力配分、車両充電、計算資源の調度で向き合ってきたものと同じ問題である。\n\n難しいのはもう半分だ。これらの判断は評価がしにくい。ルーティングで報告される改善は、それ自体が不安定な基準と比較されており、下層のハードウェアも二度同じ答えを返すとは限らない。測定が確かなものになるまで、この分野は本物の改善と測定方法の産物とを区別できず、その差額を払い続けることになる。私の仕事の多くが手法ではなく測定である理由はそこにある。\n\n学士と修士は情報工学、博士は国立陽明交通大学のバイオインフォマティクス・システム生物学で、タンパク質二次構造予測を扱った。精度を落とさない高速化、二次構造ベースの位置特異的スコア行列、問題の理論的上限、そして環状置換タンパク質のための構造モデリング・リンカー設計システム CirPred である。一貫して産業界で働いており、計算資源の調度とAIインフラの分野で12件の登録特許の発明者である。",
+    "bio": "AIのコストの大半は学習から推論へ移りつつある。モデルの学習は一度だが、提供は何百万回も行われる。しかもその計算資源は希少で、場所によって価格が異なり、互換でもない。どのリクエストをどの機械でいくらで走らせるかは、実装の細部ではなくインフラの経済の問題になった——以前に電力配分、車両充電、計算資源の調度で向き合ってきたものと同じ問題である。\n\n難しいのはもう半分だ。これらの判断は評価がしにくい。ルーティングで報告される改善は、それ自体が不安定な基準と比較されており、下層のハードウェアも二度同じ答えを返すとは限らない。測定が確かなものになるまで、本物の改善と測定方法の産物とを区別できない。私の仕事の多くが手法ではなく測定である理由はそこにある。",
     "education": [
       [
         "2021",
@@ -1030,7 +1032,8 @@
       "year": "年",
       "competition": "コンペティション",
       "project": "作品",
-      "award": "賞"
+      "award": "賞",
+      "issuer": "主催"
     },
     "deposit_cols": {
       "year": "年",
@@ -1064,6 +1067,11 @@
         "zh": "AI 鬥智賽",
         "en": "AI Application Challenge",
         "ja": "AI Application Challenge"
+      },
+      "issuer": {
+        "en": "Administration for Digital Industries, moda",
+        "ja": "デジタル発展部デジタル産業署",
+        "zh": "數位發展部數位產業署"
       }
     },
     {
@@ -1087,6 +1095,11 @@
         "zh": "AI GOOD",
         "en": "AI GOOD",
         "ja": "AI GOOD"
+      },
+      "issuer": {
+        "en": "Administration for Digital Industries, moda",
+        "ja": "デジタル発展部デジタル産業署",
+        "zh": "數位發展部數位產業署"
       }
     },
     {
@@ -1110,6 +1123,11 @@
         "zh": "數位科技競賽",
         "en": "Digital Technology Solution",
         "ja": "Digital Technology Solution"
+      },
+      "issuer": {
+        "en": "Administration for Digital Industries, moda",
+        "ja": "デジタル発展部デジタル産業署",
+        "zh": "數位發展部數位產業署"
       }
     },
     {
@@ -1133,6 +1151,11 @@
         "zh": "數位科技競賽",
         "en": "Digital Technology Solution",
         "ja": "Digital Technology Solution"
+      },
+      "issuer": {
+        "en": "Industrial Development Bureau, MOEA",
+        "ja": "経済部工業局",
+        "zh": "經濟部工業局"
       }
     },
     {
@@ -1156,6 +1179,11 @@
         "zh": "AIGO",
         "en": "AIGO",
         "ja": "AIGO"
+      },
+      "issuer": {
+        "en": "Industrial Development Bureau, MOEA",
+        "ja": "経済部工業局",
+        "zh": "經濟部工業局"
       }
     },
     {
@@ -1179,6 +1207,11 @@
         "zh": "AIGO",
         "en": "AIGO",
         "ja": "AIGO"
+      },
+      "issuer": {
+        "en": "Industrial Development Bureau, MOEA",
+        "ja": "経済部工業局",
+        "zh": "經濟部工業局"
       }
     },
     {
@@ -1202,6 +1235,11 @@
         "zh": "數位科技競賽",
         "en": "Digital Technology Solution",
         "ja": "Digital Technology Solution"
+      },
+      "issuer": {
+        "en": "Industrial Development Bureau, MOEA",
+        "ja": "経済部工業局",
+        "zh": "經濟部工業局"
       }
     },
     {
@@ -1225,6 +1263,11 @@
         "zh": "AIGO",
         "en": "AIGO",
         "ja": "AIGO"
+      },
+      "issuer": {
+        "en": "Industrial Development Bureau, MOEA",
+        "ja": "経済部工業局",
+        "zh": "經濟部工業局"
       }
     },
     {
@@ -1248,6 +1291,11 @@
         "zh": "AIGO",
         "en": "AIGO",
         "ja": "AIGO"
+      },
+      "issuer": {
+        "en": "Industrial Development Bureau, MOEA",
+        "ja": "経済部工業局",
+        "zh": "經濟部工業局"
       }
     }
   ],
@@ -1269,15 +1317,20 @@
         "en": "AI EXPO Taiwan 2026 (AMD)",
         "zh": "AI EXPO Taiwan 2026（AMD）",
         "ja": "AI EXPO Taiwan 2026（AMD）"
+      },
+      "title": {
+        "en": "Generative AI for financial services on AMD Instinct MI300X: end-to-end podcast production, V-JEPA2 video annotation, and natural-language-driven quantitative strategy generation.",
+        "zh": "金融服務的生成式 AI：在 AMD Instinct MI300X 上做 Podcast 端到端自動產製、V-JEPA2 影片智能標註，以及自然語言驅動的量化投資策略生成。",
+        "ja": "金融サービス向け生成AI：AMD Instinct MI300X 上でのポッドキャスト自動生成、V-JEPA2 による動画アノテーション、自然言語による定量投資戦略の生成。"
       }
     },
     {
-      "year": 2026,
+      "year": 2025,
       "url": "",
       "what": {
-        "en": "Nasdaq 2026 Accelerator",
-        "zh": "Nasdaq 2026 Accelerator",
-        "ja": "Nasdaq 2026 Accelerator"
+        "en": "Nasdaq Accelerator",
+        "zh": "Nasdaq Accelerator",
+        "ja": "Nasdaq Accelerator"
       }
     },
     {

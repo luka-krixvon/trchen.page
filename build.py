@@ -182,17 +182,23 @@ def body(L, code, depth):
             years.append(a["year"])
     for y in sorted(years):
         items = "".join(
-            '<li><span class="aw-win">%s</span><b>%s</b><span class="aw-comp">%s</span></li>'
+            '<li><span class="aw-win">%s</span><b>%s</b>'
+            '<span class="aw-comp">%s</span>%s</li>'
             % (e(a["award"].get(code) or a["award"]["en"]),
                e(a["project"].get(code) or a["project"]["en"]),
-               e(a["short"].get(code) or a["short"]["en"]))
+               e(a["short"].get(code) or a["short"]["en"]),
+               ('<span class="aw-org">%s</span>'
+                % e(a["issuer"].get(code) or a["issuer"]["en"])) if a.get("issuer") else "")
             for a in AWARDS if a["year"] == y)
         aw_rows += ('<div class="road-y"><span class="road-node"></span>'
                     '<span class="road-year">%s</span><ul>%s</ul></div>' % (y, items))
     def app_row(x):
         label = e(x["what"].get(code) or x["what"]["en"])
         head = '<a href="%s">%s ↗</a>' % (e(x["url"]), label) if x.get("url") else label
-        sub = '<span class="app-title">%s</span>' % e(x["title"]) if x.get("title") else ""
+        t = x.get("title")
+        if isinstance(t, dict):
+            t = t.get(code) or t.get("en")
+        sub = '<span class="app-title">%s</span>' % e(t) if t else ""
         return '<div class="svc"><dt>%s</dt><dd>%s%s</dd></div>' % (x["year"], head, sub)
     apps = "".join(app_row(x) for x in APPS)
     pc = L["patent_cols"]

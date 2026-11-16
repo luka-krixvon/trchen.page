@@ -270,6 +270,8 @@ tr:last-child td{border-bottom:0}
   color:var(--sig)}
 .road-y b{font-family:var(--serif);font-size:var(--t-sm);font-weight:600;line-height:1.4}
 .aw-comp{font-family:var(--sans);font-size:var(--t-xs);color:var(--ink3)}
+.aw-org{font-family:var(--sans);font-size:var(--t-xs);color:var(--ink3);
+  padding-left:9px;margin-left:1px;border-left:2px solid var(--line)}
 
 /* ---------- appearances ---------- */
 #appearances{max-width:none}
