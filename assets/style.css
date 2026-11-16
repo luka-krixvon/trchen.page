@@ -236,7 +236,7 @@ th{text-align:left;font-family:var(--mono);font-size:var(--t-xs);letter-spacing:
 td{padding:13px 16px;border-bottom:1px solid var(--hair);vertical-align:top;font-size:var(--t-sm)}
 tr:last-child td{border-bottom:0}
 .t-no{font-family:var(--mono);font-size:var(--t-xs);color:var(--ink2);white-space:nowrap}
-.t-ttl{font-family:var(--serif);font-size:var(--t-base);line-height:1.45}
+.t-ttl{font-family:var(--serif);font-size:var(--t-base);font-weight:500;line-height:1.45}
 .t-y{font-family:var(--mono);font-size:var(--t-xs);font-variant-numeric:tabular-nums;color:var(--ink3)}
 .t-doi{display:block;font-family:var(--mono);font-size:var(--t-xs);color:var(--ink3);margin-top:6px}
 .jur{font-family:var(--mono);font-size:var(--t-xs);padding:3px 8px;border-radius:5px;
@@ -255,7 +255,7 @@ tr:last-child td{border-bottom:0}
   transition:border-color .16s,transform .16s}
 .dep:hover{border-color:var(--accent);transform:translateY(-2px)}
 .dep .jur{align-self:flex-start}
-.dep-t{font-family:var(--serif);font-size:var(--t-base);line-height:1.45;color:var(--ink)}
+.dep-t{font-family:var(--serif);font-size:var(--t-base);font-weight:500;line-height:1.45;color:var(--ink)}
 .dep-stat{font-family:var(--mono);font-size:var(--t-xs);color:var(--accent);margin-top:auto}
 
 /* ---------- awards roadmap ---------- */
@@ -272,7 +272,7 @@ tr:last-child td{border-bottom:0}
 .road-y li{display:flex;flex-direction:column;gap:4px;min-width:0}
 .aw-win{font-family:var(--mono);font-size:var(--t-xs);letter-spacing:.1em;text-transform:uppercase;
   color:var(--sig)}
-.road-y b{font-family:var(--serif);font-size:var(--t-sm);font-weight:600;line-height:1.4}
+.road-y b{font-family:var(--serif);font-size:var(--t-sm);font-weight:500;line-height:1.4}
 .aw-comp{font-family:var(--sans);font-size:var(--t-xs);color:var(--ink3)}
 .aw-org{font-family:var(--sans);font-size:var(--t-xs);color:var(--ink3);
   padding-left:9px;margin-left:1px;border-left:2px solid var(--line)}
