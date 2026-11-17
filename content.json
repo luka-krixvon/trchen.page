@@ -484,13 +484,25 @@
       "group": "ev"
     },
     {
-      "no": "—",
-      "status": "allowed",
+      "no": "US20260178095A1",
+      "status": "examining",
       "note": null,
       "title": {
         "en": "Global cross-timezone computing power scheduling method",
         "zh": "全球跨時區算力調度方法（美國案）",
         "ja": "Global cross-timezone computing power scheduling method"
+      },
+      "region": "US",
+      "group": "compute"
+    },
+    {
+      "no": "—",
+      "status": "allowed",
+      "note": null,
+      "title": {
+        "en": "An open analytical structure combining depth and breadth with dual engines of thoughts",
+        "zh": "結合深度與廣度的雙引擎思維的開放式分析結構及其方法（美國案）",
+        "ja": "An open analytical structure combining depth and breadth with dual engines of thoughts"
       },
       "region": "US",
       "group": "compute"
