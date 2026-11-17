@@ -646,7 +646,7 @@
   ],
   "en": {
     "lang_attr": "en",
-    "meta_title": "Teng-Ruei Chen — Making AI Inference Measurable",
+    "meta_title": "Teng-Ruei Chen — LLM Routing and Inference Measurement",
     "meta_desc": "Teng-Ruei Chen, PhD — machine learning systems. LLM routing, inference economics, and the measurement problems underneath them.",
     "role": "AI infrastructure · LLM inference · Information security · Deep learning · Bioinformatics",
     "rail_sub": "",
@@ -837,7 +837,7 @@
   },
   "zh": {
     "lang_attr": "zh-Hant-TW",
-    "meta_title": "陳騰瑞 Teng-Ruei Chen — 讓 AI 推論可被量測",
+    "meta_title": "陳騰瑞 Teng-Ruei Chen — LLM 路由與推論量測",
     "meta_desc": "陳騰瑞，機器學習系統。LLM 路由、推論成本，以及它們底下的量測問題。",
     "role": "AI 基礎設施 · LLM 推論 · 資訊安全 · 深度學習 · 生物資訊",
     "rail_sub": "",
@@ -1028,7 +1028,7 @@
   },
   "ja": {
     "lang_attr": "ja",
-    "meta_title": "Teng-Ruei Chen — AI 推論を計測可能にする",
+    "meta_title": "Teng-Ruei Chen — LLM ルーティングと推論の計測",
     "meta_desc": "Teng-Ruei Chen、機械学習システム。LLMルーティング、推論の経済性、そしてその土台にある計測の問題。",
     "role": "AIインフラ · LLM推論 · 情報セキュリティ · 深層学習 · バイオインフォマティクス",
     "rail_sub": "",
