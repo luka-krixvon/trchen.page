@@ -342,7 +342,11 @@
         "en": "It is the first system that does both circularly-permuted and conventional co-linear modeling, its linker design reaches sub-angstrom accuracy, and it holds up when the permutant shares little sequence identity with the native protein or adopts a different fold through domain swapping.",
         "zh": "第一個同時能做 circularly-permuted 與傳統 co-linear 建模的系統，linker 設計達到 subangstrom 精度。即使 permutant 與原生蛋白質的 sequence identity 很低，或因為 3D domain swapping 而摺成不同構型，它仍然成立；也能辨識出 CP 誘發的 domain swapping。",
         "ja": "循環置換モデリングと従来の共線モデリングの両方に対応した初のシステムであり、リンカー設計はサブオングストローム精度に達する。置換体が天然型と配列同一性が低い場合や、ドメインスワッピングで異なる構造をとる場合でも成立する。"
-      }
+      },
+      "co_first": [
+        "@me",
+        "Y.-C. Lin"
+      ]
     },
     {
       "id": "ss-pssm",
@@ -375,7 +379,11 @@
         "en": "The new matrix beat the amino-acid matrix in every experiment, and combining the two raised three- and eight-state accuracy of existing predictors by 2.0 and 5.2 points on average — a gain obtained by changing what the model is shown, not how it learns.",
         "zh": "SSE-PSSM 在每一組實驗都贏過傳統的 amino acid PSSM；兩者合併之後，既有方法的三態與八態準確率平均各提升 2.0 與 5.2 個百分點。這個增益來自換掉餵給模型看的東西，不是換掉模型怎麼學。",
         "ja": "新しい行列は全実験でアミノ酸版を上回り、両者を併用すると既存手法の三状態・八状態精度が平均で2.0・5.2ポイント向上した。学習方法ではなく、モデルに何を見せるかを変えて得た改善である。"
-      }
+      },
+      "co_first": [
+        "@me",
+        "S.-H. Juan"
+      ]
     },
     {
       "id": "dataset-homology",
@@ -408,7 +416,11 @@
         "en": "Contrary to the long-standing assumption, homology between the query datasets barely affects accuracy — but redundancy within or between datasets inflates it. The result separates the homology that matters from the homology that does not, which is what an evaluation has to get right before any reported gain can be believed.",
         "zh": "和長期以來的假設相反：各組 query dataset 之間的 homology 幾乎不影響準確率。真正會讓準確率被高估的，是資料集內部或彼此之間的 redundancy。這個結果把會影響的 homology 和不會影響的分開——而評估要先把這件事做對，報出來的進步才可信。",
         "ja": "長年の前提に反して、クエリデータセット間の相同性は精度にほとんど影響しない。一方、データセット内部や相互の冗長性は精度を過大に見せる。影響する相同性としない相同性を切り分けた本結果は、報告された改善を信じる前に評価が満たすべき条件そのものである。"
-      }
+      },
+      "co_first": [
+        "@me",
+        "C.-H. Lo"
+      ]
     },
     {
       "id": "speed-strategy",
@@ -439,7 +451,11 @@
         "en": "Shrinking the database cuts time sharply for only a slight accuracy loss, and lowering identity actually raises accuracy; together they give about a twenty-fold speed-up at full accuracy. The paper also shows Shannon entropy explains the link between matrix quality and prediction accuracy, and releases the reduced database.",
         "zh": "縮小資料庫可以大幅省時，準確率只掉一點點；壓低 sequence identity 反而讓準確率上升。兩者合起來，在 2018 年的 UniRef90 上約快 20 倍而準確率不變。文中也用 Shannon entropy 解釋了 PSSM 品質與準確率之間的關係，並把縮減後的資料庫公開。",
         "ja": "データベースを縮小すると時間を大幅に削減でき、精度低下はわずかである。さらに配列同一性を下げると精度はむしろ上がる。両者を組み合わせると、精度を落とさずに約20倍の高速化が得られる。シャノン情報量で行列品質と予測精度の関係を説明し、縮小版データベースも公開した。"
-      }
+      },
+      "co_first": [
+        "S.-H. Juan",
+        "@me"
+      ]
     }
   ],
   "patents": [
@@ -718,7 +734,12 @@
       "dep_stats": "{v} views · {d} downloads",
       "metrics_note": "Citation figures from %s, updated %s",
       "contribution": "Contribution. ",
-      "patent_count": "%s patents"
+      "patent_count": "%s patents",
+      "co_first": "† Co-first authors",
+      "role_sole": "Sole author",
+      "role_cofirst": "Co-first author",
+      "role_first": "First author",
+      "role_nth": "Author %d"
     },
     "filters": {
       "all": "All",
@@ -909,7 +930,12 @@
       "dep_stats": "{v} 次瀏覽 · {d} 次下載",
       "metrics_note": "引用數據來自 %s，更新於 %s",
       "contribution": "貢獻：",
-      "patent_count": "%s 件"
+      "patent_count": "%s 件",
+      "co_first": "† 共同第一作者",
+      "role_sole": "獨著",
+      "role_cofirst": "共同第一作者",
+      "role_first": "第一作者",
+      "role_nth": "第 %d 作者"
     },
     "filters": {
       "all": "全部",
@@ -1100,7 +1126,12 @@
       "dep_stats": "{v} 閲覧 · {d} ダウンロード",
       "metrics_note": "被引用データは %s より、更新日 %s",
       "contribution": "貢献：",
-      "patent_count": "%s 件"
+      "patent_count": "%s 件",
+      "co_first": "† 筆頭著者（同等貢獻）",
+      "role_sole": "単著",
+      "role_cofirst": "筆頭著者（同等貢献）",
+      "role_first": "筆頭著者",
+      "role_nth": "第 %d 著者"
     },
     "filters": {
       "all": "すべて",

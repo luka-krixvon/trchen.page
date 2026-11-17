@@ -177,11 +177,15 @@ h2.big{margin-bottom:0}
 .pub-ttl{font-family:var(--serif);font-size:var(--t-base);font-weight:500;line-height:1.45;
   letter-spacing:-.012em;min-width:0}
 .pub-src{font-family:var(--mono);font-size:var(--t-xs);color:var(--ink3);white-space:nowrap}
+.pub-role{display:inline-block;margin-right:9px;padding:2px 8px;border-radius:5px;
+  background:var(--accent-soft);color:var(--accent)}
 .pub-talk{display:inline-flex;align-items:center;gap:6px;margin-right:10px;padding:3px 8px;
   border-radius:5px;background:var(--sig-soft);color:var(--sig);font-size:var(--t-xs)}
 .pub-talk svg{width:8px;height:8px;fill:currentColor}
 .pub-body{padding:4px 4px 22px 74px}
 .pub-blurb{max-width:66ch;margin-bottom:18px}
+.pub-a sup{font-size:.72em;color:var(--accent);margin-left:1px}
+.pub-cofirst{margin-top:4px;font-family:var(--mono);font-size:var(--t-xs);color:var(--ink3)}
 .pub-blurb p{font-size:var(--t-base);line-height:1.6;color:var(--ink2)}
 .pub-contrib{margin-top:10px;padding-left:12px;border-left:3px solid var(--accent);color:var(--ink)}
 .pub-contrib b{font-weight:600;color:var(--accent)}
