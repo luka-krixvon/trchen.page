@@ -180,10 +180,11 @@ def body(L, code, depth):
         cls = {"granted": "b-ok", "allowed": "b-mid", "examining": "b-wait"}[p["status"]]
         ttl = p["title"].get(code) or p["title"]["en"]
         extra = ""
-        rows += ('<tr><td class="t-no"><span class="jur">%s</span></td>'
+        rows += ('<tr><td class="t-no"><span class="jur jur-%s">%s</span></td>'
                  '<td class="t-no">%s</td><td class="t-ttl">%s%s</td>'
                  '<td><span class="badge %s"><i></i>%s</span></td></tr>'
-                 % (e(p["region"]), e(p["no"]), e(ttl), extra, cls, e(st)))
+                 % (e(p["region"].lower()), e(p["region"]), e(p["no"]),
+                    e(ttl), extra, cls, e(st)))
     dc = L["deposit_cols"]
     dep_rows = "".join(
         '<a class="dep" href="https://doi.org/%s"><span class="jur">%s</span>'

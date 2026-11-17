@@ -241,6 +241,10 @@ tr:last-child td{border-bottom:0}
 .t-doi{display:block;font-family:var(--mono);font-size:var(--t-xs);color:var(--ink3);margin-top:6px}
 .jur{font-family:var(--mono);font-size:var(--t-xs);padding:3px 8px;border-radius:5px;
   background:var(--accent-soft);color:var(--accent)}
+/* 14 件台灣案是常態，唯一的美國案才是區別點：常態安靜，例外才搶眼。
+   只動專利表的國別徽章，資料集那區的類別標籤不受影響。 */
+.jur-tw{background:var(--hair);color:var(--ink3)}
+.jur-us{font-weight:500;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--accent) 38%,transparent)}
 .badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:var(--t-xs);
   padding:4px 10px;border-radius:999px;white-space:nowrap}
 .badge i{width:5px;height:5px;border-radius:50%;background:currentColor;font-style:normal}
