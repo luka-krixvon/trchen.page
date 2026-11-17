@@ -740,7 +740,8 @@
       "role_cofirst": "Co-first author",
       "role_first": "First author",
       "role_nth": "%s author",
-      "role_ordinal": true
+      "role_ordinal": true,
+      "dissertation": "Dissertation"
     },
     "filters": {
       "all": "All",
@@ -936,7 +937,8 @@
       "role_sole": "獨著",
       "role_cofirst": "共同第一作者",
       "role_first": "第一作者",
-      "role_nth": "第 %s 作者"
+      "role_nth": "第 %s 作者",
+      "dissertation": "博士論文"
     },
     "filters": {
       "all": "全部",
@@ -1132,7 +1134,8 @@
       "role_sole": "単著",
       "role_cofirst": "筆頭著者（同等貢献）",
       "role_first": "筆頭著者",
-      "role_nth": "第 %s 著者"
+      "role_nth": "第 %s 著者",
+      "dissertation": "博士論文"
     },
     "filters": {
       "all": "すべて",
@@ -1584,5 +1587,10 @@
     "ev",
     "power",
     "mobility"
-  ]
+  ],
+  "dissertation": {
+    "year": "2021",
+    "title": "On the Improvement and Evaluation of Protein Secondary Structure Prediction",
+    "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=PiuFUZ8AAAAJ&citation_for_view=PiuFUZ8AAAAJ:9yKSN-GCB0IC"
+  }
 }
