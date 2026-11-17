@@ -3,13 +3,13 @@
 <title>og</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Spectral:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
 <style>
 /* Source for og.png. Regenerate: see README. 1200x630, the site's own tokens. */
 :root{--paper:#FAFAF9;--surface:#fff;--ink:#16191A;--ink2:#525A5C;--ink3:#7C8486;
   --line:#E1E4E0;--accent:#2A32C4;--accent-soft:#EBEDFC;
-  --serif:"Spectral",Georgia,serif;--sans:"IBM Plex Sans",-apple-system,sans-serif;
-  --mono:"IBM Plex Mono",Menlo,monospace}
+  --serif:"Space Grotesk",-apple-system,sans-serif;--sans:"Space Grotesk",-apple-system,sans-serif;
+  --mono:"Space Mono",Menlo,monospace}
 *{box-sizing:border-box;margin:0}
 body{width:1200px;height:630px;background:var(--paper);color:var(--ink);
   font-family:var(--serif);overflow:hidden;position:relative;
@@ -18,7 +18,7 @@ body{width:1200px;height:630px;background:var(--paper);color:var(--ink);
   font-family:var(--mono);font-size:15px;letter-spacing:.17em;text-transform:uppercase;color:var(--ink2)}
 .mark i{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
 .left{display:flex;flex-direction:column;justify-content:center;min-width:0}
-h1{font-size:82px;font-weight:700;letter-spacing:-.04em;line-height:.95}
+h1{font-size:76px;font-weight:700;letter-spacing:-.045em;line-height:1}
 .role{font-family:var(--mono);font-size:16px;letter-spacing:.14em;text-transform:uppercase;
   color:var(--ink3);margin-top:20px}
 .lede{font-size:30px;line-height:1.36;color:var(--ink2);margin-top:30px;max-width:21ch}
@@ -27,7 +27,7 @@ h1{font-size:82px;font-weight:700;letter-spacing:-.04em;line-height:.95}
 .counts{display:flex;gap:40px;margin-top:38px;padding-top:24px;border-top:1px solid var(--line);
   font-family:var(--mono)}
 .counts div{display:flex;flex-direction:column;gap:3px}
-.counts b{font-size:34px;font-weight:400;letter-spacing:-.03em;color:var(--accent);line-height:1}
+.counts b{font-family:var(--mono);font-size:30px;font-weight:700;letter-spacing:-.045em;color:var(--accent);line-height:1}
 .counts span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3)}
 .right{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px}
 .photo{width:300px;height:300px;border-radius:50%;object-fit:cover;background:var(--accent-soft);
@@ -48,10 +48,12 @@ svg text.on{fill:var(--accent)}
   <p class="role">Ph.D. · Machine Learning Systems</p>
   <p class="lede">The <em>routing layer</em> of large language model systems, and how much of a reported improvement is real.</p>
   <div class="counts">
+    <!--counts-->
+    <div><b>113</b><span>Citations</span></div>
+    <div><b>6</b><span>h-index</span></div>
     <div><b>13</b><span>Publications</span></div>
     <div><b>12</b><span>Patents</span></div>
-    <div><b>3</b><span>Datasets</span></div>
-    <div><b>9</b><span>Awards</span></div>
+    <!--/counts-->
   </div>
 </div>
 <div class="right">
