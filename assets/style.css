@@ -10,7 +10,7 @@
   --mono:"Space Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
   
   --t-xs:12px; --t-sm:13.5px; --t-base:16px; --t-md:18px; --t-sec:21px; --t-lg:25px; --t-xl:34px;
-  --t-display:clamp(40px,6.2vw,62px);
+  --t-display:clamp(29px,7.4vw,62px);
   --bar:54px;
   color-scheme:light;
 }
@@ -59,7 +59,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   font-size:var(--t-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)}
 .wm-dot{width:9px;height:9px;border-radius:50%;background:var(--accent);flex:none}
 .wordmark{display:none}           
-.topbar-r{display:flex;align-items:center;gap:10px}
+.topbar-r{display:flex;align-items:center;gap:10px;flex:none}
 .langs{display:flex;align-items:center;border:1px solid var(--line);border-radius:999px;
   overflow:hidden;background:var(--surface);font-family:var(--mono)}
 .langs a{font-size:var(--t-xs);padding:6px 13px;text-decoration:none;color:var(--ink2);
@@ -75,7 +75,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .page{max-width:920px;margin:0 auto;
   padding-left:max(22px,env(safe-area-inset-left,0px));
   padding-right:max(22px,env(safe-area-inset-right,0px))}
-.topnav{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;min-width:0}
+.topnav{display:flex;gap:4px;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;min-width:0;flex:1 1 auto}
 .topnav::-webkit-scrollbar{display:none}
 .topnav a{font-family:var(--sans);font-size:var(--t-sm);text-decoration:none;color:var(--ink2);
   padding:7px 11px;border-radius:7px;white-space:nowrap;transition:color .14s,background .14s}
@@ -349,4 +349,18 @@ footer.site{padding-block:30px 56px;font-family:var(--mono);font-size:var(--t-xs
   .page{max-width:1080px}
   .bio{max-width:64ch}
   .sec > p,.filt-note{max-width:72ch}
+}
+
+
+/* ---------- phones ---------- */
+@media (max-width:560px){
+  .topbar{gap:10px;padding-left:max(14px,env(safe-area-inset-left,0px));
+    padding-right:max(14px,env(safe-area-inset-right,0px))}
+  .langs a{padding:6px 9px}
+  .topnav a{padding:7px 8px}
+  .topbar-r{gap:8px}
+  .page{padding-left:max(16px,env(safe-area-inset-left,0px));
+    padding-right:max(16px,env(safe-area-inset-right,0px))}
+  .kpi-main b{font-size:clamp(28px,8.6vw,38px)}
+  .idtext h1{letter-spacing:-.03em}
 }
