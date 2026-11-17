@@ -452,7 +452,8 @@
         "zh": "結合雲端及本地算力的調度系統及其方法",
         "ja": "Scheduling system and method combining cloud and local computing power"
       },
-      "region": "TW"
+      "region": "TW",
+      "group": "compute"
     },
     {
       "no": "—",
@@ -463,7 +464,8 @@
         "en": "Battery Swapping Scheduling System and Scheduling Method",
         "zh": "換電排程系統及其排程方法",
         "ja": "Battery Swapping Scheduling System and Scheduling Method"
-      }
+      },
+      "group": "ev"
     },
     {
       "no": "—",
@@ -474,7 +476,8 @@
         "zh": "全球跨時區算力調度方法（美國案）",
         "ja": "Global cross-timezone computing power scheduling method"
       },
-      "region": "US"
+      "region": "US",
+      "group": "compute"
     },
     {
       "no": "I941269",
@@ -485,7 +488,8 @@
         "zh": "區域算力管理平台系統及區域算力資源調度方法",
         "ja": "Regional computing power management platform system"
       },
-      "region": "TW"
+      "region": "TW",
+      "group": "compute"
     },
     {
       "no": "I935869",
@@ -496,7 +500,8 @@
         "zh": "全球跨時區算力調度方法",
         "ja": "Global cross-timezone computing power scheduling method"
       },
-      "region": "TW"
+      "region": "TW",
+      "group": "compute"
     },
     {
       "no": "I928765",
@@ -507,7 +512,8 @@
         "zh": "算力需求分析系統及其方法",
         "ja": "Computing power demand analysis system and method thereof"
       },
-      "region": "TW"
+      "region": "TW",
+      "group": "compute"
     },
     {
       "no": "I928714",
@@ -518,7 +524,8 @@
         "zh": "結合深度與廣度的雙引擎思維的開放式分析結構及其方法",
         "ja": "An open analytical structure combining depth and breadth with dual engines of thoughts"
       },
-      "region": "TW"
+      "region": "TW",
+      "group": "compute"
     },
     {
       "no": "I907964",
@@ -529,7 +536,8 @@
         "zh": "基於區塊鏈的電力資訊處理系統及其方法",
         "ja": "Power information processing system and method based on blockchain"
       },
-      "region": "TW"
+      "region": "TW",
+      "group": "power"
     },
     {
       "no": "I882792",
@@ -540,7 +548,8 @@
         "zh": "智慧車輛輔助無人機作業之系統",
         "ja": "Intelligent vehicle-assisted drone operation system"
       },
-      "region": "TW"
+      "region": "TW",
+      "group": "mobility"
     },
     {
       "no": "I870046",
@@ -551,7 +560,8 @@
         "zh": "電力驅動載具的無線充電系統及方法",
         "ja": "Wireless charging system and method for unmanned vehicles"
       },
-      "region": "TW"
+      "region": "TW",
+      "group": "ev"
     },
     {
       "no": "I829017",
@@ -562,7 +572,8 @@
         "zh": "智能車輛充放電系統及其方法",
         "ja": "The system and the method of battery exchange of the electric car"
       },
-      "region": "TW"
+      "region": "TW",
+      "group": "ev"
     },
     {
       "no": "I827983",
@@ -573,7 +584,8 @@
         "zh": "智能車輛無線充放電系統及其方法",
         "ja": "The system and the method of wireless charging of the electric car"
       },
-      "region": "TW"
+      "region": "TW",
+      "group": "ev"
     },
     {
       "no": "I828105",
@@ -584,7 +596,8 @@
         "zh": "一種物流處理系統及其方法",
         "ja": "Logistics processing system and method thereof"
       },
-      "region": "TW"
+      "region": "TW",
+      "group": "mobility"
     },
     {
       "no": "I824753",
@@ -595,7 +608,8 @@
         "zh": "充電服務系統及其方法",
         "ja": "Charging service system and method thereof"
       },
-      "region": "TW"
+      "region": "TW",
+      "group": "ev"
     },
     {
       "no": "I741788",
@@ -606,7 +620,8 @@
         "zh": "一種廣域電力監控平台系統及其方法",
         "ja": "A wide area power monitoring platform system and method"
       },
-      "region": "TW"
+      "region": "TW",
+      "group": "power"
     }
   ],
   "languages": [
@@ -702,7 +717,8 @@
       "primary_sub": "citations, h-index, full list",
       "dep_stats": "{v} views · {d} downloads",
       "metrics_note": "Citation figures from %s, updated %s",
-      "contribution": "Contribution. "
+      "contribution": "Contribution. ",
+      "patent_count": "%s patents"
     },
     "filters": {
       "all": "All",
@@ -811,6 +827,12 @@
     "deposit_kinds": {
       "dataset": "Dataset",
       "software": "Software"
+    },
+    "patent_groups": {
+      "compute": "Compute scheduling and AI inference",
+      "ev": "EV charging and battery swapping",
+      "mobility": "Autonomous vehicles and logistics",
+      "power": "Power systems"
     }
   },
   "zh": {
@@ -886,7 +908,8 @@
       "primary_sub": "引用數、h-index、完整列表",
       "dep_stats": "{v} 次瀏覽 · {d} 次下載",
       "metrics_note": "引用數據來自 %s，更新於 %s",
-      "contribution": "貢獻："
+      "contribution": "貢獻：",
+      "patent_count": "%s 件"
     },
     "filters": {
       "all": "全部",
@@ -995,6 +1018,12 @@
     "deposit_kinds": {
       "dataset": "資料集",
       "software": "程式"
+    },
+    "patent_groups": {
+      "compute": "算力調度與 AI 推論",
+      "ev": "電動車充換電",
+      "mobility": "無人載具與物流",
+      "power": "電力系統"
     }
   },
   "ja": {
@@ -1070,7 +1099,8 @@
       "primary_sub": "被引用数・h-index・全リスト",
       "dep_stats": "{v} 閲覧 · {d} ダウンロード",
       "metrics_note": "被引用データは %s より、更新日 %s",
-      "contribution": "貢献："
+      "contribution": "貢献：",
+      "patent_count": "%s 件"
     },
     "filters": {
       "all": "すべて",
@@ -1179,6 +1209,12 @@
     "deposit_kinds": {
       "dataset": "データセット",
       "software": "ソフトウェア"
+    },
+    "patent_groups": {
+      "compute": "計算資源スケジューリングとAI推論",
+      "ev": "EV充電・バッテリー交換",
+      "mobility": "無人車両と物流",
+      "power": "電力システム"
     }
   },
   "awards": [
@@ -1510,5 +1546,11 @@
     "openalex_id": "A5091465074",
     "scholar_url": "https://scholar.google.com/citations?user=PiuFUZ8AAAAJ",
     "updated": "2026-11-17"
-  }
+  },
+  "patent_group_order": [
+    "compute",
+    "ev",
+    "power",
+    "mobility"
+  ]
 }

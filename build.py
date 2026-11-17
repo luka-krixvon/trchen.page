@@ -175,17 +175,29 @@ def body(L, code, depth):
         '<button class="filt" type="button" data-filter="%s" aria-pressed="%s">%s</button>'
         % (k, "true" if k == "all" else "false", e(L["filters"][k])) for k in keys)
     pubs = "\n".join(publication(p, L, i + 1, code) for i, p in enumerate(PUBS))
-    rows = ""
-    for p in PATS:
+    def patent_row(p):
         st = L["patent_status"][p["status"]]
         cls = {"granted": "b-ok", "allowed": "b-mid", "examining": "b-wait"}[p["status"]]
         ttl = p["title"].get(code) or p["title"]["en"]
-        extra = ""
-        rows += ('<tr><td class="t-no"><span class="jur jur-%s">%s</span></td>'
-                 '<td class="t-no">%s</td><td class="t-ttl">%s%s</td>'
-                 '<td><span class="badge %s"><i></i>%s</span></td></tr>'
-                 % (e(p["region"].lower()), e(p["region"]), e(p["no"]),
-                    e(ttl), extra, cls, e(st)))
+        return ('<tr><td class="t-no"><span class="jur jur-%s">%s</span></td>'
+                '<td class="t-no">%s</td><td class="t-ttl">%s</td>'
+                '<td><span class="badge %s"><i></i>%s</span></td></tr>'
+                % (e(p["region"].lower()), e(p["region"]), e(p["no"]),
+                   e(ttl), cls, e(st)))
+
+    order = C.get("patent_group_order") or []
+    glabels = L.get("patent_groups") or {}
+    rows = ""
+    if order and glabels and all(p.get("group") for p in PATS):
+        for g in order:
+            inside = [p for p in PATS if p.get("group") == g]
+            if not inside:
+                continue
+            rows += ('<tr class="grp"><td colspan="4"><b>%s</b><span>%s</span></td></tr>'
+                     % (e(glabels[g]), e(L["ui"]["patent_count"] % len(inside))))
+            rows += "".join(patent_row(p) for p in inside)
+    else:
+        rows = "".join(patent_row(p) for p in PATS)
     dc = L["deposit_cols"]
     dep_rows = "".join(
         '<a class="dep" href="https://doi.org/%s"><span class="jur">%s</span>'
