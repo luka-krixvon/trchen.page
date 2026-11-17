@@ -354,9 +354,10 @@ footer.site{padding-block:30px 56px;font-family:var(--mono);font-size:var(--t-xs
 
 /* ---------- phones ---------- */
 @media (max-width:620px){
-  /* 導覽列可橫向捲動，右緣用漸層提示還有內容 */
-  .topnav{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 22px),transparent);
-    mask-image:linear-gradient(90deg,#000 calc(100% - 22px),transparent);padding-right:14px}
+  /* 手機上放不下六個區塊連結，半截藏在語言切換底下看起來像壞掉；
+     整頁本來就是單欄捲動，直接拿掉比留一個殘缺的好 */
+  .topnav{display:none}
+  .topbar{justify-content:flex-end}
 
   /* 專利表改成卡片，不用橫向捲動也看得到「狀態」 */
   .tablewrap{overflow-x:visible}
