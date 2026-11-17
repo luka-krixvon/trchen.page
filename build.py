@@ -194,13 +194,17 @@ def body(L, code, depth):
     dis = C.get("dissertation") or {}
     dt = dis.get("title")
     dis_title = (dt.get(code) or dt.get("en")) if isinstance(dt, dict) else (dt or "")
+    dis_en = dt.get("en") if isinstance(dt, dict) else ""
 
     def edu_row(y, x):
         extra = ""
         if dis.get("url") and str(dis.get("year")) == str(y):
-            extra = ('<span class="cv-sub">%s<a href="%s">%s</a></span>'
+            alt = ""
+            if dis_en and dis_en != dis_title:
+                alt = '<span class="cv-sub2">%s</span>' % e(dis_en)
+            extra = ('<span class="cv-sub">%s<a href="%s">%s</a>%s</span>'
                      % (e(L["ui"]["dissertation"]) + ("\uff1a" if code != "en" else ": "),
-                        e(dis["url"]), e(dis_title)))
+                        e(dis["url"]), e(dis_title), alt))
         return '<div class="cv-row"><dt>%s</dt><dd>%s%s</dd></div>' % (e(y), e(x), extra)
 
     edu = "".join(edu_row(y, x) for y, x in L["education"])

@@ -151,6 +151,7 @@ h2.big{margin-bottom:0}
 .cv-sub a{color:var(--ink2);text-decoration:none;
   border-bottom:1px solid color-mix(in srgb,var(--accent) 32%,transparent)}
 .cv-sub a:hover{color:var(--accent);border-color:var(--accent)}
+.cv-sub2{display:block;margin-top:2px;font-size:var(--t-xs);color:var(--ink3);line-height:1.5}
 .cv-row{display:grid;grid-template-columns:84px 1fr;gap:16px;padding-block:10px;
   border-top:1px solid var(--hair);align-items:baseline}
 .cv-row:first-of-type{border-top:0}
