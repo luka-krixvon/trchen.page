@@ -9,6 +9,7 @@ YouTube players are stand-ins instead of real embeds.
 """
 import html
 import json
+import re
 import pathlib
 
 HERE = pathlib.Path(__file__).parent
@@ -423,7 +424,25 @@ def page(code, demo=False, standalone=True):
 """
 
 
+def sync_og():
+    """Keep the share card's figures in step with content.json."""
+    f = HERE / "og.html"
+    if not f.exists():
+        return
+    labels = [("citations", "Citations"), ("h_index", "h-index"),
+              ("publications", "Publications"), ("patents", "Patents")]
+    block = "\n".join('    <div><b>%s</b><span>%s</span></div>' % (COUNTS[k], lab)
+                      for k, lab in labels if COUNTS.get(k) is not None)
+    t = f.read_text(encoding="utf-8")
+    new = re.sub(r"<!--counts-->.*?<!--/counts-->",
+                 "<!--counts-->\n" + block + "\n    <!--/counts-->", t, flags=re.S)
+    if new != t:
+        f.write_text(new, encoding="utf-8")
+        print("   og.html (figures synced \u2014 re-render og.png to publish)")
+
+
 def main():
+    sync_og()
     written = []
     for l in LANGS:
         out = HERE / (l["dir"] + "/index.html" if l["dir"] else "index.html")
