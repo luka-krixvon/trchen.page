@@ -680,7 +680,7 @@
     },
     "headings": {
       "research": "Research",
-      "publications": "Publications",
+      "publications": "Selected publications",
       "patents": "Patents as inventor",
       "service": "Service & awards",
       "about": "About",
@@ -877,7 +877,7 @@
     },
     "headings": {
       "research": "研究主題",
-      "publications": "論文",
+      "publications": "選錄論文",
       "patents": "專利（發明人）",
       "service": "服務與獲獎",
       "about": "關於",
@@ -1073,7 +1073,7 @@
     },
     "headings": {
       "research": "研究テーマ",
-      "publications": "論文",
+      "publications": "主要論文",
       "patents": "特許（発明者）",
       "service": "学会活動・受賞",
       "about": "略歴",
