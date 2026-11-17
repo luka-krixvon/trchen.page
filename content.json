@@ -1590,7 +1590,11 @@
   ],
   "dissertation": {
     "year": "2021",
-    "title": "On the Improvement and Evaluation of Protein Secondary Structure Prediction",
-    "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=PiuFUZ8AAAAJ&citation_for_view=PiuFUZ8AAAAJ:9yKSN-GCB0IC"
+    "title": {
+      "en": "On the Improvement and Evaluation of Protein Secondary Structure Prediction",
+      "zh": "論二級結構預測之優化與準確度驗證流程",
+      "ja": "On the Improvement and Evaluation of Protein Secondary Structure Prediction"
+    },
+    "url": "https://thesis.lib.nycu.edu.tw/items/eef98ceb-ef34-44bf-a0e3-51872cca0d24"
   }
 }
