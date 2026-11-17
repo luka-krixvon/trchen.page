@@ -155,7 +155,7 @@ def publication(pub, L, i, code):
           <button class="pub-head" type="button" data-pubtoggle aria-expanded="false" aria-controls="{pid2}">
             <span class="pub-y">{pub['year']}</span>
             <span class="pub-ttl">{e(pub['title'])}</span>
-            <span class="pub-src">{mark}{role}{e(pub.get('source',''))}</span>
+            {role}<span class="pub-src">{mark}{e(pub.get('source',''))}</span>
           </button>
           <div class="pub-body{' has-talk' if v else ''}" id="{pid2}" hidden>
             {panel}
