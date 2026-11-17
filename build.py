@@ -339,19 +339,33 @@ def jsonld(L, code):
             art["identifier"] = ids if len(ids) > 1 else ids[0]
         g.append(art)
         v = p.get("video")
+        if v and v.get("id") in ("", "VIDEO_ID"):
+            v = None          # never advertise a placeholder video to search engines
         if v:
-            g.append({
+            mm, _, ss = v["duration"].partition(":")
+            total = int(mm) * 60 + int(ss or 0)
+            chaps = L["chapters"].get(p["id"], [])
+            parts = []
+            for n, (sec, txt) in enumerate(chaps):
+                end = chaps[n + 1][0] if n + 1 < len(chaps) else total
+                parts.append({"@type": "Clip", "name": txt,
+                              "startOffset": sec, "endOffset": end,
+                              "url": "https://www.youtube.com/watch?v=%s&t=%ds" % (v["id"], sec)})
+            sm = p.get("summary")
+            desc = (sm.get(code) or sm.get("en")) if isinstance(sm, dict) else (sm or p["title"])
+            item = {
                 "@type": "VideoObject", "name": p["title"],
-                "description": L["chapters"].get(p["id"], [[0, p["title"]]])[0][1],
-                "uploadDate": v["uploaded"], "duration": v["iso"], "inLanguage": "en",
+                "description": desc,
+                "uploadDate": v["uploaded"] + "T09:00:00+08:00",
+                "duration": v["iso"], "inLanguage": "en",
                 "thumbnailUrl": "https://i.ytimg.com/vi/%s/maxresdefault.jpg" % v["id"],
                 "embedUrl": "https://www.youtube.com/embed/%s" % v["id"],
                 "contentUrl": "https://www.youtube.com/watch?v=%s" % v["id"],
                 "about": {"@id": base + "/#" + p["id"]},
-                "hasPart": [{"@type": "Clip", "name": txt, "startOffset": sec,
-                             "url": "https://www.youtube.com/watch?v=%s&t=%ds" % (v["id"], sec)}
-                            for sec, txt in L["chapters"].get(p["id"], [])],
-            })
+            }
+            if parts:
+                item["hasPart"] = parts
+            g.append(item)
     return json.dumps({"@context": "https://schema.org", "@graph": g}, ensure_ascii=False, indent=1)
 
 
