@@ -142,8 +142,8 @@
       },
       "source": "arXiv",
       "summary": {
-        "en": "Two GPU kernels that implement the same INT8 matrix-multiply interface are normally treated as interchangeable. Holding everything else fixed — checkpoint, prompts, hardware, engine, decoding — and swapping only the kernel, they agreed on not a single generated sequence. The arithmetic itself cannot be to blame: for shared INT8 operands under a verified no-overflow bound, the integer accumulator is exact and order-independent.",
-        "zh": "兩個實作同一套 scaled INT8 GEMM 介面的 kernel，一般被當成可以互換。我把其他條件全部固定——checkpoint、prompt、硬體、inference engine、decoding、量化設定——只換掉 INT8 linear kernel（CUTLASS 換成 Triton），結果端到端跑出來沒有任何一條序列是一樣的。但算術本身不可能是兇手：在已驗證不會 overflow 的前提下，INT32 的 dot product 是精確的，而且與順序無關。",
+        "en": "Two GPU kernels that implement the same INT8 matrix-multiply interface are normally treated as interchangeable. Holding everything else fixed — checkpoint, prompts, hardware, engine, decoding — and swapping only the kernel, they agreed on not a single generated sequence. The arithmetic can be ruled out up front: for shared INT8 operands under a verified no-overflow bound, the integer accumulator is exact and order-independent — which gave me a clean starting point for locating where the difference actually comes from.",
+        "zh": "兩個實作同一套 scaled INT8 GEMM 介面的 kernel，一般被當成可以互換。我把其他條件全部固定——checkpoint、prompt、硬體、inference engine、decoding、量化設定——只換掉 INT8 linear kernel（CUTLASS 換成 Triton），結果端到端跑出來沒有任何一條序列是一樣的。而算術本身可以先排除：在已驗證不會 overflow 的前提下，INT32 的 dot product 是精確的，且與順序無關——這給了我一個乾淨的起點去定位差異到底從哪裡來。",
         "ja": "同一のINT8行列積インタフェースを実装する2つのGPUカーネルは、通常は互換と見なされる。チェックポイント・プロンプト・ハードウェア・エンジン・デコードを固定し、カーネルだけを入れ替えたところ、生成列は一つも一致しなかった。しかも算術自体は原因になり得ない——オーバーフローしないことが検証された共有INT8オペランドでは、整数累算は厳密であり、順序に依存しないためである。"
       },
       "contribution": {
@@ -205,8 +205,8 @@
         "ja": "弱い検証器がモデルの回答を受理したとき、次の呼び出しは同じモデルを再サンプリングするか、より強いモデルへ再ルーティングするかを選べる。正誤が隠れているため、この選択は調整の問題ではなく識別の問題になる。回収可能な停止負債・双方向の行動サポート・結果盲選択器のホールドアウト価値という三つのゲートを設け、固定した152問のMBPP+実験で検証した。"
       },
       "contribution": {
-        "en": "It shows the stopping debt is real — a false-positive stop leaves 2.6 points of recoverable accuracy — but that the evidence does not yet identify when to resample rather than reroute, and it names the statistic that looks like evidence but contains no observable-history term.",
-        "zh": "stopping debt 確實存在：一次 false-positive 的停止，會留下 +2.59 個百分點可以救回來的準確率。但現有證據還不足以判斷什麼時候該 resample、什麼時候該 reroute。文中也點出一個看起來像證據的統計量，實際上不含任何 observable-history 的項。",
+        "en": "It establishes that the stopping debt is real — a false-positive stop leaves 2.6 points of recoverable accuracy — and sets out what it would take to identify when to resample rather than reroute. It also names a statistic widely read as evidence that in fact carries no observable-history term, and so cannot support that decision.",
+        "zh": "證明 stopping debt 確實存在：一次 false-positive 的停止，會留下 +2.59 個百分點可以救回來的準確率。更重要的是釐清了這個決策需要什麼條件才能成立——並指出一個常被當成證據的統計量，其實不含任何 observable-history 的項，因此無法支撐這個判斷。",
         "ja": "停止負債が実在すること（誤って停止すると2.6ポイント分の精度が回収可能なまま残る）を示す一方、再サンプリングと再ルーティングのどちらを選ぶべきかは現状の証拠では識別できないと明示し、証拠のように見えて観測履歴の項を含まない統計量を指摘した。"
       }
     },
@@ -241,8 +241,8 @@
         "ja": "ルーティング評価では、回答を見る前に一つのモデルを選ぶ方策と、記録済みの回答のどれかが正しければ正解と数える事後オラクルが比較される。確率的デコーディングの下では両者は異なる決定クラスであり、その差はしばしば「ルーティングの伸びしろ」と読まれる。11のオープンモデルの凍結正誤テンソル（問題×モデルごとに30応答）をGSM8K・MATH-500・GPQA-Diamondで監査した。"
       },
       "contribution": {
-        "en": "It shows the gap identifies only an interval, not a number: a zero premium is always attainable over compatible couplings, so the headline figure depends on coupling, decision class, scorer, pool and the number of draws. The result is a measurement contract for reading oracle gaps, not a claim about how much routing can gain.",
-        "zh": "這個落差只框得出一個區間，框不出一個數字：在相容的 coupling 之下，premium 為零永遠是可能的。所以檯面上那個數字其實取決於 coupling、decision class、scorer、pool 與抽樣次數。成果是一份解讀 oracle gap 的量測規約，不是「routing 可以賺多少」的結論。",
+        "en": "It proves the gap identifies an interval rather than a number: a zero premium is always attainable over compatible couplings. From that it sets out a measurement contract for reading oracle gaps — report the figure together with the coupling, decision class, scorer, pool and number of draws that produced it.",
+        "zh": "我證明這個落差所能識別的是一個區間而非單一數字：在相容的 coupling 之下，premium 為零始終是可能的。據此我給出一份解讀 oracle gap 的量測規約——要報這個數字，就必須連同 coupling、decision class、scorer、pool 與抽樣次數一起報。",
         "ja": "この差は数値ではなく区間しか同定しないことを示した：整合的なカップリングの下では差ゼロが常に達成可能であり、表に出る数値はカップリング・決定クラス・採点器・プール・サンプル数に依存する。成果は「ルーティングでどれだけ得られるか」ではなく、オラクル差を読むための計測規約である。"
       }
     },
@@ -269,7 +269,7 @@
       "source": "ICT Journal",
       "summary": {
         "en": "Heat treatment is one of Taiwan's most energy-intensive traditional industries: heating, holding temperature and heat loss all waste energy. Scheduling was done first-come-first-served by hand, which cannot balance furnace utilisation, delivery dates and energy use at the same time. We built an AI scheduler that simulates the schedule before an order is accepted, using Monte Carlo tree search to estimate the delivery date and propose an order-to-furnace assignment, together with an energy management system that meters equipment in real time and computes per-product carbon emissions against ERP data.",
-        "zh": "熱處理是台灣耗能最高的傳統產業之一：加熱、保溫、熱逸散都在浪費能源。而排程長期靠人工先進先出，沒辦法同時顧到設備稼動率、交期和能耗。我們做的是一套 AI 排程系統，在接單前就先模擬排程，用 MCTS 估出交期並建議訂單要進哪一座爐；搭配一套 EMS，透過智慧電表與設備聯網即時監控用電，結合 ERP 資料算出每項產品的碳排。",
+        "zh": "熱處理是台灣耗能最高的傳統產業之一：加熱、保溫、熱逸散都在浪費能源。而排程長期靠人工先進先出，難以同時兼顧設備稼動率、交期與能耗。我們做的是一套 AI 排程系統，在接單前就先模擬排程，用 MCTS 估出交期並建議訂單要進哪一座爐；搭配一套 EMS，透過智慧電表與設備聯網即時監控用電，結合 ERP 資料算出每項產品的碳排。",
         "ja": "熱処理は台湾で最もエネルギー消費の大きい伝統産業の一つであり、加熱・保温・放熱のいずれもエネルギーを浪費する。スケジューリングは人手による先着順で、炉の稼働率・納期・エネルギー消費を同時に満たすことができなかった。受注前にスケジュールを模擬し、モンテカルロ木探索で納期を見積もって炉への割り当てを提案するAIスケジューラと、スマートメータと設備連携で消費電力を実時間監視し、ERPデータと突き合わせて製品別の炭素排出を算出するエネルギー管理システムを構築した。"
       },
       "contribution": {
@@ -302,7 +302,7 @@
       "source": "Biomolecules",
       "summary": {
         "en": "Three-state secondary structure prediction climbed from about 56% to 81% over sixty years and then sat at 81–86% for decades. A 1990s estimate put the theoretical ceiling at 88%, so the problem came to be seen as either finished or hopeless. I ran large-scale sequence and structural analyses to re-estimate that ceiling, and to set the limits for segment-based and eight-state prediction, which had never been determined.",
-        "zh": "三態的 secondary structure prediction，六十年間從大約 56% 爬到 81%，之後就停在 81–86% 很久。1990 年代估出來的理論上限是 88%，所以這個題目漸漸被當成做完了、或做不動了。我用大規模的序列與結構分析重新估這個上限，順便把當時還沒人定出來的 segment-based 與八態預測的上限也估出來。",
+        "zh": "三態的 secondary structure prediction，六十年間從大約 56% 爬到 81%，之後就停在 81–86% 很久。1990 年代估出來的理論上限是 88%，這個數字長期被當成天花板。我用大規模的序列與結構分析重新估這個上限，順便把當時還沒人定出來的 segment-based 與八態預測的上限也估出來。",
         "ja": "三状態の二次構造予測は60年かけて約56%から81%まで上がり、その後は81〜86%で長く停滞した。1990年代の推定では理論上限は88%とされ、この問題は「終わった」か「手に負えない」と見なされるようになった。大規模な配列・構造解析で上限を再推定し、未確定だったセグメント単位および八状態予測の上限も併せて求めた。"
       },
       "contribution": {
@@ -371,9 +371,9 @@
       "venue": "PLOS ONE, vol. 16, no. 7, e0255076 · Jul 2021 · IF 3.24",
       "source": "PLOS ONE",
       "summary": {
-        "en": "Secondary structure prediction had stalled, and most effort was going into the learning algorithm. I took a step back and changed the input instead: a position-specific scoring matrix built from secondary structure elements rather than from amino acids. It was tested under strict independent evaluation, with training and testing sets sharing under 25% sequence identity.",
-        "zh": "Secondary structure prediction 停了一段時間，而大部分的力氣都花在 machine learning 演算法上。我退一步，改的是 input：提出以 secondary structure element 為基礎的 PSSM（SSE-PSSM），取代傳統以 amino acid 為基礎的 PSSM。驗證用的是嚴格的 independent test，training 與 testing 的 sequence identity 低於 25%。",
-        "ja": "二次構造予測は停滞しており、労力の多くは学習アルゴリズムに注がれていた。本研究は一歩引いて入力の側を変えた——アミノ酸ではなく二次構造要素に基づく位置特異的スコア行列である。訓練・評価セットの配列同一性を25%未満に抑えた厳密な独立検証で評価した。"
+        "en": "Secondary structure prediction had stalled, and most effort was going into the learning algorithm. I changed direction: instead of tuning the algorithm further, I changed what the model is shown — a position-specific scoring matrix built from secondary structure elements rather than from amino acids. It was tested under strict independent evaluation, with training and testing sets sharing under 25% sequence identity.",
+        "zh": "Secondary structure prediction 停了一段時間，而大部分的力氣都花在 machine learning 演算法上。我換了一個方向：與其繼續調演算法，不如換掉餵進去的東西。我提出以 secondary structure element 為基礎的 PSSM（SSE-PSSM），取代傳統以 amino acid 為基礎的 PSSM。驗證用的是嚴格的 independent test，training 與 testing 的 sequence identity 低於 25%。",
+        "ja": "二次構造予測は停滞しており、労力の多くは学習アルゴリズムに注がれていた。本研究は方向を変え、入力の側に着目した——アミノ酸ではなく二次構造要素に基づく位置特異的スコア行列を提案した。訓練・評価セットの配列同一性を25%未満に抑えた厳密な独立検証で評価した。"
       },
       "contribution": {
         "en": "The new matrix beat the amino-acid matrix in every experiment, and combining the two raised three- and eight-state accuracy of existing predictors by 2.0 and 5.2 points on average — a gain obtained by changing what the model is shown, not how it learns.",
@@ -739,7 +739,8 @@
       "role_sole": "Sole author",
       "role_cofirst": "Co-first author",
       "role_first": "First author",
-      "role_nth": "Author %d"
+      "role_nth": "%s author",
+      "role_ordinal": true
     },
     "filters": {
       "all": "All",
@@ -935,7 +936,7 @@
       "role_sole": "獨著",
       "role_cofirst": "共同第一作者",
       "role_first": "第一作者",
-      "role_nth": "第 %d 作者"
+      "role_nth": "第 %s 作者"
     },
     "filters": {
       "all": "全部",
@@ -1131,7 +1132,7 @@
       "role_sole": "単著",
       "role_cofirst": "筆頭著者（同等貢献）",
       "role_first": "筆頭著者",
-      "role_nth": "第 %d 著者"
+      "role_nth": "第 %s 著者"
     },
     "filters": {
       "all": "すべて",
