@@ -148,7 +148,9 @@ python3 refresh_metrics.py && python3 build.py
 
 ## 重新產生 og.png
 
-`og.html` 是分享預覽圖（1200×630）的原始檔，用網站同一套 token 和字型。改完跑：
+`og.html` 是分享預覽圖（1200×630）的原始檔，用網站同一套 token 和字型。
+
+卡片上的四個數字由 `build.py` 自動從 `content.json` 同步（`<!--counts-->` 區塊之間），所以引用數變動後 `og.html` 會跟著更新 —— **但 `og.png` 是圖檔，必須手動重跑下面這行才會真的換掉**。改完版面或想讓數字生效時跑：
 
 ```bash
 "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --disable-gpu \
