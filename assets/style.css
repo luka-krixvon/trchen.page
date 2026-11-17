@@ -168,7 +168,7 @@ h2.big{margin-bottom:0}
 .filt[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
 .filt-note{font-family:var(--mono);font-size:var(--t-xs);color:var(--ink3);margin-top:14px}
 .pub{display:block;border-top:1px solid var(--hair)}
-.pub-head{display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:18px;align-items:baseline;
+.pub-head{display:grid;grid-template-columns:52px minmax(0,1fr) 104px 152px;gap:14px;align-items:baseline;
   width:100%;text-align:left;padding:15px 4px;border-radius:8px;transition:background .13s}
 .pub-head:hover{background:var(--hair)}
 .pub-head[aria-expanded="true"]{background:var(--hair)}
@@ -176,8 +176,10 @@ h2.big{margin-bottom:0}
 .pub-y{font-family:var(--mono);font-size:var(--t-xs);color:var(--ink3);font-variant-numeric:tabular-nums}
 .pub-ttl{font-family:var(--serif);font-size:var(--t-base);font-weight:500;line-height:1.45;
   letter-spacing:-.012em;min-width:0}
-.pub-src{font-family:var(--mono);font-size:var(--t-xs);color:var(--ink3);white-space:nowrap}
-.pub-role{display:inline-block;margin-right:9px;padding:2px 8px;border-radius:5px;
+.pub-src{font-family:var(--mono);font-size:var(--t-xs);color:var(--ink3);white-space:nowrap;
+  text-align:right;justify-self:end}
+.pub-role{justify-self:end;padding:2px 8px;border-radius:5px;white-space:nowrap;
+  font-family:var(--mono);font-size:var(--t-xs);
   background:var(--accent-soft);color:var(--accent)}
 .pub-talk{display:inline-flex;align-items:center;gap:6px;margin-right:10px;padding:3px 8px;
   border-radius:5px;background:var(--sig-soft);color:var(--sig);font-size:var(--t-xs)}
@@ -316,8 +318,10 @@ footer.site{padding-block:30px 56px;font-family:var(--mono);font-size:var(--t-xs
   .road-node{top:6px;left:-26px}
 }
 @media (max-width:680px){
-  .pub-head{grid-template-columns:48px minmax(0,1fr);row-gap:5px}
-  .pub-src{grid-column:2;justify-self:start}
+  .pub-head{grid-template-columns:48px minmax(0,1fr) auto;row-gap:7px;column-gap:10px}
+  .pub-ttl{grid-column:2 / -1}
+  .pub-role{grid-column:2;grid-row:2;justify-self:start}
+  .pub-src{grid-column:3;grid-row:2;justify-self:start;text-align:left}
   .pub-body{padding-left:48px}
 }
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
