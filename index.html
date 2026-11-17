@@ -29,7 +29,7 @@
 <meta name="theme-color" content="#FAFAF9" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#16191A" media="(prefers-color-scheme: dark)">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=e0014294">
+<link rel="stylesheet" href="assets/style.css?v=054221bc">
 </head>
 <body>
 <a class="skip" href="#about">Skip to content</a>
@@ -131,7 +131,7 @@
           </button>
           <div class="pub-body" id="pub-integer-alibi" hidden>
             
-            <div class="pub-blurb"><p>Two GPU kernels that implement the same INT8 matrix-multiply interface are normally treated as interchangeable. Holding everything else fixed — checkpoint, prompts, hardware, engine, decoding — and swapping only the kernel, they agreed on not a single generated sequence. The arithmetic itself cannot be to blame: for shared INT8 operands under a verified no-overflow bound, the integer accumulator is exact and order-independent.</p><p class="pub-contrib"><b>Contribution. </b>It localizes the divergence to scale application and output rounding after the exact accumulator, confirms this layer by layer on 196 and 252 linear layers with a pre-registered prediction list, and shows the same intervention restores end-to-end bitwise agreement.</p></div>
+            <div class="pub-blurb"><p>Two GPU kernels that implement the same INT8 matrix-multiply interface are normally treated as interchangeable. Holding everything else fixed — checkpoint, prompts, hardware, engine, decoding — and swapping only the kernel, they agreed on not a single generated sequence. The arithmetic can be ruled out up front: for shared INT8 operands under a verified no-overflow bound, the integer accumulator is exact and order-independent — which gave me a clean starting point for locating where the difference actually comes from.</p><p class="pub-contrib"><b>Contribution. </b>It localizes the divergence to scale application and output rounding after the exact accumulator, confirms this layer by layer on 196 and 252 linear layers with a pre-registered prediction list, and shows the same intervention restores end-to-end bitwise agreement.</p></div>
             <div class="pub-meta">
             <p class="pub-a"><b>Teng-Ruei Chen</b></p>
             <p class="pub-v">arXiv:2608.13756 [cs.LG] · Aug 2026</p>
@@ -165,7 +165,7 @@
           </button>
           <div class="pub-body" id="pub-resample-or-reroute" hidden>
             
-            <div class="pub-blurb"><p>When a weak verifier accepts a model&#x27;s answer, the next call can either resample the same model or reroute to a stronger one. Because correctness is hidden, choosing between them is an identification problem rather than a tuning problem. I set three gates — recoverable stopping debt, two-sided action support, and held-out value from an outcome-blind selector — and ran them on a pinned 152-query MBPP+ experiment.</p><p class="pub-contrib"><b>Contribution. </b>It shows the stopping debt is real — a false-positive stop leaves 2.6 points of recoverable accuracy — but that the evidence does not yet identify when to resample rather than reroute, and it names the statistic that looks like evidence but contains no observable-history term.</p></div>
+            <div class="pub-blurb"><p>When a weak verifier accepts a model&#x27;s answer, the next call can either resample the same model or reroute to a stronger one. Because correctness is hidden, choosing between them is an identification problem rather than a tuning problem. I set three gates — recoverable stopping debt, two-sided action support, and held-out value from an outcome-blind selector — and ran them on a pinned 152-query MBPP+ experiment.</p><p class="pub-contrib"><b>Contribution. </b>It establishes that the stopping debt is real — a false-positive stop leaves 2.6 points of recoverable accuracy — and sets out what it would take to identify when to resample rather than reroute. It also names a statistic widely read as evidence that in fact carries no observable-history term, and so cannot support that decision.</p></div>
             <div class="pub-meta">
             <p class="pub-a"><b>Teng-Ruei Chen</b></p>
             <p class="pub-v">arXiv:2607.08665 [cs.LG] · Jul 2026 · Research Square 10.21203/rs.3.rs-11021599/v1</p>
@@ -182,7 +182,7 @@
           </button>
           <div class="pub-body" id="pub-routing-oracle" hidden>
             
-            <div class="pub-blurb"><p>Routing benchmarks compare a policy that must commit to one model before seeing its answer against a hindsight oracle that credits any correct recorded output. Under random decoding these are different decision classes, and the gap between them is often read as a routing opportunity. I audited frozen correctness tensors from 11 open models with 30 archived responses per query–model cell on GSM8K, MATH-500 and GPQA-Diamond.</p><p class="pub-contrib"><b>Contribution. </b>It shows the gap identifies only an interval, not a number: a zero premium is always attainable over compatible couplings, so the headline figure depends on coupling, decision class, scorer, pool and the number of draws. The result is a measurement contract for reading oracle gaps, not a claim about how much routing can gain.</p></div>
+            <div class="pub-blurb"><p>Routing benchmarks compare a policy that must commit to one model before seeing its answer against a hindsight oracle that credits any correct recorded output. Under random decoding these are different decision classes, and the gap between them is often read as a routing opportunity. I audited frozen correctness tensors from 11 open models with 30 archived responses per query–model cell on GSM8K, MATH-500 and GPQA-Diamond.</p><p class="pub-contrib"><b>Contribution. </b>It proves the gap identifies an interval rather than a number: a zero premium is always attainable over compatible couplings. From that it sets out a measurement contract for reading oracle gaps — report the figure together with the coupling, decision class, scorer, pool and number of draws that produced it.</p></div>
             <div class="pub-meta">
             <p class="pub-a"><b>Teng-Ruei Chen</b></p>
             <p class="pub-v">arXiv:2607.03436 [cs.LG] · Jul 2026</p>
@@ -195,7 +195,7 @@
           <button class="pub-head" type="button" data-pubtoggle aria-expanded="false" aria-controls="pub-net-zero">
             <span class="pub-y">2024</span>
             <span class="pub-ttl">AI-enabled digital net-zero transformation in the heat-processing industry</span>
-            <span class="pub-src"><span class="pub-role">Author 2</span>ICT Journal</span>
+            <span class="pub-src"><span class="pub-role">2nd author</span>ICT Journal</span>
           </button>
           <div class="pub-body" id="pub-net-zero" hidden>
             
@@ -212,7 +212,7 @@
           <button class="pub-head" type="button" data-pubtoggle aria-expanded="false" aria-controls="pub-ultimate-limits">
             <span class="pub-y">2021</span>
             <span class="pub-ttl">Discovering the ultimate limits of protein secondary structure prediction</span>
-            <span class="pub-src"><span class="pub-role">Author 3</span>Biomolecules</span>
+            <span class="pub-src"><span class="pub-role">3rd author</span>Biomolecules</span>
           </button>
           <div class="pub-body" id="pub-ultimate-limits" hidden>
             
@@ -250,7 +250,7 @@
           </button>
           <div class="pub-body" id="pub-ss-pssm" hidden>
             
-            <div class="pub-blurb"><p>Secondary structure prediction had stalled, and most effort was going into the learning algorithm. I took a step back and changed the input instead: a position-specific scoring matrix built from secondary structure elements rather than from amino acids. It was tested under strict independent evaluation, with training and testing sets sharing under 25% sequence identity.</p><p class="pub-contrib"><b>Contribution. </b>The new matrix beat the amino-acid matrix in every experiment, and combining the two raised three- and eight-state accuracy of existing predictors by 2.0 and 5.2 points on average — a gain obtained by changing what the model is shown, not how it learns.</p></div>
+            <div class="pub-blurb"><p>Secondary structure prediction had stalled, and most effort was going into the learning algorithm. I changed direction: instead of tuning the algorithm further, I changed what the model is shown — a position-specific scoring matrix built from secondary structure elements rather than from amino acids. It was tested under strict independent evaluation, with training and testing sets sharing under 25% sequence identity.</p><p class="pub-contrib"><b>Contribution. </b>The new matrix beat the amino-acid matrix in every experiment, and combining the two raised three- and eight-state accuracy of existing predictors by 2.0 and 5.2 points on average — a gain obtained by changing what the model is shown, not how it learns.</p></div>
             <div class="pub-meta">
             <p class="pub-a"><b>Teng-Ruei Chen</b><sup>†</sup>, S.-H. Juan<sup>†</sup>, Y.-W. Huang, Y.-C. Lin, W.-C. Lo</p><p class="pub-cofirst">† Co-first authors</p>
             <p class="pub-v">PLOS ONE, vol. 16, no. 7, e0255076 · Jul 2021 · IF 3.24 · doi:10.1371/journal.pone.0255076</p>

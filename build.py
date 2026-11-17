@@ -45,7 +45,13 @@ def byline_role(pub, L):
     if au and au[0] == "@me":
         return L["ui"]["role_first"]
     if "@me" in au:
-        return L["ui"]["role_nth"] % (au.index("@me") + 1)
+        n = au.index("@me") + 1
+        if L["ui"].get("role_ordinal"):
+            suffix = "th" if 11 <= n % 100 <= 13 else {1: "st", 2: "nd", 3: "rd"}.get(n % 10, "th")
+            pos = "%d%s" % (n, suffix)
+        else:
+            pos = str(n)
+        return L["ui"]["role_nth"] % pos
     return ""
 
 

@@ -29,7 +29,7 @@
 <meta name="theme-color" content="#FAFAF9" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#16191A" media="(prefers-color-scheme: dark)">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
-<link rel="stylesheet" href="../assets/style.css?v=e0014294">
+<link rel="stylesheet" href="../assets/style.css?v=054221bc">
 </head>
 <body>
 <a class="skip" href="#about">跳到主要內容</a>
@@ -131,7 +131,7 @@
           </button>
           <div class="pub-body" id="pub-integer-alibi" hidden>
             
-            <div class="pub-blurb"><p>兩個實作同一套 scaled INT8 GEMM 介面的 kernel，一般被當成可以互換。我把其他條件全部固定——checkpoint、prompt、硬體、inference engine、decoding、量化設定——只換掉 INT8 linear kernel（CUTLASS 換成 Triton），結果端到端跑出來沒有任何一條序列是一樣的。但算術本身不可能是兇手：在已驗證不會 overflow 的前提下，INT32 的 dot product 是精確的，而且與順序無關。</p><p class="pub-contrib"><b>貢獻：</b>把差異定位在 accumulator 之後的 scale 套用與 output rounding。用 Qwen3-1.7B 與 8B 的每一層 linear layer（196 層、252 層）餵相同 operand 驗證，power-of-two scale 下輸出 bit-identical，與事前登記的預測清單完全吻合；同樣的介入也讓端到端恢復 bitwise 一致。</p></div>
+            <div class="pub-blurb"><p>兩個實作同一套 scaled INT8 GEMM 介面的 kernel，一般被當成可以互換。我把其他條件全部固定——checkpoint、prompt、硬體、inference engine、decoding、量化設定——只換掉 INT8 linear kernel（CUTLASS 換成 Triton），結果端到端跑出來沒有任何一條序列是一樣的。而算術本身可以先排除：在已驗證不會 overflow 的前提下，INT32 的 dot product 是精確的，且與順序無關——這給了我一個乾淨的起點去定位差異到底從哪裡來。</p><p class="pub-contrib"><b>貢獻：</b>把差異定位在 accumulator 之後的 scale 套用與 output rounding。用 Qwen3-1.7B 與 8B 的每一層 linear layer（196 層、252 層）餵相同 operand 驗證，power-of-two scale 下輸出 bit-identical，與事前登記的預測清單完全吻合；同樣的介入也讓端到端恢復 bitwise 一致。</p></div>
             <div class="pub-meta">
             <p class="pub-a"><b>Teng-Ruei Chen</b></p>
             <p class="pub-v">arXiv:2608.13756 [cs.LG] · Aug 2026</p>
@@ -165,7 +165,7 @@
           </button>
           <div class="pub-body" id="pub-resample-or-reroute" hidden>
             
-            <div class="pub-blurb"><p>當一個不夠強的 verifier 接受了 LLM 的回答，下一次呼叫可以 resample 同一個模型，也可以 reroute 到更強的。因為正確與否是看不見的，要選哪一個其實是 identification problem，不是調參。我排了三道 gate——recoverable stopping debt、雙向的 FIT action support、outcome-blind selector 的 held-out value——在固定的 152 題 MBPP+ 上逐一檢驗。</p><p class="pub-contrib"><b>貢獻：</b>stopping debt 確實存在：一次 false-positive 的停止，會留下 +2.59 個百分點可以救回來的準確率。但現有證據還不足以判斷什麼時候該 resample、什麼時候該 reroute。文中也點出一個看起來像證據的統計量，實際上不含任何 observable-history 的項。</p></div>
+            <div class="pub-blurb"><p>當一個不夠強的 verifier 接受了 LLM 的回答，下一次呼叫可以 resample 同一個模型，也可以 reroute 到更強的。因為正確與否是看不見的，要選哪一個其實是 identification problem，不是調參。我排了三道 gate——recoverable stopping debt、雙向的 FIT action support、outcome-blind selector 的 held-out value——在固定的 152 題 MBPP+ 上逐一檢驗。</p><p class="pub-contrib"><b>貢獻：</b>證明 stopping debt 確實存在：一次 false-positive 的停止，會留下 +2.59 個百分點可以救回來的準確率。更重要的是釐清了這個決策需要什麼條件才能成立——並指出一個常被當成證據的統計量，其實不含任何 observable-history 的項，因此無法支撐這個判斷。</p></div>
             <div class="pub-meta">
             <p class="pub-a"><b>Teng-Ruei Chen</b></p>
             <p class="pub-v">arXiv:2607.08665 [cs.LG] · Jul 2026 · Research Square 10.21203/rs.3.rs-11021599/v1</p>
@@ -182,7 +182,7 @@
           </button>
           <div class="pub-body" id="pub-routing-oracle" hidden>
             
-            <div class="pub-blurb"><p>Routing 的 benchmark 會拿兩種東西相比：一種是看到回答之前就得選定模型的 policy，另一種是事後只要有任何一份記錄下來的回答正確就算數的 oracle。在 stochastic decoding 下這是兩種不同的 decision class，而兩者的落差常被當成「routing 還有多少空間」。我用 11 個開源模型的凍結 correctness tensor、每個 query×model 格存 30 份回應，在 GSM8K、MATH-500 與 GPQA-Diamond 上做稽核。</p><p class="pub-contrib"><b>貢獻：</b>這個落差只框得出一個區間，框不出一個數字：在相容的 coupling 之下，premium 為零永遠是可能的。所以檯面上那個數字其實取決於 coupling、decision class、scorer、pool 與抽樣次數。成果是一份解讀 oracle gap 的量測規約，不是「routing 可以賺多少」的結論。</p></div>
+            <div class="pub-blurb"><p>Routing 的 benchmark 會拿兩種東西相比：一種是看到回答之前就得選定模型的 policy，另一種是事後只要有任何一份記錄下來的回答正確就算數的 oracle。在 stochastic decoding 下這是兩種不同的 decision class，而兩者的落差常被當成「routing 還有多少空間」。我用 11 個開源模型的凍結 correctness tensor、每個 query×model 格存 30 份回應，在 GSM8K、MATH-500 與 GPQA-Diamond 上做稽核。</p><p class="pub-contrib"><b>貢獻：</b>我證明這個落差所能識別的是一個區間而非單一數字：在相容的 coupling 之下，premium 為零始終是可能的。據此我給出一份解讀 oracle gap 的量測規約——要報這個數字，就必須連同 coupling、decision class、scorer、pool 與抽樣次數一起報。</p></div>
             <div class="pub-meta">
             <p class="pub-a"><b>Teng-Ruei Chen</b></p>
             <p class="pub-v">arXiv:2607.03436 [cs.LG] · Jul 2026</p>
@@ -199,7 +199,7 @@
           </button>
           <div class="pub-body" id="pub-net-zero" hidden>
             
-            <div class="pub-blurb"><p>熱處理是台灣耗能最高的傳統產業之一：加熱、保溫、熱逸散都在浪費能源。而排程長期靠人工先進先出，沒辦法同時顧到設備稼動率、交期和能耗。我們做的是一套 AI 排程系統，在接單前就先模擬排程，用 MCTS 估出交期並建議訂單要進哪一座爐；搭配一套 EMS，透過智慧電表與設備聯網即時監控用電，結合 ERP 資料算出每項產品的碳排。</p><p class="pub-contrib"><b>貢獻：</b>把先進先出的排程換成同時考慮能耗與交期的集中批次處理與階段性升降溫控制。文中報告導入後減碳超過 1,500 噸、節電超過 300 萬度。</p></div>
+            <div class="pub-blurb"><p>熱處理是台灣耗能最高的傳統產業之一：加熱、保溫、熱逸散都在浪費能源。而排程長期靠人工先進先出，難以同時兼顧設備稼動率、交期與能耗。我們做的是一套 AI 排程系統，在接單前就先模擬排程，用 MCTS 估出交期並建議訂單要進哪一座爐；搭配一套 EMS，透過智慧電表與設備聯網即時監控用電，結合 ERP 資料算出每項產品的碳排。</p><p class="pub-contrib"><b>貢獻：</b>把先進先出的排程換成同時考慮能耗與交期的集中批次處理與階段性升降溫控制。文中報告導入後減碳超過 1,500 噸、節電超過 300 萬度。</p></div>
             <div class="pub-meta">
             <p class="pub-a">T.-C. Su, <b>Teng-Ruei Chen</b>, C.-W. Lin</p>
             <p class="pub-v">電腦與通訊 (ICT Journal, ITRI), no. 197, pp. 35–42 · Mar 2024</p>
@@ -216,7 +216,7 @@
           </button>
           <div class="pub-body" id="pub-ultimate-limits" hidden>
             
-            <div class="pub-blurb"><p>三態的 secondary structure prediction，六十年間從大約 56% 爬到 81%，之後就停在 81–86% 很久。1990 年代估出來的理論上限是 88%，所以這個題目漸漸被當成做完了、或做不動了。我用大規模的序列與結構分析重新估這個上限，順便把當時還沒人定出來的 segment-based 與八態預測的上限也估出來。</p><p class="pub-contrib"><b>貢獻：</b>三態的上限重新估為約 92%，比長期以來認定的高 4–5 個百分點；八態估為 84–87%。也就是說空間還在，而且現在有一個可以瞄準的數字。</p></div>
+            <div class="pub-blurb"><p>三態的 secondary structure prediction，六十年間從大約 56% 爬到 81%，之後就停在 81–86% 很久。1990 年代估出來的理論上限是 88%，這個數字長期被當成天花板。我用大規模的序列與結構分析重新估這個上限，順便把當時還沒人定出來的 segment-based 與八態預測的上限也估出來。</p><p class="pub-contrib"><b>貢獻：</b>三態的上限重新估為約 92%，比長期以來認定的高 4–5 個百分點；八態估為 84–87%。也就是說空間還在，而且現在有一個可以瞄準的數字。</p></div>
             <div class="pub-meta">
             <p class="pub-a">C.-T. Ho, Y.-W. Huang, <b>Teng-Ruei Chen</b>, C.-H. Lo, W.-C. Lo</p>
             <p class="pub-v">Biomolecules, vol. 11, no. 11, 1627 · Nov 2021 · IF 4.88 · doi:10.3390/biom11111627</p>
@@ -250,7 +250,7 @@
           </button>
           <div class="pub-body" id="pub-ss-pssm" hidden>
             
-            <div class="pub-blurb"><p>Secondary structure prediction 停了一段時間，而大部分的力氣都花在 machine learning 演算法上。我退一步，改的是 input：提出以 secondary structure element 為基礎的 PSSM（SSE-PSSM），取代傳統以 amino acid 為基礎的 PSSM。驗證用的是嚴格的 independent test，training 與 testing 的 sequence identity 低於 25%。</p><p class="pub-contrib"><b>貢獻：</b>SSE-PSSM 在每一組實驗都贏過傳統的 amino acid PSSM；兩者合併之後，既有方法的三態與八態準確率平均各提升 2.0 與 5.2 個百分點。這個增益來自換掉餵給模型看的東西，不是換掉模型怎麼學。</p></div>
+            <div class="pub-blurb"><p>Secondary structure prediction 停了一段時間，而大部分的力氣都花在 machine learning 演算法上。我換了一個方向：與其繼續調演算法，不如換掉餵進去的東西。我提出以 secondary structure element 為基礎的 PSSM（SSE-PSSM），取代傳統以 amino acid 為基礎的 PSSM。驗證用的是嚴格的 independent test，training 與 testing 的 sequence identity 低於 25%。</p><p class="pub-contrib"><b>貢獻：</b>SSE-PSSM 在每一組實驗都贏過傳統的 amino acid PSSM；兩者合併之後，既有方法的三態與八態準確率平均各提升 2.0 與 5.2 個百分點。這個增益來自換掉餵給模型看的東西，不是換掉模型怎麼學。</p></div>
             <div class="pub-meta">
             <p class="pub-a"><b>Teng-Ruei Chen</b><sup>†</sup>, S.-H. Juan<sup>†</sup>, Y.-W. Huang, Y.-C. Lin, W.-C. Lo</p><p class="pub-cofirst">† 共同第一作者</p>
             <p class="pub-v">PLOS ONE, vol. 16, no. 7, e0255076 · Jul 2021 · IF 3.24 · doi:10.1371/journal.pone.0255076</p>

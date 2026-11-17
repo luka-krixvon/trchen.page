@@ -354,6 +354,9 @@ footer.site{padding-block:30px 56px;font-family:var(--mono);font-size:var(--t-xs
 :root[lang^="zh"] .bio,:root[lang^="ja"] .bio{line-height:1.9}
 :root[lang^="zh"] .idtext h1,:root[lang^="ja"] .idtext h1{letter-spacing:-.01em}
 :root[lang^="zh"] .pub-ttl,:root[lang^="ja"] .pub-ttl{line-height:1.5}
+/* ch 量的是數字寬度，對 CJK 偏窄；改用 em 直接指定每行字數 */
+:root[lang^="zh"] .pub-blurb,:root[lang^="ja"] .pub-blurb{max-width:44em}
+:root[lang^="zh"] .bio,:root[lang^="ja"] .bio{max-width:40em}
 :root[lang^="zh"] .theme-row p,:root[lang^="ja"] .theme-row p{line-height:1.8}
 
 
