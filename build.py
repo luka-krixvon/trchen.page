@@ -192,13 +192,15 @@ def body(L, code, depth):
     bio_html = "".join('<p class="bio">%s</p>' % e(par) for par in L["bio"].split("\n\n"))
     cv_class = "cv-grid cv-stack" if len(L["education"]) < 2 else "cv-grid"
     dis = C.get("dissertation") or {}
+    dt = dis.get("title")
+    dis_title = (dt.get(code) or dt.get("en")) if isinstance(dt, dict) else (dt or "")
 
     def edu_row(y, x):
         extra = ""
         if dis.get("url") and str(dis.get("year")) == str(y):
             extra = ('<span class="cv-sub">%s<a href="%s">%s</a></span>'
-                     % (e(L["ui"]["dissertation"]) + "\uff1a" if code != "en" else e(L["ui"]["dissertation"]) + ": ",
-                        e(dis["url"]), e(dis["title"])))
+                     % (e(L["ui"]["dissertation"]) + ("\uff1a" if code != "en" else ": "),
+                        e(dis["url"]), e(dis_title)))
         return '<div class="cv-row"><dt>%s</dt><dd>%s%s</dd></div>' % (e(y), e(x), extra)
 
     edu = "".join(edu_row(y, x) for y, x in L["education"])
