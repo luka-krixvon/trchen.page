@@ -35,8 +35,27 @@ CAP = ('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1 9l11 6 9-4.
        '13.18v4L12 21l7-3.82v-4L12 17z"/></svg>')
 
 
+def byline_role(pub, L):
+    """What position he holds on this paper, said plainly."""
+    au, co = pub["authors"], (pub.get("co_first") or [])
+    if au == ["@me"]:
+        return L["ui"]["role_sole"]
+    if "@me" in co:
+        return L["ui"]["role_cofirst"]
+    if au and au[0] == "@me":
+        return L["ui"]["role_first"]
+    if "@me" in au:
+        return L["ui"]["role_nth"] % (au.index("@me") + 1)
+    return ""
+
+
 def authors(pub):
-    return ", ".join("<b>%s</b>" % e(SITE["name"]) if a == "@me" else e(a) for a in pub["authors"])
+    co = set(pub.get("co_first") or [])
+    out = []
+    for a in pub["authors"]:
+        name = "<b>%s</b>" % e(SITE["name"]) if a == "@me" else e(a)
+        out.append(name + "<sup>\u2020</sup>" if a in co else name)
+    return ", ".join(out)
 
 
 def topbar(L, code, depth):
@@ -90,6 +109,9 @@ def publication(pub, L, i, code):
         if isinstance(x, dict):
             return x.get(code) or x.get("en")
         return x
+    r = byline_role(pub, L)
+    role = ('<span class="pub-role">%s</span>' % e(r)) if r else ""
+    cofirst = ('<p class="pub-cofirst">%s</p>' % e(L["ui"]["co_first"])) if pub.get("co_first") else ""
     sm, cb = pick("summary"), pick("contribution")
     blurb = ""
     if sm or cb:
@@ -127,13 +149,13 @@ def publication(pub, L, i, code):
           <button class="pub-head" type="button" data-pubtoggle aria-expanded="false" aria-controls="{pid2}">
             <span class="pub-y">{pub['year']}</span>
             <span class="pub-ttl">{e(pub['title'])}</span>
-            <span class="pub-src">{mark}{e(pub.get('source',''))}</span>
+            <span class="pub-src">{mark}{role}{e(pub.get('source',''))}</span>
           </button>
           <div class="pub-body{' has-talk' if v else ''}" id="{pid2}" hidden>
             {panel}
             {blurb}
             <div class="pub-meta">
-            <p class="pub-a">{authors(pub)}</p>
+            <p class="pub-a">{authors(pub)}</p>{cofirst}
             <p class="pub-v">{e(venue)}{note}</p>
             <div class="tags">{tags}</div>
             <div class="acts">{acts}{watch}</div>
