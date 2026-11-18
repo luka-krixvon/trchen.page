@@ -21,7 +21,7 @@
     "name_zh": "陳騰瑞",
     "primary_link": "scholar",
     "linkedin": "https://www.linkedin.com/in/luka-chen/",
-    "metrics_updated": "2026-11-17"
+    "metrics_updated": "2026-11-18"
   },
   "counts": {
     "publications": 13,
@@ -1575,7 +1575,7 @@
       "title": "Per-layer int8 activation captures of Qwen3-1.7B (W8A8) for the fault-injection study in arXiv:2609.00363",
       "record": "23696093",
       "views": 21,
-      "downloads": 8
+      "downloads": 9
     },
     {
       "year": 2026,
@@ -1583,8 +1583,8 @@
       "kind": "dataset",
       "title": "When Strong Reasoners Join the Pool: run record and code (NVIDIA B300, MATH-500)",
       "record": "23939046",
-      "views": 160,
-      "downloads": 19
+      "views": 165,
+      "downloads": 20
     }
   ],
   "metrics": {
