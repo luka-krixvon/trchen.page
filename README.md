@@ -138,6 +138,24 @@ Pages 接著自動重新部署。Actions 頁面也有 Run workflow 按鈕可以�
 數字是 build 時寫進 HTML 的，不是在訪客瀏覽器裡抓的 —— 靜態頁面那樣做會有 CORS 問題、
 每個訪客都打一次 API，而且爬蟲看不到數字。
 
+## 排程停掉的時候
+
+GitHub 會在倉庫**連續 60 天沒有任何人工 commit** 之後，自動停用排程類的 Actions，而且不會通知。
+這個網站平常不太會動，所以有可能遇到。判斷方式：網站上「數據日期」那一行停在很久以前。
+
+檢查與手動觸發：
+
+```bash
+gh run list --repo luka-krixvon/trchen.page --workflow "Refresh metrics" --limit 5
+gh workflow run "Refresh metrics" --repo luka-krixvon/trchen.page
+```
+
+網頁上也可以：Actions 分頁 → 左側選 Refresh metrics → 右上 Run workflow。
+被停用的話，同一頁會出現 Enable workflow 按鈕。
+
+注意：數字沒有變動時，這支程式**不會**寫檔也不會 commit，所以「跑完但日期沒前進」是正常的，
+不代表壞掉。要確認它有讀到資料，看那次 run 的 log 裡有沒有 `openalex: … citations` 那一行。
+
 ## 手動更新引用數
 
 ```bash
