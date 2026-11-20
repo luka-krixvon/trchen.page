@@ -182,10 +182,10 @@ def body(L, code, depth):
         for k in ("i10_index", "deposits", "awards")
         if COUNTS.get(k) is not None)
     src = ""
-    if METRICS.get("source") and METRICS.get("updated"):
+    if METRICS.get("source") and SITE.get("metrics_updated"):
         srclink = '<a href="%s">%s</a>' % (e(METRICS["source_url"]), e(METRICS["source"]))
         src = '<p class="kpi-src">%s</p>' % (
-            e(L["ui"]["metrics_note"]).replace("%s", "{}", 2).format(srclink, e(METRICS["updated"])))
+            e(L["ui"]["metrics_note"]).replace("%s", "{}", 2).format(srclink, e(SITE["metrics_updated"])))
     counts = ('<div class="kpi-main">%s</div><div class="kpi-strip">%s</div>%s'
               % (headline, minor, src))
     lede_html = ('          <p class="lede">%s</p>\n' % L["lede"]) if L.get("lede") else ""

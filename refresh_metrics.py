@@ -81,10 +81,6 @@ def main():
                 if c["counts"].get(k) != v:
                     changed.append("%s %s -> %s" % (k, c["counts"].get(k), v))
                 c["counts"][k] = v
-            today = date.today().isoformat()
-            if changed and m.get("updated") != today:
-                m["updated"] = today
-                c["metrics"] = m
             print("  openalex: %(citations)s citations, h-index %(h_index)s, i10 %(i10_index)s" % got)
         else:
             print("  openalex unavailable; figures left at %s" % c["counts"].get("citations"))
