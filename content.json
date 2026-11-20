@@ -21,7 +21,7 @@
     "name_zh": "陳騰瑞",
     "primary_link": "scholar",
     "linkedin": "https://www.linkedin.com/in/luka-chen/",
-    "metrics_updated": "2026-11-19"
+    "metrics_updated": "2026-11-20"
   },
   "counts": {
     "publications": 13,
@@ -1583,8 +1583,8 @@
       "kind": "dataset",
       "title": "When Strong Reasoners Join the Pool: run record and code (NVIDIA B300, MATH-500)",
       "record": "23939046",
-      "views": 168,
-      "downloads": 20
+      "views": 169,
+      "downloads": 22
     }
   ],
   "metrics": {
