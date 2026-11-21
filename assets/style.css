@@ -153,6 +153,9 @@ h2.big{margin-bottom:0}
   border-bottom:1px solid color-mix(in srgb,var(--accent) 32%,transparent)}
 .cv-sub a:hover{color:var(--accent);border-color:var(--accent)}
 .cv-sub2{display:block;margin-top:2px;font-size:var(--t-xs);color:var(--ink3);line-height:1.5}
+.cv-proof{margin-left:9px;font-family:var(--mono);font-size:var(--t-xs);color:var(--ink3);
+  text-decoration:none;border-bottom:1px solid var(--line);white-space:nowrap}
+.cv-proof:hover{color:var(--accent);border-color:var(--accent)}
 .cv-row{display:grid;grid-template-columns:96px minmax(0,1fr);gap:18px;padding-block:10px;
   border-top:1px solid var(--hair);align-items:baseline}
 .cv-row:first-of-type{border-top:0}

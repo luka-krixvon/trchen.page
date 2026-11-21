@@ -754,7 +754,8 @@
       "role_first": "First author",
       "role_nth": "%s author",
       "role_ordinal": true,
-      "dissertation": "Dissertation"
+      "dissertation": "Dissertation",
+      "certificate": "Certificate"
     },
     "filters": {
       "all": "All",
@@ -873,7 +874,8 @@
     "memberships": [
       [
         "2026–",
-        "Sigma Xi, The Scientific Research Honor Society — Full Member"
+        "Sigma Xi, The Scientific Research Honor Society — Full Member",
+        "sigma-xi-certificate.jpg"
       ]
     ]
   },
@@ -958,7 +960,8 @@
       "role_cofirst": "共同第一作者",
       "role_first": "第一作者",
       "role_nth": "第 %s 作者",
-      "dissertation": "博士論文"
+      "dissertation": "博士論文",
+      "certificate": "證書"
     },
     "filters": {
       "all": "全部",
@@ -1077,7 +1080,8 @@
     "memberships": [
       [
         "2026–",
-        "Sigma Xi 科學研究榮譽學會 — Full Member"
+        "Sigma Xi 科學研究榮譽學會 — Full Member",
+        "sigma-xi-certificate.jpg"
       ]
     ]
   },
@@ -1162,7 +1166,8 @@
       "role_cofirst": "筆頭著者（同等貢献）",
       "role_first": "筆頭著者",
       "role_nth": "第 %s 著者",
-      "dissertation": "博士論文"
+      "dissertation": "博士論文",
+      "certificate": "証書"
     },
     "filters": {
       "all": "すべて",
@@ -1281,7 +1286,8 @@
     "memberships": [
       [
         "2026–",
-        "Sigma Xi, The Scientific Research Honor Society — Full Member"
+        "Sigma Xi, The Scientific Research Honor Society — Full Member",
+        "sigma-xi-certificate.jpg"
       ]
     ]
   },

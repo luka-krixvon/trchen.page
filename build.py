@@ -210,7 +210,14 @@ def body(L, code, depth):
     edu = "".join(edu_row(y, x) for y, x in L["education"])
     pos = "".join('<div class="cv-row"><dt>%s</dt><dd>%s</dd></div>' % (e(y), e(x)) for y, x in L["positions"])
     mem_rows = L.get("memberships") or []
-    mem = "".join('<div class="cv-row"><dt>%s</dt><dd>%s</dd></div>' % (e(y), e(x)) for y, x in mem_rows)
+    def mem_row(r):
+        y, x = r[0], r[1]
+        u = r[2] if len(r) > 2 else ""
+        link = (' <a class="cv-proof" href="%s%s">%s</a>'
+                % (up, e(u), e(L["ui"]["certificate"]))) if u else ""
+        return '<div class="cv-row"><dt>%s</dt><dd>%s%s</dd></div>' % (e(y), e(x), link)
+
+    mem = "".join(mem_row(r) for r in mem_rows)
     mem_block = ('<dl class="cv-group"><h3>%s</h3>%s</dl>'
                  % (e(L["headings"]["memberships"]), mem)) if mem else ""
     themes = "".join('<div class="theme-row"><h3>%s</h3><p>%s</p></div>' % (e(a), e(b))
