@@ -1601,7 +1601,7 @@
       "kind": "dataset",
       "title": "Per-layer int8 activation captures of Qwen3-1.7B (W8A8) for the fault-injection study in arXiv:2609.00363",
       "record": "23696093",
-      "views": 24,
+      "views": 25,
       "downloads": 12
     },
     {
@@ -1611,7 +1611,7 @@
       "title": "When Strong Reasoners Join the Pool: run record and code (NVIDIA B300, MATH-500)",
       "record": "23939046",
       "views": 170,
-      "downloads": 22
+      "downloads": 23
     }
   ],
   "metrics": {
