@@ -209,6 +209,10 @@ def body(L, code, depth):
 
     edu = "".join(edu_row(y, x) for y, x in L["education"])
     pos = "".join('<div class="cv-row"><dt>%s</dt><dd>%s</dd></div>' % (e(y), e(x)) for y, x in L["positions"])
+    mem_rows = L.get("memberships") or []
+    mem = "".join('<div class="cv-row"><dt>%s</dt><dd>%s</dd></div>' % (e(y), e(x)) for y, x in mem_rows)
+    mem_block = ('<dl class="cv-group"><h3>%s</h3>%s</dl>'
+                 % (e(L["headings"]["memberships"]), mem)) if mem else ""
     themes = "".join('<div class="theme-row"><h3>%s</h3><p>%s</p></div>' % (e(a), e(b))
                      for a, b in L["themes"])
     pub_sub = "<p>%s</p>" % e(L["ui"]["pub_sub"])
@@ -300,6 +304,7 @@ def body(L, code, depth):
       <div class="{cv_class}">
         <dl class="cv-group"><h3>{e(L['headings']['education'])}</h3>{edu}</dl>
         <dl class="cv-group"><h3>{e(L['headings']['positions'])}</h3>{pos}</dl>
+        {mem_block}
       </div>
     </section>
 

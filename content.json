@@ -700,7 +700,8 @@
       "positions": "Positions",
       "awards": "Awards",
       "appearances": "Appearances",
-      "deposits": "Datasets & software"
+      "deposits": "Datasets & software",
+      "memberships": "Memberships"
     },
     "count_labels": {
       "publications": "Publications",
@@ -868,7 +869,13 @@
       "ev": "EV charging and battery swapping",
       "mobility": "Autonomous vehicles and logistics",
       "power": "Power systems"
-    }
+    },
+    "memberships": [
+      [
+        "2026–",
+        "Sigma Xi, The Scientific Research Honor Society — Full Member"
+      ]
+    ]
   },
   "zh": {
     "lang_attr": "zh-Hant-TW",
@@ -898,7 +905,8 @@
       "positions": "經歷",
       "awards": "獲獎",
       "appearances": "國際曝光",
-      "deposits": "資料集與程式"
+      "deposits": "資料集與程式",
+      "memberships": "學會"
     },
     "count_labels": {
       "publications": "論文",
@@ -1065,7 +1073,13 @@
       "ev": "電動車充換電",
       "mobility": "無人載具與物流",
       "power": "電力系統"
-    }
+    },
+    "memberships": [
+      [
+        "2026–",
+        "Sigma Xi 科學研究榮譽學會 — Full Member"
+      ]
+    ]
   },
   "ja": {
     "lang_attr": "ja",
@@ -1095,7 +1109,8 @@
       "positions": "職歴",
       "awards": "受賞",
       "appearances": "対外活動",
-      "deposits": "データセット・ソフトウェア"
+      "deposits": "データセット・ソフトウェア",
+      "memberships": "所属学会"
     },
     "count_labels": {
       "publications": "論文",
@@ -1262,7 +1277,13 @@
       "ev": "EV充電・バッテリー交換",
       "mobility": "無人車両と物流",
       "power": "電力システム"
-    }
+    },
+    "memberships": [
+      [
+        "2026–",
+        "Sigma Xi, The Scientific Research Honor Society — Full Member"
+      ]
+    ]
   },
   "awards": [
     {
