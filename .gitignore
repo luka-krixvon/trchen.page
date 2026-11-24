@@ -4,4 +4,4 @@ preview/
 .DS_Store
 
 # working notes, not for the public repo
-notes.local.md
+*.local.md
