@@ -21,7 +21,7 @@
     "name_zh": "陳騰瑞",
     "primary_link": "scholar",
     "linkedin": "https://www.linkedin.com/in/luka-chen/",
-    "metrics_updated": "2026-11-21"
+    "metrics_updated": "2026-11-24"
   },
   "counts": {
     "publications": 13,
@@ -1592,7 +1592,7 @@
       "kind": "software",
       "title": "deterministic-int8-llm-inference: measurement programme and reproducibility companion for two papers on cross-kernel INT8 inference numerics",
       "record": "23695800",
-      "views": 25,
+      "views": 27,
       "downloads": 8
     },
     {
@@ -1601,8 +1601,8 @@
       "kind": "dataset",
       "title": "Per-layer int8 activation captures of Qwen3-1.7B (W8A8) for the fault-injection study in arXiv:2609.00363",
       "record": "23696093",
-      "views": 25,
-      "downloads": 12
+      "views": 26,
+      "downloads": 13
     },
     {
       "year": 2026,
@@ -1610,7 +1610,7 @@
       "kind": "dataset",
       "title": "When Strong Reasoners Join the Pool: run record and code (NVIDIA B300, MATH-500)",
       "record": "23939046",
-      "views": 170,
+      "views": 172,
       "downloads": 23
     }
   ],
