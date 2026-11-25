@@ -21,7 +21,7 @@
     "name_zh": "陳騰瑞",
     "primary_link": "scholar",
     "linkedin": "https://www.linkedin.com/in/luka-chen/",
-    "metrics_updated": "2026-11-24"
+    "metrics_updated": "2026-11-25"
   },
   "counts": {
     "publications": 13,
@@ -1592,7 +1592,7 @@
       "kind": "software",
       "title": "deterministic-int8-llm-inference: measurement programme and reproducibility companion for two papers on cross-kernel INT8 inference numerics",
       "record": "23695800",
-      "views": 27,
+      "views": 29,
       "downloads": 8
     },
     {
